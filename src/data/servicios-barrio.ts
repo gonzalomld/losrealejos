@@ -32,7 +32,7 @@ export const SERVICIOS_BARRIO: ServicioBarrio[] = [
     nombre: "Avisar de un problema en la calle",
     descripcion: "Farolas fundidas, baches, aceras rotas, jardines sin cuidar o suciedad.",
     acciones: [
-      { texto: "Comunicar una incidencia en vía pública (sistema externo)", href: "https://sede.losrealejos.es/incidencias", externo: true },
+      { texto: "Comunicar una incidencia en vía pública (sistema externo)", href: "http://www.lineaverdelosrealejos.es/lv/incidencias_online.asp", externo: true },
       { texto: "Llamar a la Oficina de Atención Ciudadana", href: "tel:+34922346234" },
     ],
     areaId: "atencion-ciudadana",
@@ -141,7 +141,7 @@ export const SERVICIOS_BARRIO: ServicioBarrio[] = [
     descripcion: "Cuándo llamar a la Policía Local y qué hacer ante alertas del tiempo.",
     acciones: [
       { texto: "Ver teléfonos de emergencia", href: "/mi-barrio/seguridad-emergencias" },
-      { texto: "Pedir cita en la Oficina de Atención Ciudadana", href: "https://sede.losrealejos.es/cita-previa", externo: true },
+      { texto: "Pedir cita en la Oficina de Atención Ciudadana", href: "https://losrealejos.es/atencion-ciudadana/cita-previa/", externo: true },
     ],
     areaId: "seguridad-emergencias",
     telefono: "922 34 62 54",

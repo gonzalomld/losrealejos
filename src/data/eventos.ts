@@ -62,9 +62,9 @@ export const EVENTOS: Evento[] = [
     fechaActualizacion: "2026-07-01",
   },
   {
-    id: "romeria-san-vicente",
-    titulo: "Romería de San Vicente",
-    descripcion: "Romería tradicional con carretas, parrandas y comida típica. Salida desde la iglesia a las 12:00. Recorrido accesible.",
+    id: "romeria-san-vicente-mayo",
+    titulo: "Romería de San Vicente en las Fiestas de Mayo",
+    descripcion: "Romería dentro de las Fiestas de Mayo, las fiestas principales del municipio en torno a la Santa Cruz. Carretas, parrandas y comida típica. Salida desde San Vicente a las 12:00. Recorrido accesible.",
     fechaHoraISO: "2026-09-06T12:00:00",
     lugar: "Plaza de Realejo Alto",
     categoria: "fiestas",
@@ -78,7 +78,7 @@ export const EVENTOS: Evento[] = [
     fechaHoraISO: "2026-10-03T21:00:00",
     lugar: "Estadio Los Príncipes",
     categoria: "deporte",
-    inscripcionUrl: "https://sede.losrealejos.es/deportes/carrera-nocturna",
+    inscripcionUrl: "https://sede.losrealejos.es/",
     fechaActualizacion: "2026-06-20",
   },
   {

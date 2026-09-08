@@ -10,8 +10,10 @@ import { EVENTOS } from "@/data/eventos";
 import { AVISOS } from "@/data/avisos";
 import { FileText, BadgeEuro, IdCard, Plane, HousePlus, Waves, Baby, Trophy } from "lucide-react";
 
+// El título final lo compone la plantilla del layout:
+// "Trámites, servicios e información municipal · Ayuntamiento de la Villa de Los Realejos"
 export const metadata: Metadata = {
-  title: "Portada",
+  title: "Trámites, servicios e información municipal",
   description:
     "Haz tus gestiones con el Ayuntamiento de Los Realejos en lenguaje claro: empadronamiento, certificados, IBI, obras, piscina, ayudas y empleo. Teléfono 922 34 62 34.",
 };
@@ -23,7 +25,7 @@ const GESTIONES = [
   { id: "certificado-de-viaje-descuento-residente", texto: "Certificado de viaje (descuento de residente)", Icono: Plane },
   { id: "licencia-obra-menor", texto: "Hacer una obra pequeña en casa", Icono: HousePlus },
   { id: "inscripcion-piscina-municipal", texto: "Apuntarme a la piscina municipal", Icono: Waves },
-  { id: "inscripcion-piscina-municipal", texto: "Apuntar a mi hijo a una actividad", Icono: Baby },
+  { id: "inscripcion-actividades-infantiles", texto: "Apuntar a mi hijo a una actividad", Icono: Baby },
   { id: "uso-instalaciones-deportivas", texto: "Reservar una pista de deporte", Icono: Trophy },
 ];
 
@@ -33,7 +35,6 @@ export default function Portada() {
   const proximosEventos = EVENTOS.filter((e) => e.fechaHoraISO.slice(0, 10) >= hoy)
     .sort((a, b) => (a.fechaHoraISO > b.fechaHoraISO ? 1 : -1))
     .slice(0, 4);
-  const conPlazo = TRAMITES.filter((t) => t.plazoAbierto).length;
 
   return (
     <>
@@ -139,8 +140,7 @@ export default function Portada() {
             Transparencia y tablón
           </h2>
           <p className="prosa-municipal mt-2 text-lg">
-            Cualquier documento oficial está a dos clics desde esta portada. Hay {conPlazo} trámites
-            con plazo abierto ahora mismo.
+            Cualquier documento oficial está a dos clics desde esta portada.
           </p>
           <ul className="mt-4 grid gap-3 sm:grid-cols-2">
             <li>
@@ -153,16 +153,16 @@ export default function Portada() {
               </a>
             </li>
             <li>
-              <a href="/transparencia/contratacion" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo">
+              <a href="https://contrataciondelestado.es" target="_blank" rel="noopener" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo" aria-label="Perfil del contratante: licitaciones abiertas en la Plataforma de Contratación del Sector Público (se abre otro sistema en pestaña nueva)">
                 <FileText aria-hidden="true" size={28} className="shrink-0" />
                 <span>
                   Perfil del contratante: licitaciones abiertas
-                  <span className="block text-base font-normal text-muted-foreground">Qué compra el Ayuntamiento y cómo presentar tu oferta</span>
+                  <span className="block text-base font-normal text-muted-foreground">Qué compra el Ayuntamiento y cómo presentar tu oferta (Plataforma de Contratación del Sector Público, se abre en pestaña nueva)</span>
                 </span>
               </a>
             </li>
             <li>
-              <a href="/transparencia/servicios-urbanismo" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo">
+              <a href="/tablon-de-anuncios" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo">
                 <FileText aria-hidden="true" size={28} className="shrink-0" />
                 <span>
                   Tablón de anuncios oficial
@@ -171,7 +171,7 @@ export default function Portada() {
               </a>
             </li>
             <li>
-              <a href="/transparencia/institucional" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo">
+              <a href="/ordenanzas" className="flex items-start gap-3 rounded border bg-card p-4 font-bold text-primary hover:bg-info-fondo">
                 <FileText aria-hidden="true" size={28} className="shrink-0" />
                 <span>
                   Ordenanzas: normas municipales
@@ -196,7 +196,7 @@ export default function Portada() {
             <ExternalServiceCard
               servicio="pago"
               quePuedesHacer="Pagar el IBI (Impuesto sobre Bienes Inmuebles), tasas y multas con tarjeta."
-              href="https://sede.losrealejos.es/pago"
+              href="https://losrealejos.es/hacienda/pago-de-tributos-y-multas/"
             />
           </div>
         </section>

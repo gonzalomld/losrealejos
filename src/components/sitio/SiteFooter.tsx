@@ -43,9 +43,10 @@ export function SiteFooter() {
         <div>
           <h2 className="text-lg font-bold">Síguenos</h2>
           <ul className="mt-2 space-y-2 text-base">
-            <li><a className="underline underline-offset-4" href="https://www.facebook.com/losrealejos" target="_blank" rel="noopener">Facebook del Ayuntamiento (se abre en pestaña nueva)</a></li>
-            <li><a className="underline underline-offset-4" href="https://x.com/losrealejos" target="_blank" rel="noopener">X (Twitter) del Ayuntamiento (se abre en pestaña nueva)</a></li>
-            <li><a className="underline underline-offset-4" href="https://www.instagram.com/losrealejos" target="_blank" rel="noopener">Instagram del Ayuntamiento (se abre en pestaña nueva)</a></li>
+            <li><a className="underline underline-offset-4" href="https://www.facebook.com/Ayuntamientodelosrealejos" target="_blank" rel="noopener">Facebook del Ayuntamiento (se abre en pestaña nueva)</a></li>
+            <li><a className="underline underline-offset-4" href="https://x.com/Los_Realejos" target="_blank" rel="noopener">X (Twitter) del Ayuntamiento (se abre en pestaña nueva)</a></li>
+            <li><a className="underline underline-offset-4" href="https://www.instagram.com/aytolosrealejos/" target="_blank" rel="noopener">Instagram del Ayuntamiento (se abre en pestaña nueva)</a></li>
+            <li><a className="underline underline-offset-4" href="https://www.youtube.com/@AyuntamientodeLosRealejos" target="_blank" rel="noopener">YouTube del Ayuntamiento (se abre en pestaña nueva)</a></li>
             <li><a className="underline underline-offset-4" href="https://losrealejos.travel" target="_blank" rel="noopener">Web de turismo: losrealejos.travel (web independiente, se abre en pestaña nueva)</a></li>
           </ul>
         </div>

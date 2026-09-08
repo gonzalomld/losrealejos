@@ -88,11 +88,11 @@ export const NOTICIAS: Noticia[] = [
     fechaActualizacion: "2026-07-02",
   },
   {
-    id: "fiestas-del-carmen-palo-blanco",
-    titular: "Palo Blanco celebra sus fiestas con verbena, romería y feria de ganado",
+    id: "fiestas-palo-blanco-julio",
+    titular: "Palo Blanco celebra sus fiestas de julio con verbena, romería y feria de ganado",
     entradilla: "Las fiestas son del 11 al 16 de julio. El día grande es la procesión del domingo.",
     cuerpo: [
-      "Palo Blanco celebra sus fiestas en honor a la Virgen del Carmen del 11 al 16 de julio, con verbena cada noche en la plaza.",
+      "Palo Blanco celebra sus fiestas de julio del 11 al 16, con verbena cada noche en la plaza.",
       "El domingo 13 es el día grande: misa, procesión y feria de ganado por la mañana, y concierto de la banda por la tarde.",
       "Durante las fiestas se corta la calle principal de 19:00 a 02:00. Hay aparcamiento habilitado junto al campo de fútbol.",
     ],

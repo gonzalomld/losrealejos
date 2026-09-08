@@ -24,7 +24,7 @@ export function diasRestantes(finISO: string, hoyISO?: string): number | null {
   return Math.round((fin.getTime() - hoy.getTime()) / 86400000);
 }
 
-export function estadoPlazo(finISO: string | null): "abierto" | "proximo" | "cerrado" | "sin-plazo" {
+export function estadoPlazo(finISO: string | null | undefined): "abierto" | "proximo" | "cerrado" | "sin-plazo" {
   if (!finISO) return "sin-plazo";
   const dias = diasRestantes(finISO);
   if (dias === null) return "sin-plazo";

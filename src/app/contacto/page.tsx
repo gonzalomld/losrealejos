@@ -43,7 +43,7 @@ export default function Contacto() {
             <ExternalServiceCard
               servicio="cita"
               quePuedesHacer="Reservar día y hora para que te atiendan en persona en la OAC."
-              href="https://sede.losrealejos.es/cita-previa"
+              href="https://losrealejos.es/atencion-ciudadana/cita-previa/"
               textoEnlace="Pedir cita previa en la OAC"
             />
             <section aria-labelledby="nucleos" className="rounded border bg-card p-4">

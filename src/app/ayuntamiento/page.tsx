@@ -46,7 +46,7 @@ export default function Ayuntamiento() {
             <ul className="mt-2 space-y-2 text-lg">
               <li><a href="/empleo-publico" className="text-primary underline">Ver las convocatorias de empleo público</a></li>
               <li><a href="/transparencia/contratacion" className="text-primary underline">Ver licitaciones y contratos abiertos</a></li>
-              <li><a href="/transparencia/institucional" className="text-primary underline">Ver las ordenanzas y normas municipales</a></li>
+              <li><a href="/ordenanzas" className="text-primary underline">Ver las ordenanzas y normas municipales</a></li>
             </ul>
           </section>
         </div>

@@ -8,11 +8,12 @@ export function SiteHeader() {
     <header className="bg-primary text-white">
       <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-x-6 gap-y-3 px-4 py-4">
         {/* Logotipo tipográfico sobrio. Se sustituirá por la marca oficial del Ayuntamiento cuando esté disponible. */}
-        <a href="/" aria-label="Ayuntamiento de la Villa de Los Realejos, ir a la portada" className="mr-auto">
-          <span className="block text-xl font-extrabold leading-tight md:text-2xl">
-            Ayuntamiento de la Villa
+        <a href="/" className="mr-auto">
+          <span className="block text-xl font-extrabold leading-tight md:text-2xl" aria-hidden="true">
+            Ayuntamiento de la Villa{" "}
             <span className="block">de Los Realejos</span>
           </span>
+          <span className="sr-only">Ayuntamiento de la Villa de Los Realejos</span>
         </a>
         <a
           href={CONTACTO_OAC.telefonoHref}

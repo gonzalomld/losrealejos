@@ -15,7 +15,7 @@ export type Tramite = {
   silencio: string;
   tasa: string;
   tasaGratuita: boolean;
-  normativa: { titulo: string; url: string }[];
+  normativa: { titulo: string; url?: string }[];
   sedeUrl: string;
   areaId: string;
   temas: Tema[];
@@ -63,7 +63,7 @@ export const TRAMITES: Tramite[] = [
       { titulo: "Ley de Bases del Régimen Local: normas del padrón", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392" },
       { titulo: "Reglamento de Población y Demarcación Territorial", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1986-8532" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/alta-padron",
     areaId: "atencion-ciudadana",
     temas: ["padron"],
     perfiles: ["ciudadano"],
@@ -107,7 +107,7 @@ export const TRAMITES: Tramite[] = [
     normativa: [
       { titulo: "Ley de Bases del Régimen Local: normas del padrón", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/certificado-empadronamiento",
     areaId: "atencion-ciudadana",
     temas: ["padron"],
     perfiles: ["ciudadano"],
@@ -146,9 +146,9 @@ export const TRAMITES: Tramite[] = [
     tasa: "Gratuito.",
     tasaGratuita: true,
     normativa: [
-      { titulo: "Normas estatales del descuento de residente en transportes", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2017-7923" },
+      { titulo: "Normativa estatal sobre bonificaciones a residentes en transportes (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/certificado-viaje-residente",
     areaId: "atencion-ciudadana",
     temas: ["padron"],
     perfiles: ["ciudadano"],
@@ -191,9 +191,9 @@ export const TRAMITES: Tramite[] = [
     normativa: [
       { titulo: "Ley del Procedimiento Administrativo Común: cómo presentar escritos", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/instancia-generica",
     areaId: "secretaria-general",
-    temas: ["servicios-sociales"],
+    temas: ["atencion-ciudadana"],
     perfiles: ["ciudadano", "empresa", "asociacion"],
     plazoAbierto: false,
     fechaActualizacion: "2026-03-02",
@@ -233,10 +233,10 @@ export const TRAMITES: Tramite[] = [
     tasa: "El importe depende del valor del suelo y de los años. Como ejemplo, una vivienda media puede pagar unos 180 euros. El cálculo exacto lo hace Hacienda.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza municipal del impuesto de plusvalía", url: "https://sede.losrealejos.es/ordenanzas/plusvalia" },
+      { titulo: "Ordenanza municipal reguladora del impuesto de plusvalía (referencia pendiente de verificación)" },
       { titulo: "Ley de Haciendas Locales: impuestos municipales", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/plusvalia-municipal",
     areaId: "hacienda",
     temas: ["tributos"],
     perfiles: ["ciudadano", "empresa"],
@@ -277,9 +277,9 @@ export const TRAMITES: Tramite[] = [
     tasa: "Como ejemplo: abono mensual de nado libre unos 28,50 euros; curso trimestral infantil unos 45 euros. Las personas empadronadas pagan menos.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza de precios de instalaciones deportivas", url: "https://sede.losrealejos.es/ordenanzas/deportes" },
+      { titulo: "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/inscripcion-piscina",
     areaId: "deportes",
     temas: ["deportes"],
     perfiles: ["ciudadano"],
@@ -323,10 +323,10 @@ export const TRAMITES: Tramite[] = [
     tasa: "Como ejemplo: unos 32,15 euros de tasa más un porcentaje sobre el presupuesto de obra. El importe exacto lo calcula Urbanismo.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza municipal de licencias urbanísticas", url: "https://sede.losrealejos.es/ordenanzas/urbanismo" },
-      { titulo: "Ley del Suelo de Canarias", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2017-9024" },
+      { titulo: "Ordenanza municipal de licencias urbanísticas (referencia pendiente de verificación)" },
+      { titulo: "Ley del Suelo y de los Espacios Naturales Protegidos de Canarias (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/licencia-obra-menor",
     areaId: "urbanismo",
     temas: ["urbanismo"],
     perfiles: ["ciudadano", "empresa"],
@@ -370,10 +370,10 @@ export const TRAMITES: Tramite[] = [
     tasa: "Como ejemplo: apertura de comercio pequeño unos 120 euros. Bares y locales grandes pagan más según metros.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza municipal de actividades", url: "https://sede.losrealejos.es/ordenanzas/actividades" },
-      { titulo: "Ley de Actividades Clasificadas de Canarias", url: "https://www.boe.es/buscar/act.php?id=BOE-A-1998-7604" },
+      { titulo: "Ordenanza municipal reguladora de actividades (referencia pendiente de verificación)" },
+      { titulo: "Ley canaria de actividades clasificadas (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/licencia-actividad",
     areaId: "urbanismo",
     temas: ["actividad-economica", "urbanismo"],
     perfiles: ["empresa", "asociacion"],
@@ -416,7 +416,7 @@ export const TRAMITES: Tramite[] = [
     normativa: [
       { titulo: "Ley General de Subvenciones: cobro de ayudas", url: "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/cesion-derecho-cobro",
     areaId: "hacienda",
     temas: ["tributos", "servicios-sociales"],
     perfiles: ["ciudadano", "empresa", "asociacion"],
@@ -457,10 +457,10 @@ export const TRAMITES: Tramite[] = [
     tasa: "Como ejemplo: pista exterior unos 12 euros por hora; pabellón completo unos 30 euros por hora. Clubes locales con convenio pagan menos.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza de precios de instalaciones deportivas", url: "https://sede.losrealejos.es/ordenanzas/deportes" },
-      { titulo: "Reglamento de uso de instalaciones deportivas", url: "https://sede.losrealejos.es/ordenanzas/uso-deportivo" },
+      { titulo: "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)" },
+      { titulo: "Reglamento municipal de uso de instalaciones deportivas (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/reserva-instalaciones-deportivas",
     areaId: "deportes",
     temas: ["deportes"],
     perfiles: ["ciudadano", "asociacion", "empresa"],
@@ -500,16 +500,61 @@ export const TRAMITES: Tramite[] = [
     tasa: "El IBI depende del valor de tu vivienda. Como ejemplo, una vivienda media en Realejo Bajo paga unos 210 euros al año. Mira tu recibo para ver tu importe.",
     tasaGratuita: false,
     normativa: [
-      { titulo: "Ordenanza del IBI de Los Realejos", url: "https://sede.losrealejos.es/ordenanzas/ibi" },
-      { titulo: "Calendario fiscal 2026", url: "https://sede.losrealejos.es/ordenanzas/calendario-fiscal" },
+      { titulo: "Ordenanza municipal del IBI (referencia pendiente de verificación)" },
+      { titulo: "Calendario fiscal municipal (referencia pendiente de verificación)" },
     ],
-    sedeUrl: "https://sede.losrealejos.es",
+    sedeUrl: "https://sede.losrealejos.es/tramites/pago-tributos",
     areaId: "hacienda",
     temas: ["tributos"],
     perfiles: ["ciudadano", "empresa"],
     plazoAbierto: true,
     fechaActualizacion: "2026-07-01",
     relacionados: ["plusvalia-municipal-iivtnu", "cesion-derecho-cobro", "licencia-obra-menor"],
+  },
+  {
+    id: "inscripcion-actividades-infantiles",
+    tituloClaro: "Apuntar a mi hijo a una actividad",
+    tituloOficial: "Inscripción en actividades infantiles y juveniles municipales",
+    resumen: {
+      queEs: "Es apuntar a tu hijo a talleres, ludoteca, campamentos y actividades de verano.",
+      queNecesito: "Necesitas el DNI del padre o la madre y los datos del niño.",
+      dondeSeHace: "Se hace en la Casa de la Juventud, en Cultura o por internet.",
+    },
+    descripcion:
+      "El Ayuntamiento organiza actividades para niños durante el curso y en verano: ludoteca, talleres, campamentos y clases. Las plazas son limitadas y se dan por orden de llegada.",
+    requisitos: [
+      "Niños de 3 a 16 años empadronados en Los Realejos (tienen prioridad).",
+      "La inscripción la hace el padre, la madre o el tutor legal.",
+      "Estar al día en los pagos de actividades anteriores.",
+    ],
+    documentacion: [
+      "DNI del padre, madre o tutor.",
+      "Libro de familia o certificado de nacimiento.",
+      "Tarjeta sanitaria del niño.",
+      "Si tiene alergias o necesita medicación, informe médico.",
+    ],
+    canales: ["ambos"],
+    comoSeHace: [
+      { paso: 1, texto: "Mira la oferta de actividades en la agenda o en la Casa de la Juventud." },
+      { paso: 2, texto: "Rellena la ficha de inscripción con los datos del niño." },
+      { paso: 3, texto: "Paga la cuota si la actividad la tiene. Hay descuentos para familias numerosas." },
+      { paso: 4, texto: "Recibirás la confirmación de plaza por teléfono o correo." },
+    ],
+    identificacion: "En persona basta el DNI. Online necesitas Cl@ve o certificado.",
+    plazoResolucion: "La plaza se confirma en unos 7 días si hay sitio libre.",
+    silencio: "Si no recibes respuesta en 15 días, llama a Juventud: puede que no haya plaza.",
+    tasa: "Como ejemplo: ludoteca mensual unos 20 euros; campamento de verano unos 60 euros por quincena. Familias numerosas pagan la mitad.",
+    tasaGratuita: false,
+    normativa: [
+      { titulo: "Ordenanza municipal de precios de actividades culturales y juveniles (referencia pendiente de verificación)" },
+    ],
+    sedeUrl: "https://sede.losrealejos.es/tramites/inscripcion-actividades-infantiles",
+    areaId: "juventud",
+    temas: ["cultura", "servicios-sociales"],
+    perfiles: ["ciudadano"],
+    plazoAbierto: true,
+    fechaActualizacion: "2026-07-05",
+    relacionados: ["inscripcion-piscina-municipal", "uso-instalaciones-deportivas", "alta-en-el-padron"],
   },
 ];
 

@@ -5,7 +5,7 @@ import { EVENTOS } from "@/data/eventos";
 import { DOCUMENTOS } from "@/data/transparencia";
 import { SERVICIOS_BARRIO } from "@/data/servicios-barrio";
 import { AREAS } from "@/data/areas";
-import { BLOQUES_TRANSPARENCIA } from "@/data/vocabularios";
+import { BLOQUES_TRANSPARENCIA, ETIQUETAS_BLOQUE } from "@/data/vocabularios";
 
 export const metadata: Metadata = {
   title: "Mapa del sitio",
@@ -60,7 +60,7 @@ export default function MapaDelSitio() {
           <ul className="mt-2 space-y-1">
             <li><a className="text-primary underline" href="/transparencia">Portal de transparencia</a></li>
             {BLOQUES_TRANSPARENCIA.map((b) => (
-              <li key={b}><a className="text-primary underline" href={`/transparencia/${b}`}>Bloque: {b}</a></li>
+              <li key={b}><a className="text-primary underline" href={`/transparencia/${b}`}>{ETIQUETAS_BLOQUE[b].titulo}</a></li>
             ))}
           </ul>
         </section>
@@ -82,7 +82,9 @@ export default function MapaDelSitio() {
           <ul className="mt-2 space-y-1">
             <li><a className="text-primary underline" href="/buscar">Buscar en el portal</a></li>
             <li><a className="text-primary underline" href="/contacto">Contacto y atención ciudadana</a></li>
-            <li><a className="text-primary underline" href="/campanas/fiestas-del-carmen-2026">Campaña: Fiestas del Carmen 2026 (ejemplo de microsite)</a></li>
+            <li><a className="text-primary underline" href="/tablon-de-anuncios">Tablón de anuncios oficial</a></li>
+            <li><a className="text-primary underline" href="/ordenanzas">Ordenanzas: normas municipales</a></li>
+            <li><a className="text-primary underline" href="/campanas/fiestas-de-mayo-2026">Campaña: Fiestas de Mayo 2026 (ejemplo de microsite)</a></li>
             <li><a className="text-primary underline" href="/accesibilidad">Declaración de accesibilidad</a></li>
             <li><a className="text-primary underline" href="/accesibilidad/reclamacion">Reclamar sobre accesibilidad de esta web</a></li>
             <li><a className="text-primary underline" href="/aviso-legal">Aviso legal</a></li>

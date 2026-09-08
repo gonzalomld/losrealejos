@@ -8,7 +8,7 @@ import { CookieBanner } from "@/components/sitio/CookieBanner";
 
 export const metadata: Metadata = {
   title: {
-    default: "Ayuntamiento de la Villa de Los Realejos",
+    default: "Ayuntamiento de la Villa de Los Realejos · Trámites, servicios e información municipal",
     template: "%s · Ayuntamiento de la Villa de Los Realejos",
   },
   description:

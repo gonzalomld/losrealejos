@@ -7,6 +7,7 @@ export const TEMAS = [
   "actividad-economica",
   "medio-ambiente",
   "servicios-sociales",
+  "atencion-ciudadana",
 ] as const;
 export type Tema = (typeof TEMAS)[number];
 
@@ -19,6 +20,7 @@ export const ETIQUETAS_TEMA: Record<Tema, string> = {
   "actividad-economica": "Actividad económica",
   "medio-ambiente": "Medio ambiente",
   "servicios-sociales": "Servicios sociales",
+  "atencion-ciudadana": "Atención ciudadana",
 };
 
 export const CANALES = ["online", "presencial", "ambos"] as const;

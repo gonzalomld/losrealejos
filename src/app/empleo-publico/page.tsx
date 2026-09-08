@@ -104,10 +104,11 @@ export default function EmpleoPublico() {
           <AvisoPlazo
             aviso={{
               id: "plan-empleo-social",
-              titulo: "Plan de empleo social: 40 contratos, apúntate antes del 12 de septiembre",
+              titulo: "Plan de empleo social: 40 contratos",
               tipo: "empleo",
               descripcion: "Contratos de seis meses para limpieza, jardines y colegios.",
               finPlazoISO: "2026-09-12",
+              fechaHechoISO: null,
               enlace: "/transparencia/empleo-personal",
               enlaceTexto: "Ver las bases del plan de empleo en transparencia",
             }}

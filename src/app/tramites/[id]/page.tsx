@@ -141,9 +141,15 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
           <ul className="mt-2 list-disc space-y-1 pl-6">
             {tramite.normativa.map((n) => (
               <li key={n.titulo}>
-                <a href={n.url} target="_blank" rel="noopener" className="font-semibold text-primary underline">
-                  {n.titulo} (se abre en pestaña nueva)
-                </a>
+                {n.url ? (
+                  <a href={n.url} target="_blank" rel="noopener" className="font-semibold text-primary underline">
+                    {n.titulo} (se abre en pestaña nueva)
+                  </a>
+                ) : (
+                  <span>
+                    {n.titulo} <DatoEjemplo />
+                  </span>
+                )}
               </li>
             ))}
           </ul>
@@ -151,6 +157,15 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
 
         <section aria-labelledby="cta-sede" className="mt-8">
           <h2 id="cta-sede" className="text-2xl font-extrabold">8. Empezar el trámite</h2>
+          <p className="mt-2 flex flex-wrap items-center gap-2 text-base">
+            <span>
+              Dirección en la Sede: <code className="rounded bg-muted px-1">{tramite.sedeUrl}</code>
+            </span>
+            <DatoEjemplo />
+          </p>
+          <p className="mt-1 text-base text-muted-foreground">
+            Dirección orientativa: la dirección definitiva de cada trámite se configurará con el Ayuntamiento.
+          </p>
           <div className="mt-3">
             <ExternalServiceCard
               servicio="sede"

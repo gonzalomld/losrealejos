@@ -14,7 +14,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/transparencia", "/noticias", "/agenda", "/buscar", "/contacto",
     "/empleo-publico", "/ayudas", "/mapa-del-sitio", "/accesibilidad",
     "/accesibilidad/reclamacion", "/aviso-legal", "/politica-de-cookies",
-    "/proteccion-de-datos", "/campanas/fiestas-del-carmen-2026",
+    "/proteccion-de-datos", "/campanas/fiestas-de-mayo-2026", "/tablon-de-anuncios", "/ordenanzas",
   ].map((ruta) => ({ url: `${BASE}${ruta || "/"}`, lastModified: new Date("2026-09-08") }));
   const dinamicas = [
     ...TRAMITES.map((t) => `/tramites/${t.id}`),

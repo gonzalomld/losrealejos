@@ -142,6 +142,13 @@
   }
 }
 
+/* Migas de pan: separador generado por CSS, fuera del árbol de accesibilidad */
+.migas .miga::before {
+  content: "/";
+  margin-right: 0.25rem;
+  color: hsl(var(--muted-foreground));
+}
+
 /* Enlace de salto: oculto hasta recibir foco */
 .enlace-salto {
   position: absolute;

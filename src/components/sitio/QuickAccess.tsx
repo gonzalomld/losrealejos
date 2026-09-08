@@ -1,9 +1,9 @@
 import { CalendarCheck, CreditCard, TriangleAlert, HandCoins, Briefcase, ExternalLink } from "lucide-react";
 
 const ACCESOS = [
-  { href: "https://sede.losrealejos.es/cita-previa", texto: "Cita previa", descripcion: "Pedir cita en la OAC", Icono: CalendarCheck, externa: true },
-  { href: "https://sede.losrealejos.es/pago", texto: "Pagar tributos", descripcion: "IBI, tasas y multas", Icono: CreditCard, externa: true },
-  { href: "https://sede.losrealejos.es/incidencias", texto: "Comunicar una incidencia", descripcion: "Avisar de un problema en la calle", Icono: TriangleAlert, externa: true },
+  { href: "https://losrealejos.es/atencion-ciudadana/cita-previa/", texto: "Cita previa", descripcion: "Pedir cita en la OAC", Icono: CalendarCheck, externa: true },
+  { href: "https://losrealejos.es/hacienda/pago-de-tributos-y-multas/", texto: "Pagar tributos", descripcion: "IBI, tasas y multas", Icono: CreditCard, externa: true },
+  { href: "http://www.lineaverdelosrealejos.es/lv/incidencias_online.asp", texto: "Comunicar una incidencia", descripcion: "Avisar de un problema en la calle", Icono: TriangleAlert, externa: true },
   { href: "/ayudas", texto: "Ayudas y subvenciones", descripcion: "Ayudas con plazo abierto", Icono: HandCoins, externa: false },
   { href: "/empleo-publico", texto: "Empleo público", descripcion: "Trabajar en el Ayuntamiento", Icono: Briefcase, externa: false },
   { href: "https://sede.losrealejos.es", texto: "Sede Electrónica", descripcion: "Hacer trámites por internet", Icono: ExternalLink, externa: true },
