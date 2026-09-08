@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import { Breadcrumbs } from "@/components/sitio/Breadcrumbs";
 import { TramiteCard } from "@/components/sitio/TramiteCard";
 import { EmptyState } from "@/components/sitio/EmptyState";
-import { TRAMITES } from "@/data/tramites";
-import { ETIQUETAS_TEMA, ETIQUETAS_PERFIL, TEMAS, PERFILES } from "@/data/vocabularios";
+import { TRAMITES, temasDe } from "@/data/tramites";
+import { ETIQUETAS_TEMA, ETIQUETAS_PERFIL, TEMAS, PERFILES, type Tema } from "@/data/vocabularios";
 import { Search } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -22,18 +22,16 @@ export default async function TramitesPage({
   const tema = typeof sp.tema === "string" ? sp.tema : "";
   const perfil = typeof sp.perfil === "string" ? sp.perfil : "";
   const canal = typeof sp.canal === "string" ? sp.canal : "";
-  const soloPlazo = sp.plazo === "abierto";
 
   const normalizar = (s: string) =>
     s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "");
   const palabras = normalizar(q.trim()).split(/\s+/).filter(Boolean);
 
   const filtrados = TRAMITES.filter((t) => {
-    if (tema && !t.temas.includes(tema as (typeof t.temas)[number])) return false;
+    if (tema && !temasDe(t).includes(tema as Tema)) return false;
     if (perfil && !t.perfiles.includes(perfil as (typeof t.perfiles)[number])) return false;
     if (canal === "online" && !t.canales.includes("online") && !t.canales.includes("ambos")) return false;
     if (canal === "presencial" && !t.canales.includes("presencial") && !t.canales.includes("ambos")) return false;
-    if (soloPlazo && !t.plazoAbierto) return false;
     if (palabras.length > 0) {
       const texto = normalizar(`${t.tituloClaro} ${t.tituloOficial} ${t.descripcion}`);
       if (!palabras.every((p) => texto.includes(p))) return false;
@@ -47,7 +45,7 @@ export default async function TramitesPage({
       <div className="mx-auto max-w-6xl px-4 py-6">
         <h1 className="text-3xl font-extrabold">Trámites y servicios</h1>
         <p className="prosa-municipal mt-2 text-lg">
-          Aquí están todas las gestiones explicadas con palabras claras. Este portal solo informa:
+          Aquí están las {TRAMITES.length} gestiones explicadas con palabras claras. Este portal solo informa:
           el trámite se hace después en la Sede Electrónica o en persona. Última actualización del
           catálogo: 8 de septiembre de 2026.
         </p>
@@ -80,10 +78,6 @@ export default async function TramitesPage({
                 <option value="online">Por internet</option>
                 <option value="presencial">En persona</option>
               </select>
-            </p>
-            <p className="flex items-center gap-2">
-              <input id="f-plazo" name="plazo" type="checkbox" value="abierto" defaultChecked={soloPlazo} className="h-6 w-6" />
-              <label htmlFor="f-plazo" className="font-bold">Solo con plazo abierto ahora</label>
             </p>
           </div>
           <div className="mt-3 flex flex-wrap gap-3">

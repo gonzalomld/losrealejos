@@ -18,7 +18,9 @@ export type Tramite = {
   normativa: { titulo: string; url?: string }[];
   sedeUrl: string;
   areaId: string;
-  temas: Tema[];
+  tema: Tema;
+  temasSecundarios: Tema[];
+  presencial: { nombre: string; direccion: string; telefono: string };
   perfiles: Perfil[];
   plazoAbierto: boolean;
   fechaActualizacion: string;
@@ -33,7 +35,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es apuntarte en la lista de personas que viven en Los Realejos.",
       queNecesito: "Necesitas tu DNI o pasaporte y un papel que diga dónde vives.",
-      dondeSeHace: "Se hace en persona en la Oficina de Atención Ciudadana (OAC).",
+      dondeSeHace: "Se hace en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6.",
     },
     descripcion:
       "El padrón es la lista oficial de las personas que viven en el municipio. Estar empadronado sirve para pedir ayudas, apuntar a tus hijos al colegio y usar los servicios del Ayuntamiento.",
@@ -65,7 +67,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/alta-padron",
     areaId: "atencion-ciudadana",
-    temas: ["padron"],
+    presencial: { nombre: "Oficina de Atención Ciudadana (OAC)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 34" },
+    tema: "padron",
+    temasSecundarios: [],
     perfiles: ["ciudadano"],
     plazoAbierto: false,
     fechaActualizacion: "2026-06-15",
@@ -78,7 +82,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es un papel oficial que dice que vives en Los Realejos.",
       queNecesito: "Necesitas estar empadronado y tu DNI o Cl@ve.",
-      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la OAC.",
+      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6.",
     },
     descripcion:
       "Este certificado acredita dónde vives. Te lo piden para renovar el DNI, pedir becas, matricular a tus hijos o hacer gestiones con otras administraciones.",
@@ -109,7 +113,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/certificado-empadronamiento",
     areaId: "atencion-ciudadana",
-    temas: ["padron"],
+    presencial: { nombre: "Oficina de Atención Ciudadana (OAC)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 34" },
+    tema: "padron",
+    temasSecundarios: [],
     perfiles: ["ciudadano"],
     plazoAbierto: false,
     fechaActualizacion: "2026-05-20",
@@ -122,7 +128,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es el papel que te da descuento en avión y barco por vivir en Canarias.",
       queNecesito: "Necesitas estar empadronado. No hace falta certificado digital.",
-      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la OAC.",
+      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6.",
     },
     descripcion:
       "Las personas que viven en Canarias pagan menos en los vuelos y barcos a la Península y entre islas. La compañía te pide este certificado para aplicarte el descuento.",
@@ -150,7 +156,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/certificado-viaje-residente",
     areaId: "atencion-ciudadana",
-    temas: ["padron"],
+    presencial: { nombre: "Oficina de Atención Ciudadana (OAC)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 34" },
+    tema: "padron",
+    temasSecundarios: [],
     perfiles: ["ciudadano"],
     plazoAbierto: false,
     fechaActualizacion: "2026-04-10",
@@ -163,7 +171,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es una carta oficial para pedir o comunicar cualquier cosa al Ayuntamiento.",
       queNecesito: "Necesitas explicar con claridad lo que pides y adjuntar tus papeles.",
-      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la OAC.",
+      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6.",
     },
     descripcion:
       "Sirve para cualquier petición que no tenga su propio trámite: hacer una sugerencia, pedir información, presentar un documento o reclamar. Si tu gestión tiene trámite propio, usa ese en su lugar.",
@@ -193,7 +201,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/instancia-generica",
     areaId: "secretaria-general",
-    temas: ["atencion-ciudadana"],
+    presencial: { nombre: "Oficina de Atención Ciudadana (OAC)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 34" },
+    tema: "atencion-ciudadana",
+    temasSecundarios: [],
     perfiles: ["ciudadano", "empresa", "asociacion"],
     plazoAbierto: false,
     fechaActualizacion: "2026-03-02",
@@ -206,7 +216,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es pagar el impuesto municipal cuando vendes o heredas una casa o un terreno.",
       queNecesito: "Necesitas la escritura de la venta o de la herencia.",
-      dondeSeHace: "Se declara por internet en la Sede Electrónica o en persona en Hacienda.",
+      dondeSeHace: "Se declara por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6.",
     },
     descripcion:
       "Cuando una casa o un terreno cambia de dueño (venta, herencia o donación), hay que pagar este impuesto al Ayuntamiento. Se llama plusvalía. El plazo es de 30 días si es una venta y 6 meses si es una herencia.",
@@ -238,7 +248,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/plusvalia-municipal",
     areaId: "hacienda",
-    temas: ["tributos"],
+    presencial: { nombre: "Oficina de Hacienda", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 48" },
+    tema: "tributos",
+    temasSecundarios: [],
     perfiles: ["ciudadano", "empresa"],
     plazoAbierto: false,
     fechaActualizacion: "2026-06-01",
@@ -251,7 +263,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es apuntarte a nadar libre, a cursos o a clases en la piscina del municipio.",
       queNecesito: "Necesitas tu DNI y tus datos de contacto. Los menores necesitan autorización.",
-      dondeSeHace: "Se hace en la piscina municipal o en Deportes. También online para renovar.",
+      dondeSeHace: "Se hace en la piscina municipal, en Avenida de los Remedios. También online para renovar.",
     },
     descripcion:
       "La piscina municipal de Los Realejos ofrece nado libre, cursos para niños y adultos, aquagym y natación para mayores. Puedes pagar por meses o apuntarte a un curso completo.",
@@ -281,7 +293,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/inscripcion-piscina",
     areaId: "deportes",
-    temas: ["deportes"],
+    presencial: { nombre: "Piscina municipal", direccion: "Avenida de los Remedios", telefono: "922 34 62 45" },
+    tema: "deportes",
+    temasSecundarios: [],
     perfiles: ["ciudadano"],
     plazoAbierto: true,
     fechaActualizacion: "2026-07-10",
@@ -294,7 +308,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es el permiso para arreglos pequeños: baño, cocina, ventanas o pintar la fachada.",
       queNecesito: "Necesitas describir la obra y decir quién la va a hacer.",
-      dondeSeHace: "Se pide en la Gerencia Municipal de Urbanismo (GMU) o en la Sede.",
+      dondeSeHace: "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6, o en la Sede Electrónica.",
     },
     descripcion:
       "Si vas a cambiar el baño, la cocina, las ventanas o arreglar el tejado, necesitas este permiso. No vale para tirar muros de carga ni para casas nuevas: eso es obra mayor. La GMU (Gerencia Municipal de Urbanismo) es la oficina que lo tramita.",
@@ -328,7 +342,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/licencia-obra-menor",
     areaId: "urbanismo",
-    temas: ["urbanismo"],
+    presencial: { nombre: "Gerencia Municipal de Urbanismo (GMU)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 56" },
+    tema: "urbanismo",
+    temasSecundarios: [],
     perfiles: ["ciudadano", "empresa"],
     plazoAbierto: false,
     fechaActualizacion: "2026-05-28",
@@ -341,7 +357,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es el permiso para abrir una tienda, un bar, una oficina o un taller.",
       queNecesito: "Necesitas un técnico que prepare el proyecto del local.",
-      dondeSeHace: "Se pide en la Gerencia Municipal de Urbanismo (GMU).",
+      dondeSeHace: "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6.",
     },
     descripcion:
       "Antes de abrir un negocio necesitas que el Ayuntamiento compruebe que el local cumple las normas de seguridad, ruido e higiene. Los negocios pequeños sin obras pueden usar un trámite más rápido: pregunta en la GMU.",
@@ -375,7 +391,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/licencia-actividad",
     areaId: "urbanismo",
-    temas: ["actividad-economica", "urbanismo"],
+    presencial: { nombre: "Gerencia Municipal de Urbanismo (GMU)", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 56" },
+    tema: "actividad-economica",
+    temasSecundarios: ["urbanismo"],
     perfiles: ["empresa", "asociacion"],
     plazoAbierto: false,
     fechaActualizacion: "2026-04-22",
@@ -388,7 +406,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es decir al Ayuntamiento en qué cuenta quieres cobrar una ayuda o factura.",
       queNecesito: "Necesitas tu DNI y el número de tu cuenta bancaria.",
-      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en Hacienda.",
+      dondeSeHace: "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6.",
     },
     descripcion:
       "Si el Ayuntamiento te va a pagar (una ayuda, una subvención o una factura de tu empresa), con este papel indicas la cuenta donde quieres recibir el dinero. También sirve para ceder el cobro a otra persona.",
@@ -418,7 +436,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/cesion-derecho-cobro",
     areaId: "hacienda",
-    temas: ["tributos", "servicios-sociales"],
+    presencial: { nombre: "Oficina de Hacienda", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 48" },
+    tema: "tributos",
+    temasSecundarios: ["servicios-sociales"],
     perfiles: ["ciudadano", "empresa", "asociacion"],
     plazoAbierto: false,
     fechaActualizacion: "2026-02-18",
@@ -431,7 +451,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es reservar una pista, el pabellón o el campo para jugar o entrenar.",
       queNecesito: "Necesitas decir qué día, a qué hora y cuántas personas sois.",
-      dondeSeHace: "Se reserva en Deportes o en la propia instalación.",
+      dondeSeHace: "Se reserva en la Oficina de Deportes, en la piscina municipal, o en la propia instalación.",
     },
     descripcion:
       "Puedes reservar por horas el pabellón, las pistas del Estadio Los Príncipes, las canchas de los barrios y las salas. Los clubes de Los Realejos tienen preferencia en horario de tarde.",
@@ -462,7 +482,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/reserva-instalaciones-deportivas",
     areaId: "deportes",
-    temas: ["deportes"],
+    presencial: { nombre: "Oficina de Deportes", direccion: "Piscina municipal, Avenida de los Remedios", telefono: "922 34 62 45" },
+    tema: "deportes",
+    temasSecundarios: [],
     perfiles: ["ciudadano", "asociacion", "empresa"],
     plazoAbierto: false,
     fechaActualizacion: "2026-06-30",
@@ -475,7 +497,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es pagar el impuesto de tu casa (IBI) o una tasa del Ayuntamiento.",
       queNecesito: "Necesitas la carta de pago o la referencia del recibo.",
-      dondeSeHace: "Se paga por internet en la pasarela de pago o en el banco.",
+      dondeSeHace: "Se paga por internet en la pasarela de pago, en el banco o en persona en la Oficina de Hacienda.",
     },
     descripcion:
       "El IBI (Impuesto sobre Bienes Inmuebles) es el impuesto anual de tu casa, local o terreno. También puedes pagar aquí tasas como la basura, vados o multas. Si no tienes la carta de pago, pídela en Hacienda.",
@@ -505,7 +527,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/pago-tributos",
     areaId: "hacienda",
-    temas: ["tributos"],
+    presencial: { nombre: "Oficina de Hacienda", direccion: "Avenida de Canarias, 6, Realejo Bajo", telefono: "922 34 62 48" },
+    tema: "tributos",
+    temasSecundarios: [],
     perfiles: ["ciudadano", "empresa"],
     plazoAbierto: true,
     fechaActualizacion: "2026-07-01",
@@ -518,7 +542,7 @@ export const TRAMITES: Tramite[] = [
     resumen: {
       queEs: "Es apuntar a tu hijo a talleres, ludoteca, campamentos y actividades de verano.",
       queNecesito: "Necesitas el DNI del padre o la madre y los datos del niño.",
-      dondeSeHace: "Se hace en la Casa de la Juventud, en Cultura o por internet.",
+      dondeSeHace: "Se hace en la Casa de la Juventud, en Realejo Alto, o por internet.",
     },
     descripcion:
       "El Ayuntamiento organiza actividades para niños durante el curso y en verano: ludoteca, talleres, campamentos y clases. Las plazas son limitadas y se dan por orden de llegada.",
@@ -550,7 +574,9 @@ export const TRAMITES: Tramite[] = [
     ],
     sedeUrl: "https://sede.losrealejos.es/tramites/inscripcion-actividades-infantiles",
     areaId: "juventud",
-    temas: ["cultura", "servicios-sociales"],
+    presencial: { nombre: "Casa de la Juventud", direccion: "Realejo Alto", telefono: "922 34 62 49" },
+    tema: "cultura",
+    temasSecundarios: ["servicios-sociales"],
     perfiles: ["ciudadano"],
     plazoAbierto: true,
     fechaActualizacion: "2026-07-05",
@@ -560,4 +586,8 @@ export const TRAMITES: Tramite[] = [
 
 export function getTramite(id: string): Tramite | undefined {
   return TRAMITES.find((t) => t.id === id);
+}
+
+export function temasDe(t: Tramite): Tema[] {
+  return [t.tema, ...t.temasSecundarios];
 }

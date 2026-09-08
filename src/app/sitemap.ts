@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { TRAMITES } from "@/data/tramites";
+import { AYUDAS } from "@/data/ayudas";
 import { NOTICIAS } from "@/data/noticias";
 import { EVENTOS } from "@/data/eventos";
 import { SERVICIOS_BARRIO } from "@/data/servicios-barrio";
@@ -18,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ].map((ruta) => ({ url: `${BASE}${ruta || "/"}`, lastModified: new Date("2026-09-08") }));
   const dinamicas = [
     ...TRAMITES.map((t) => `/tramites/${t.id}`),
+    ...AYUDAS.map((a) => `/ayudas/${a.id}`),
     ...NOTICIAS.map((n) => `/noticias/${n.id}`),
     ...EVENTOS.map((e) => `/agenda/${e.id}`),
     ...SERVICIOS_BARRIO.map((s) => `/mi-barrio/${s.id}`),

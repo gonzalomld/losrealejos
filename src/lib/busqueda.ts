@@ -1,4 +1,4 @@
-import { TRAMITES } from "@/data/tramites";
+import { TRAMITES, temasDe } from "@/data/tramites";
 import { NOTICIAS } from "@/data/noticias";
 import { EVENTOS } from "@/data/eventos";
 import { DOCUMENTOS } from "@/data/transparencia";
@@ -48,7 +48,7 @@ export function buscarTodo({ q, tipo, tema }: FiltrosBusqueda): Resultado[] {
 
   for (const t of TRAMITES) {
     if (tipo && tipo !== "tramite") continue;
-    if (tema && !t.temas.includes(tema as Tema)) continue;
+    if (tema && !temasDe(t).includes(tema as Tema)) continue;
     if (!coincide(`${t.tituloClaro} ${t.tituloOficial} ${t.descripcion}`)) continue;
     resultados.push({
       tipo: "tramite",
@@ -56,7 +56,7 @@ export function buscarTodo({ q, tipo, tema }: FiltrosBusqueda): Resultado[] {
       descripcion: t.descripcion,
       href: `/tramites/${t.id}`,
       fecha: t.fechaActualizacion,
-      tema: t.temas[0],
+      tema: t.tema,
     });
   }
 

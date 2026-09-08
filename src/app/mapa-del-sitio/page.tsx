@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import { TRAMITES } from "@/data/tramites";
+import { AYUDAS } from "@/data/ayudas";
 import { NOTICIAS } from "@/data/noticias";
 import { EVENTOS } from "@/data/eventos";
-import { DOCUMENTOS } from "@/data/transparencia";
 import { SERVICIOS_BARRIO } from "@/data/servicios-barrio";
 import { AREAS } from "@/data/areas";
 import { BLOQUES_TRANSPARENCIA, ETIQUETAS_BLOQUE } from "@/data/vocabularios";
@@ -26,14 +26,17 @@ export default function MapaDelSitio() {
       <p className="text-sm text-muted-foreground">Última actualización: 8 de septiembre de 2026</p>
       <div className="mt-4 grid gap-6 md:grid-cols-2">
         <section aria-labelledby="ms-tramites">
-          <h2 id="ms-tramites" className="text-xl font-bold">Trámites y servicios</h2>
+          <h2 id="ms-tramites" className="text-xl font-bold">Trámites y servicios ({TRAMITES.length} gestiones)</h2>
           <ul className="mt-2 space-y-1">
             <li><a className="text-primary underline" href="/tramites">Catálogo de trámites y servicios</a></li>
             {TRAMITES.map((t) => (
               <li key={t.id}><a className="text-primary underline" href={`/tramites/${t.id}`}>{t.tituloClaro}</a></li>
             ))}
             <li><a className="text-primary underline" href="/empleo-publico">Empleo público: convocatorias</a></li>
-            <li><a className="text-primary underline" href="/ayudas">Ayudas y subvenciones</a></li>
+            <li><a className="text-primary underline" href="/ayudas">Ayudas y subvenciones ({AYUDAS.length} ayudas)</a></li>
+            {AYUDAS.map((a) => (
+              <li key={a.id}><a className="text-primary underline" href={`/ayudas/${a.id}`}>{a.titulo}</a></li>
+            ))}
           </ul>
         </section>
         <section aria-labelledby="ms-barrio">

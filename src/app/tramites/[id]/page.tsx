@@ -7,7 +7,7 @@ import { PrintButton } from "@/components/sitio/PrintButton";
 import { ExternalServiceCard } from "@/components/sitio/ExternalServiceCard";
 import { TRAMITES, getTramite } from "@/data/tramites";
 import { getArea } from "@/data/areas";
-import { CONTACTO_OAC, ETIQUETAS_TEMA } from "@/data/vocabularios";
+import { ETIQUETAS_TEMA } from "@/data/vocabularios";
 import { formatearFechaES } from "@/lib/formato";
 import { CheckSquare, ListOrdered, BookOpen, Landmark, Phone } from "lucide-react";
 
@@ -47,7 +47,7 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
       telephone: "+34922346234",
     },
     areaServed: "Los Realejos",
-    serviceType: tramite.temas.map((t) => ETIQUETAS_TEMA[t]).join(", "),
+    serviceType: ETIQUETAS_TEMA[tramite.tema],
     availableChannel: tramite.canales.includes("online") || tramite.canales.includes("ambos")
       ? { "@type": "ServiceChannel", name: "Sede Electrónica", serviceUrl: tramite.sedeUrl }
       : { "@type": "ServiceChannel", name: "Oficina de Atención Ciudadana (OAC)" },
@@ -59,7 +59,7 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
       <Breadcrumbs migas={[{ texto: "Trámites y servicios", href: "/tramites" }, { texto: tramite.tituloClaro }]} />
       <article className="mx-auto max-w-6xl px-4 py-6">
         <p className="text-sm font-bold uppercase tracking-wide text-primary">
-          Trámite · {tramite.temas.map((t) => ETIQUETAS_TEMA[t]).join(" · ")}
+          Trámite · {ETIQUETAS_TEMA[tramite.tema]}
         </p>
         <h1 className="mt-1 text-3xl font-extrabold md:text-4xl">{tramite.tituloClaro}</h1>
         <p className="mt-1 text-lg text-muted-foreground">Nombre oficial: {tramite.tituloOficial}</p>
@@ -118,7 +118,12 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
           </ol>
           <p className="mt-2">
             <strong>Por internet:</strong> {online ? "sí se puede hacer online." : "no se puede hacer online, hay que ir en persona."}{" "}
-            <strong>En persona:</strong> en la Oficina de Atención Ciudadana (OAC), {CONTACTO_OAC.direccion}.
+            <strong>En persona:</strong> en {tramite.presencial.nombre}, {tramite.presencial.direccion}
+            {" "}(teléfono{" "}
+            <a href={`tel:+34${tramite.presencial.telefono.replace(/\s/g, "")}`} className="font-bold text-primary underline">
+              {tramite.presencial.telefono}
+            </a>
+            ).
           </p>
 
           <h2 className="mt-6 text-2xl font-extrabold">5. Cuánto tarda y qué pasa si no responden</h2>
@@ -157,14 +162,8 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
 
         <section aria-labelledby="cta-sede" className="mt-8">
           <h2 id="cta-sede" className="text-2xl font-extrabold">8. Empezar el trámite</h2>
-          <p className="mt-2 flex flex-wrap items-center gap-2 text-base">
-            <span>
-              Dirección en la Sede: <code className="rounded bg-muted px-1">{tramite.sedeUrl}</code>
-            </span>
-            <DatoEjemplo />
-          </p>
-          <p className="mt-1 text-base text-muted-foreground">
-            Dirección orientativa: la dirección definitiva de cada trámite se configurará con el Ayuntamiento.
+          <p className="mt-2 text-base text-muted-foreground">
+            La dirección definitiva de cada trámite en la Sede Electrónica se configurará con el Ayuntamiento.
           </p>
           <div className="mt-3">
             <ExternalServiceCard
@@ -196,7 +195,7 @@ export default async function FichaTramite({ params }: { params: Promise<{ id: s
           ) : (
             <p className="mt-2 text-lg">
               Oficina de Atención Ciudadana (OAC):{" "}
-              <a href={CONTACTO_OAC.telefonoHref} className="font-bold text-primary underline">{CONTACTO_OAC.telefono}</a>
+              <a href="tel:+34922346234" className="font-bold text-primary underline">922 34 62 34</a>
             </p>
           )}
         </section>

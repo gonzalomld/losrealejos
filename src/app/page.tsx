@@ -80,7 +80,7 @@ export default function Portada() {
           </ul>
           <p className="mt-3">
             <a href="/tramites" className="text-lg font-bold text-primary underline underline-offset-4">
-              Ver todos los trámites y servicios ({TRAMITES.length} gestiones con explicación clara)
+              Ver todos los trámites y servicios ({TRAMITES.length} gestiones con explicación clara. Última actualización del catálogo: 8 de septiembre de 2026)
             </a>
           </p>
         </section>
