@@ -2,146 +2,96 @@
 @tailwind components;
 @tailwind utilities;
 
-
-
 @layer base {
+  html {
+    /* 112.5% = 18px sobre base 16px del navegador. Respeta la preferencia del usuario. */
+    font-size: 112.5%;
+  }
+
   :root {
+    /* Fondo base: blanco roto cálido, nunca blanco puro a pantalla completa */
+    --background: 40 20% 97%;
+    --foreground: 24 12% 13%;
+    --card: 40 20% 97%;
+    --card-foreground: 24 12% 13%;
+    --popover: 40 20% 97%;
+    --popover-foreground: 24 12% 13%;
+    /* Primario institucional: petróleo / teal oscuro atlántico */
+    --primary: 182 60% 21%;
+    --primary-foreground: 40 20% 97%;
+    /* Secundario: piedra volcánica, gris cálido oscuro */
+    --secondary: 30 8% 90%;
+    --secondary-foreground: 24 12% 13%;
+    --muted: 30 10% 92%;
+    --muted-foreground: 24 10% 32%;
+    /* Acento: ocre / terracota apagado, uso moderado */
+    --accent: 22 45% 38%;
+    --accent-foreground: 40 20% 97%;
+    --destructive: 0 62% 36%;
+    --destructive-foreground: 40 20% 97%;
+    --border: 30 10% 80%;
+    --input: 30 10% 80%;
+    --ring: 182 60% 21%;
+    --radius: 0.5rem;
 
-    --background: 0 0% 100%;
+    /* Semánticos de estado (siempre con icono + texto, nunca solo color) */
+    --exito: 150 55% 24%;
+    --exito-fondo: 150 30% 92%;
+    --plazo-atencion: 32 80% 30%;
+    --plazo-atencion-fondo: 38 80% 92%;
+    --no-disponible: 24 8% 38%;
+    --no-disponible-fondo: 30 8% 90%;
+    --info: 182 60% 21%;
+    --info-fondo: 182 25% 92%;
+    --error: 0 62% 36%;
+    --error-fondo: 0 50% 94%;
 
-    --foreground: 0 0% 3.9%;
+    --chart-1: 182 60% 30%;
+    --chart-2: 22 45% 42%;
+    --chart-3: 150 40% 32%;
+    --chart-4: 38 70% 45%;
+    --chart-5: 24 12% 40%;
 
-    --card: 0 0% 100%;
+    --sidebar-background: 40 20% 97%;
+    --sidebar-foreground: 24 12% 20%;
+    --sidebar-primary: 182 60% 21%;
+    --sidebar-primary-foreground: 40 20% 97%;
+    --sidebar-accent: 30 10% 92%;
+    --sidebar-accent-foreground: 24 12% 13%;
+    --sidebar-border: 30 10% 80%;
+    --sidebar-ring: 182 60% 21%;
+  }
 
-    --card-foreground: 0 0% 3.9%;
-
-    --popover: 0 0% 100%;
-
-    --popover-foreground: 0 0% 3.9%;
-
-    --primary: 0 0% 9%;
-
-    --primary-foreground: 0 0% 98%;
-
-    --secondary: 0 0% 96.1%;
-
-    --secondary-foreground: 0 0% 9%;
-
-    --muted: 0 0% 96.1%;
-
-    --muted-foreground: 0 0% 45.1%;
-
-    --accent: 0 0% 96.1%;
-
-    --accent-foreground: 0 0% 9%;
-
-    --destructive: 0 84.2% 60.2%;
-
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 89.8%;
-
-    --input: 0 0% 89.8%;
-
-    --ring: 0 0% 3.9%;
-
-    --chart-1: 12 76% 61%;
-
-    --chart-2: 173 58% 39%;
-
-    --chart-3: 197 37% 24%;
-
-    --chart-4: 43 74% 66%;
-
-    --chart-5: 27 87% 67%;
-
-    --radius: 0.5rem
-  ;
-
-    --sidebar-background: 0 0% 98%;
-
-    --sidebar-foreground: 240 5.3% 26.1%;
-
-    --sidebar-primary: 240 5.9% 10%;
-
-    --sidebar-primary-foreground: 0 0% 98%;
-
-    --sidebar-accent: 240 4.8% 95.9%;
-
-    --sidebar-accent-foreground: 240 5.9% 10%;
-
-    --sidebar-border: 220 13% 91%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%}
   .dark {
-
-    --background: 0 0% 3.9%;
-
-    --foreground: 0 0% 98%;
-
-    --card: 0 0% 3.9%;
-
-    --card-foreground: 0 0% 98%;
-
-    --popover: 0 0% 3.9%;
-
-    --popover-foreground: 0 0% 98%;
-
-    --primary: 0 0% 98%;
-
-    --primary-foreground: 0 0% 9%;
-
-    --secondary: 0 0% 14.9%;
-
-    --secondary-foreground: 0 0% 98%;
-
-    --muted: 0 0% 14.9%;
-
-    --muted-foreground: 0 0% 63.9%;
-
-    --accent: 0 0% 14.9%;
-
-    --accent-foreground: 0 0% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-
-    --destructive-foreground: 0 0% 98%;
-
-    --border: 0 0% 14.9%;
-
-    --input: 0 0% 14.9%;
-
-    --ring: 0 0% 83.1%;
-
-    --chart-1: 220 70% 50%;
-
-    --chart-2: 160 60% 45%;
-
-    --chart-3: 30 80% 55%;
-
-    --chart-4: 280 65% 60%;
-
-    --chart-5: 340 75% 55%
-  ;
-
-    --sidebar-background: 240 5.9% 10%;
-
-    --sidebar-foreground: 240 4.8% 95.9%;
-
-    --sidebar-primary: 224.3 76.3% 48%;
-
-    --sidebar-primary-foreground: 0 0% 100%;
-
-    --sidebar-accent: 240 3.7% 15.9%;
-
-    --sidebar-accent-foreground: 240 4.8% 95.9%;
-
-    --sidebar-border: 240 3.7% 15.9%;
-
-    --sidebar-ring: 217.2 91.2% 59.8%}
+    --background: 24 12% 10%;
+    --foreground: 40 20% 96%;
+    --card: 24 12% 12%;
+    --card-foreground: 40 20% 96%;
+    --popover: 24 12% 12%;
+    --popover-foreground: 40 20% 96%;
+    --primary: 182 35% 62%;
+    --primary-foreground: 24 12% 10%;
+    --secondary: 24 8% 20%;
+    --secondary-foreground: 40 20% 96%;
+    --muted: 24 8% 20%;
+    --muted-foreground: 30 8% 72%;
+    --accent: 22 50% 60%;
+    --accent-foreground: 24 12% 10%;
+    --destructive: 0 55% 55%;
+    --destructive-foreground: 40 20% 96%;
+    --border: 24 8% 26%;
+    --input: 24 8% 26%;
+    --ring: 182 35% 62%;
+    --sidebar-background: 24 12% 10%;
+    --sidebar-foreground: 40 20% 90%;
+    --sidebar-primary: 182 35% 55%;
+    --sidebar-primary-foreground: 40 20% 96%;
+    --sidebar-accent: 24 8% 20%;
+    --sidebar-accent-foreground: 40 20% 96%;
+    --sidebar-border: 24 8% 26%;
+    --sidebar-ring: 182 35% 62%;
+  }
 }
-
-
 
 @layer base {
   * {
@@ -149,5 +99,62 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-size: 1rem;
+    line-height: 1.6;
   }
+  p {
+    line-height: 1.6;
+  }
+  /* Foco visible de alto contraste en todo elemento interactivo */
+  :focus-visible {
+    outline: 3px solid hsl(var(--ring));
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  /* Áreas táctiles amplias */
+  button,
+  a {
+    min-height: 44px;
+  }
+  nav a,
+  header a,
+  footer a {
+    display: inline-flex;
+    align-items: center;
+  }
+  /* Ancho de línea máximo en textos largos */
+  .prosa-municipal {
+    max-width: 70ch;
+  }
+  .prosa-municipal p {
+    margin-bottom: 1rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Enlace de salto: oculto hasta recibir foco */
+.enlace-salto {
+  position: absolute;
+  left: 0.5rem;
+  top: -100px;
+  z-index: 100;
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 0.5rem 0.5rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+.enlace-salto:focus {
+  top: 0;
 }
