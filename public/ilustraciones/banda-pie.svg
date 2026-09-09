@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1260 360" role="img" aria-label="Ilustración del litoral de Los Realejos: mar y roques de la costa, sin edificios">
+  <rect width="1260" height="360" fill="#dfe4e2"/>
+  <rect width="1260" height="120" fill="#e9e4d8"/>
+  <path d="M0 120 L1260 120 L1260 360 L0 360 Z" fill="#0e4b4a"/>
+  <path d="M0 120 L260 112 L520 124 L800 112 L1080 124 L1260 116 L1260 140 L0 140 Z" fill="#f4f1ea" opacity="0.4"/>
+  <g fill="#123332">
+    <path d="M200 280 L300 210 L400 280 Z"/>
+    <path d="M820 290 L930 205 L1040 290 Z"/>
+    <ellipse cx="590" cy="300" rx="110" ry="24"/>
+  </g>
+  <g fill="#ffffff" opacity="0.45">
+    <path d="M0 180 L220 172 L460 184 L700 174 L940 184 L1260 174 L1260 184 L0 184 Z"/>
+    <path d="M0 230 L300 222 L600 232 L900 224 L1260 232 L1260 240 L0 240 Z"/>
+  </g>
+</svg>

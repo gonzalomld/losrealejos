@@ -5,7 +5,7 @@ import { MapPin } from "lucide-react";
 export function EventoCard({ evento }: { evento: Evento }) {
   return (
     <article className="flex h-full flex-col rounded border bg-card p-4">
-      <p className="text-sm font-bold uppercase tracking-wide text-primary">
+      <p className="etiqueta-categoria">
         Evento · {formatearFechaHoraES(evento.fechaHoraISO)}
       </p>
       <h3 className="mt-1 text-lg font-bold leading-snug">

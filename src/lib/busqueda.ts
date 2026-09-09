@@ -1,8 +1,9 @@
-import { TRAMITES, temasDe } from "@/data/tramites";
-import { NOTICIAS } from "@/data/noticias";
-import { EVENTOS } from "@/data/eventos";
-import { DOCUMENTOS } from "@/data/transparencia";
-import { SERVICIOS_BARRIO } from "@/data/servicios-barrio";
+import { leerParaFront } from "@/lib/cms/almacen";
+import type { Tramite } from "@/data/tramites";
+import type { Noticia } from "@/data/noticias";
+import type { Evento } from "@/data/eventos";
+import type { DocumentoTransparencia } from "@/data/transparencia";
+import type { ServicioBarrio } from "@/data/servicios-barrio";
 import { ETIQUETAS_TEMA, type Tema, type TipoContenido } from "@/data/vocabularios";
 
 export type Resultado = {
@@ -24,7 +25,7 @@ function normalizar(s: string): string {
   return s
     .toLowerCase()
     .normalize("NFD")
-    .replace(/[\u0300-\u036f]/g, "");
+    .replace(/[̀-ͯ]/g, "");
 }
 
 const PAGINAS: Resultado[] = [
@@ -37,7 +38,18 @@ const PAGINAS: Resultado[] = [
   { tipo: "pagina", titulo: "Declaración de accesibilidad", descripcion: "Cómo cumple este portal la normativa de accesibilidad.", href: "/accesibilidad", fecha: "2026-06-01" },
 ];
 
-export function buscarTodo({ q, tipo, tema }: FiltrosBusqueda): Resultado[] {
+function temasDe(t: Tramite): string[] {
+  return [t.tema, ...t.temasSecundarios];
+}
+
+export async function buscarTodo({ q, tipo, tema }: FiltrosBusqueda): Promise<Resultado[]> {
+  const [TRAMITES, NOTICIAS, EVENTOS, DOCUMENTOS, SERVICIOS] = await Promise.all([
+    leerParaFront<Tramite>("tramites"),
+    leerParaFront<Noticia>("noticias"),
+    leerParaFront<Evento>("eventos"),
+    leerParaFront<DocumentoTransparencia>("transparencia"),
+    leerParaFront<ServicioBarrio>("servicios"),
+  ]);
   const query = normalizar(q.trim());
   const palabras = query.split(/\s+/).filter(Boolean);
 
@@ -72,7 +84,7 @@ export function buscarTodo({ q, tipo, tema }: FiltrosBusqueda): Resultado[] {
     });
   }
 
-  for (const s of SERVICIOS_BARRIO) {
+  for (const s of SERVICIOS) {
     if (tipo && tipo !== "servicio") continue;
     if (!coincide(`${s.nombre} ${s.descripcion}`)) continue;
     resultados.push({

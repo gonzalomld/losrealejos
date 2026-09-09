@@ -1,10 +1,5 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { PrototypeBanner } from "@/components/sitio/PrototypeBanner";
-import { SiteHeader } from "@/components/sitio/SiteHeader";
-import { QuickAccessSlot } from "@/components/sitio/QuickAccessSlot";
-import { SiteFooter } from "@/components/sitio/SiteFooter";
-import { CookieBanner } from "@/components/sitio/CookieBanner";
 
 export const metadata: Metadata = {
   title: {
@@ -39,17 +34,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(JSON_LD_ORGANIZACION) }}
         />
-        <a href="#contenido" className="enlace-salto">
-          Saltar al contenido principal
-        </a>
-        <PrototypeBanner />
-        <SiteHeader />
-        <QuickAccessSlot />
-        <main id="contenido" tabIndex={-1}>
-          {children}
-        </main>
-        <SiteFooter />
-        <CookieBanner />
+        {children}
       </body>
     </html>
   );

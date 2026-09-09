@@ -33,6 +33,9 @@
     --input: 30 10% 80%;
     --ring: 210 78% 30%;
     --radius: 0.5rem;
+    /* Tono más oscuro de la escala del primario, para la barra de servicio.
+       Contraste verificado: texto #F7F4EC sobre este fondo ≥ 4.5:1. */
+    --primario-oscuro: 210 80% 16%;
 
     /* Semánticos de estado (siempre con icono + texto, nunca solo color) */
     --exito: 150 55% 24%;
@@ -149,6 +152,135 @@
   color: hsl(var(--muted-foreground));
 }
 
+/* Nivel 2 — Navbar azul de marca (primario de la paleta).
+   La profundidad respecto a la barra de servicio (primario-oscuro) se percibe
+   por el cambio de tono dentro de la misma familia, sin líneas divisorias. */
+.navbar-marca {
+  background: hsl(var(--primary));
+  color: hsl(var(--primary-foreground));
+  box-shadow: 0 1px 0 rgb(255 255 255 / 0.15), 0 8px 24px rgb(0 0 0 / 0.18);
+}
+.navbar-marca a {
+  min-height: 44px;
+}
+/* Fila del navbar: una sola fila, una sola línea base (64px) */
+.navbar-fila {
+  min-height: 64px;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  flex-wrap: nowrap;
+}
+/* Marca HTML: monograma R + texto en blanco, sin pastilla */
+.logo-marca-link {
+  text-decoration: none;
+}
+.logo-marca-texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.1;
+  color: #fff;
+}
+.logo-marca-superior {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+.logo-marca-principal {
+  font-size: 1.15rem;
+  font-weight: 800;
+  letter-spacing: 0.01em;
+}
+/* Pills del nav: un botón por entrada (texto + chevron integrado).
+   Tipografía contenida (1rem medium) para que las 5 quepan en una fila. */
+.nav-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  white-space: nowrap;
+  border-radius: 9999px;
+  padding: 0.55rem 0.9rem;
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.3;
+  color: #fff;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  min-height: 44px;
+}
+.nav-pill:hover {
+  background: rgb(255 255 255 / 0.12);
+}
+.nav-pill-activo {
+  background: rgb(255 255 255 / 0.18);
+  font-weight: 700;
+}
+.nav-pill svg {
+  opacity: 0.7;
+  flex-shrink: 0;
+}
+/* Clases anteriores (bilingües enlace+chevron): ya sin uso en el nav,
+   se conservan solo por si algún otro componente las referencia. */
+.nav-item {
+  border-radius: 0.5rem;
+  text-decoration: none;
+}
+.nav-item:hover {
+  background: rgb(255 255 255 / 0.12);
+  text-decoration: none;
+}
+.nav-item-activo {
+  background: rgb(255 255 255 / 0.18);
+}
+.nav-chevron {
+  border-radius: 9999px;
+}
+.nav-chevron:hover {
+  background: rgb(255 255 255 / 0.14);
+}
+.nav-chevron svg {
+  opacity: 0.7;
+}
+/* Buscador sobre azul: lupa redonda; campo compacto en desplegable blanco.
+   El botón del campo usa primario-oscuro con texto para no fundirse. */
+.navbar-marca .buscador-campo {
+  color-scheme: light;
+}
+.navbar-marca form[role="search"] button[type="submit"] {
+  background: hsl(var(--primario-oscuro));
+  color: #fff;
+  white-space: nowrap;
+}
+.navbar-marca form[role="search"] input {
+  border-color: hsl(var(--primary));
+  min-width: 0;
+}
+
+/* Panel del mega menú: claro, a ancho completo del viewport, sin fotos.
+   Posicionado respecto al header (que es relative); la fila interior no
+   debe ser relative para no recortar el panel al max-w-6xl. */
+.mega-panel {
+  position: absolute;
+  inset-inline: 0;
+  top: 100%;
+  z-index: 50;
+  background: hsl(var(--card));
+  color: hsl(var(--card-foreground));
+  border-top: 4px solid hsl(var(--accent));
+  box-shadow: 0 12px 28px rgb(0 0 0 / 0.25);
+}
+.mega-destino {
+  border-radius: 0.5rem;
+}
+.mega-destino:hover {
+  background: hsl(var(--muted));
+}
+.mega-destino:hover a {
+  text-decoration: underline;
+}
+
 /* Logotipo tipográfico: un único nodo de texto, partido en dos líneas por CSS */
 .logo-marca {
   display: block;
@@ -178,4 +310,291 @@
 }
 .enlace-salto:focus {
   top: 0;
+}
+
+/* Barra de servicio (nivel 1): fondo primario oscuro, texto claro pequeño.
+   Separación con la cabecera de marca solo por cambio de fondo, sin líneas. */
+.barra-servicio {
+  background: hsl(var(--primario-oscuro));
+  color: #f7f4ec;
+}
+.barra-servicio ul {
+  gap: 0.25rem;
+}
+.barra-servicio a {
+  color: #f7f4ec;
+  text-decoration: none;
+  text-underline-offset: 3px;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.barra-servicio a:hover {
+  text-decoration: underline;
+}
+/* Separadores generados por CSS, fuera del árbol de accesibilidad */
+.barra-servicio li + li::before {
+  content: "·";
+  opacity: 0.6;
+}
+/* Distintivo corto junto a Sede Electrónica (el texto largo queda en aria-label) */
+.distintivo-cert {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1;
+  padding: 0.3rem 0.55rem;
+  border-radius: 9999px;
+  background: rgb(255 255 255 / 0.16);
+  color: #f7f4ec;
+  white-space: nowrap;
+}
+/* En escritorio el área de pulsación la da el relleno, sin engordar la barra:
+   sin min-height de 44px aquí (en el menú móvil sí se aplica). */
+.barra-servicio a {
+  min-height: 0;
+}
+/* Foco propio sobre fondo oscuro: anillo claro, visible donde el habitual se pierde */
+.foco-sobre-oscuro:focus-visible {
+  outline: 3px solid #ffd97a;
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+/* Etiquetas de categoría unificadas: siempre más pequeñas que el titular */
+.etiqueta-categoria {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: hsl(var(--muted-foreground));
+  line-height: 1.5;
+}
+.etiqueta-categoria svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+/* Tarjetas de acceso: foco y puntero visibles, transición breve */
+.tarjeta-acceso {
+  transition: background-color 150ms ease, border-color 150ms ease;
+}
+.tarjeta-acceso:hover {
+  background-color: hsl(var(--info-fondo));
+  border-color: hsl(var(--primary));
+}
+.tarjeta-acceso:focus-visible {
+  outline: 3px solid hsl(var(--ring));
+  outline-offset: 2px;
+}
+
+/* Títulos de sección de portada: más grandes, más peso, más aire */
+.titulo-seccion {
+  font-size: 1.75rem;
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+@media (min-width: 768px) {
+  .titulo-seccion {
+    font-size: 2.25rem;
+  }
+}
+
+/* Motivo ondulado del sistema: separador sutil entre secciones */
+.motivo-onda {
+  display: block;
+  width: 100%;
+  height: 24px;
+  color: hsl(var(--border));
+  opacity: 0.6;
+}
+
+/* Panel sólido sobre imagen: opaco, garantiza contraste AA real */
+.hero-panel {
+  background: hsl(var(--primario-oscuro));
+  color: #f7f4ec;
+  border-radius: 0.75rem;
+}
+.hero-panel a:not(.boton-panel) {
+  color: #f7f4ec;
+}
+
+/* Pie del portal: tarjeta con foto de la plaza + degradado blanco.
+   Todo el texto vive sobre la zona blanca; la foto queda en el tercio inferior. */
+.pie-portal {
+  background: #f6f5f2;
+  padding-top: 56px;
+  color-scheme: light;
+  font-family: -apple-system, "Segoe UI", Helvetica, sans-serif;
+}
+.pie-tarjeta {
+  position: relative;
+  height: 660px;
+  margin-left: 40px;
+  margin-right: 40px;
+  border-radius: 28px;
+  overflow: hidden;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  background-image: url("/fotos/plaza-los-realejos.jpg");
+  background-size: cover;
+  background-position: center bottom;
+}
+.pie-degradado {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    #fff 0%,
+    rgba(255, 255, 255, 0.97) 30%,
+    rgba(255, 255, 255, 0.82) 52%,
+    rgba(255, 255, 255, 0.35) 72%,
+    rgba(255, 255, 255, 0) 90%
+  );
+}
+.pie-contenido {
+  position: relative;
+  display: grid;
+  grid-template-columns: 300px repeat(5, minmax(0, 1fr));
+  gap: 40px;
+  padding: 56px 64px 0;
+}
+.pie-marca-nombre {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.25;
+  color: #1c1c1c;
+  margin: 0;
+}
+.pie-logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: #fff;
+  flex-shrink: 0;
+}
+.pie-copy {
+  margin-top: 12px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+.pie-direccion {
+  margin-top: 12px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #3a3a3a;
+}
+.pie-telefono {
+  display: inline-flex;
+  font-size: 16px;
+  font-weight: 800;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+.pie-telefono:hover {
+  color: #0b4f8a;
+  text-decoration: underline;
+}
+.pie-redes {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+.pie-red {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  min-height: 32px;
+  height: 32px;
+  border: 1.5px solid #6b6b6b;
+  border-radius: 8px;
+  color: #1c1c1c;
+  text-decoration: none;
+}
+.pie-red:hover {
+  border-color: #0b4f8a;
+  color: #0b4f8a;
+}
+.pie-grupo-titulo {
+  font-size: 14px;
+  font-weight: 800;
+  color: #1c1c1c;
+  margin: 0 0 4px;
+  line-height: 1.5;
+}
+.pie-grupo-lista {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.pie-enlace {
+  display: inline-flex;
+  align-items: center;
+  font-size: 14px;
+  color: #3a3a3a;
+  text-decoration: none;
+  line-height: 1.5;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+.pie-enlace:hover {
+  color: #0b4f8a;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.pie-cierre {
+  font-size: 12.5px;
+  color: #5a5a5a;
+  padding: 18px 64px 22px;
+  margin: 0;
+  line-height: 1.6;
+}
+@media (max-width: 1024px) {
+  .pie-contenido {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .pie-marca {
+    grid-column: 1 / -1;
+  }
+}
+@media (max-width: 640px) {
+  .pie-tarjeta {
+    height: auto;
+    min-height: 560px;
+    margin-left: 16px;
+    margin-right: 16px;
+    border-radius: 20px;
+  }
+  .pie-degradado {
+    background: linear-gradient(
+      180deg,
+      #fff 0%,
+      rgba(255, 255, 255, 0.98) 40%,
+      rgba(255, 255, 255, 0.9) 70%,
+      rgba(255, 255, 255, 0.75) 100%
+    );
+  }
+  .pie-contenido {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+    padding: 32px 20px 24px;
+  }
+  .pie-cierre {
+    padding: 16px 20px 20px;
+  }
 }

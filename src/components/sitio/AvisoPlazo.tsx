@@ -1,4 +1,4 @@
-import { CalendarClock, TriangleAlert, Info, Megaphone } from "lucide-react";
+import { CalendarClock, TriangleAlert, Megaphone } from "lucide-react";
 import { diasRestantes, estadoPlazo, formatearFechaES } from "@/lib/formato";
 import { ETIQUETAS_TIPO_AVISO, type Aviso } from "@/data/avisos";
 
@@ -8,27 +8,33 @@ export function AvisoPlazo({ aviso }: { aviso: Aviso }) {
   const dias = aviso.finPlazoISO ? diasRestantes(aviso.finPlazoISO) : null;
   const Icono = conPlazo
     ? estado === "proximo" || estado === "cerrado" ? TriangleAlert : CalendarClock
-    : aviso.fechaHechoISO ? Megaphone : Info;
-  const clase = conPlazo
-    ? estado === "proximo" ? "border-l-atencion" : estado === "cerrado" ? "border-l-nodisponible" : "border-l-exito"
-    : "border-l-info";
-  const etiqueta = conPlazo ? "Con plazo de solicitud" : "Aviso puntual";
+    : Megaphone;
+  // Los avisos con plazo destacan: fondo tenue + borde grueso. Nunca solo color:
+  // icono + insignia textual "Caduca" siempre presentes.
+  const marco = conPlazo
+    ? estado === "proximo"
+      ? "border-atencion border-l-8 bg-atencion-fondo"
+      : estado === "cerrado"
+        ? "border-nodisponible border-l-8 bg-nodisponible-fondo"
+        : "border-exito border-l-8 bg-exito-fondo"
+    : "border-border border-l-4 bg-card";
   return (
-    <article className={`rounded border border-border border-l-8 bg-card p-4 ${clase}`}>
-      <p className="flex flex-wrap items-center gap-2 text-sm font-bold uppercase tracking-wide text-foreground">
-        <Icono aria-hidden="true" size={18} />
+    <article className={`rounded border p-4 ${marco}`}>
+      <p className="etiqueta-categoria flex flex-wrap items-center gap-1 !text-foreground">
+        <Icono aria-hidden="true" size={14} />
         {ETIQUETAS_TIPO_AVISO[aviso.tipo]}
-        <span>· {etiqueta}</span>
-        {conPlazo && aviso.finPlazoISO && estado !== "cerrado" && dias !== null && (
-          <span>· Fin de plazo: {formatearFechaES(aviso.finPlazoISO)} (quedan {dias} días)</span>
-        )}
-        {conPlazo && aviso.finPlazoISO && estado === "cerrado" && (
-          <span>· Plazo cerrado el {formatearFechaES(aviso.finPlazoISO)}</span>
-        )}
-        {!conPlazo && aviso.fechaHechoISO && (
-          <span>· Fecha: {formatearFechaES(aviso.fechaHechoISO)}</span>
-        )}
+        <span>· {conPlazo ? "Con plazo de solicitud" : "Aviso puntual"}</span>
       </p>
+      {conPlazo && aviso.finPlazoISO && (
+        <p className="mt-1 inline-block rounded bg-primary px-2 py-0.5 text-sm font-bold text-white">
+          {estado === "cerrado"
+            ? `Plazo cerrado el ${formatearFechaES(aviso.finPlazoISO)}`
+            : `Caduca: ${formatearFechaES(aviso.finPlazoISO)}${dias !== null ? ` (quedan ${dias} días)` : ""}`}
+        </p>
+      )}
+      {!conPlazo && aviso.fechaHechoISO && (
+        <p className="mt-1 text-sm font-bold">Fecha: {formatearFechaES(aviso.fechaHechoISO)}</p>
+      )}
       <h3 className="mt-1 text-lg font-bold text-foreground">{aviso.titulo}</h3>
       <p className="mt-1 text-base text-muted-foreground">{aviso.descripcion}</p>
       <p className="mt-2">

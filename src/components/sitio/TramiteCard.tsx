@@ -11,7 +11,7 @@ export function TramiteCard({ tramite }: { tramite: Tramite }) {
       : ETIQUETAS_CANAL.ambos;
   return (
     <article className="flex h-full flex-col rounded border bg-card p-4">
-      <p className="text-sm font-bold uppercase tracking-wide text-primary">Trámite · {ETIQUETAS_TEMA[tramite.tema]}</p>
+      <p className="etiqueta-categoria flex items-center gap-1">Trámite · {ETIQUETAS_TEMA[tramite.tema]}</p>
       <h3 className="mt-1 text-lg font-bold leading-snug">
         <a href={`/tramites/${tramite.id}`} className="underline-offset-4 hover:underline">
           {tramite.tituloClaro}

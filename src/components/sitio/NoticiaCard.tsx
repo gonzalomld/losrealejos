@@ -6,8 +6,8 @@ import { CalendarDays } from "lucide-react";
 export function NoticiaCard({ noticia }: { noticia: Noticia }) {
   return (
     <article className="flex h-full flex-col rounded border bg-card p-4">
-      <p className="flex items-center gap-1 text-sm font-bold uppercase tracking-wide text-primary">
-        <CalendarDays aria-hidden="true" size={16} />
+      <p className="etiqueta-categoria flex items-center gap-1">
+        <CalendarDays aria-hidden="true" size={14} />
         Noticia · {ETIQUETAS_CATEGORIA_NOTICIA[noticia.categoria] ?? noticia.categoria} · {formatearFechaES(noticia.fecha)}
       </p>
       <h3 className="mt-1 text-lg font-bold leading-snug">
