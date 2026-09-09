@@ -1,0 +1,30 @@
+[
+  {
+    "fecha": "2026-09-07",
+    "usuario": "M. Hernández (Editor, Urbanismo)",
+    "accion": "envio_revision",
+    "elemento": "tramites/licencia-obra-menor",
+    "detalle": "Enviada a revisión: actualizados requisitos"
+  },
+  {
+    "fecha": "2026-09-06",
+    "usuario": "J. Pérez (Editor, Hacienda)",
+    "accion": "envio_revision",
+    "elemento": "tramites/plusvalia-municipal-iivtnu",
+    "detalle": "Enviada a revisión: nuevo plazo de resolución"
+  },
+  {
+    "fecha": "2026-09-05",
+    "usuario": "R. Sosa (Validadora)",
+    "accion": "publicacion",
+    "elemento": "noticias/reforma-piscina-municipal-verano",
+    "detalle": "Publicada tras revisión"
+  },
+  {
+    "fecha": "2026-09-04",
+    "usuario": "Administrador demo",
+    "accion": "cambio_permiso",
+    "elemento": "usuarios",
+    "detalle": "Asignada C. Ruiz a Bienestar Social"
+  }
+]

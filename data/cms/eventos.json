@@ -1,0 +1,417 @@
+[
+  {
+    "id": "obra-teatro-pancho-manue",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "obra-teatro-pancho-manue",
+      "titulo": "Obra de teatro: «Pancho y Manue», comedia canaria",
+      "descripcion": "Una compañía canaria trae su comedia sobre dos hermanos que heredan una platanera. Para todos los públicos. Entrada 8 euros, mayores 5 euros.",
+      "fechaHoraISO": "2026-09-12T20:30:00",
+      "lugar": "Teatro Cine Realejos",
+      "categoria": "teatro",
+      "imagen": null,
+      "fechaActualizacion": "2026-07-01"
+    },
+    "estado": "en_revision",
+    "pubFecha": "2026-07-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-07-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "L. Díaz (Editora, Cultura)",
+    "enviadoPor": "L. Díaz (Editora, Cultura)",
+    "fechaEnvio": "2026-09-03",
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "obra-teatro-pancho-manue",
+          "titulo": "Obra de teatro: «Pancho y Manue», comedia canaria",
+          "descripcion": "Una compañía canaria trae su comedia sobre dos hermanos que heredan una platanera. Para todos los públicos. Entrada 8 euros, mayores 5 euros.",
+          "fechaHoraISO": "2026-09-12T20:30:00",
+          "lugar": "Teatro Cine Realejos",
+          "categoria": "teatro",
+          "imagen": null,
+          "fechaActualizacion": "2026-07-01"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "concierto-bandas-realejos",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "concierto-bandas-realejos",
+      "titulo": "Concierto conjunto de las bandas de Realejo Alto y Realejo Bajo",
+      "descripcion": "Las dos bandas del municipio tocan juntas por primera vez en el Teatro. Entrada libre hasta completar aforo.",
+      "fechaHoraISO": "2026-09-19T19:00:00",
+      "lugar": "Teatro Cine Realejos",
+      "categoria": "musica",
+      "fechaActualizacion": "2026-07-01"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-07-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "concierto-bandas-realejos",
+          "titulo": "Concierto conjunto de las bandas de Realejo Alto y Realejo Bajo",
+          "descripcion": "Las dos bandas del municipio tocan juntas por primera vez en el Teatro. Entrada libre hasta completar aforo.",
+          "fechaHoraISO": "2026-09-19T19:00:00",
+          "lugar": "Teatro Cine Realejos",
+          "categoria": "musica",
+          "fechaActualizacion": "2026-07-01"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "cine-familiar-septiembre",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "cine-familiar-septiembre",
+      "titulo": "Cine familiar: película de animación en el Teatro",
+      "descripcion": "Sesión de cine para niños y familias. Entrada 5 euros, menores de 3 años gratis.",
+      "fechaHoraISO": "2026-09-26T17:30:00",
+      "lugar": "Teatro Cine Realejos",
+      "categoria": "cine",
+      "inscripcionUrl": null,
+      "fechaActualizacion": "2026-07-01"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-07-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "cine-familiar-septiembre",
+          "titulo": "Cine familiar: película de animación en el Teatro",
+          "descripcion": "Sesión de cine para niños y familias. Entrada 5 euros, menores de 3 años gratis.",
+          "fechaHoraISO": "2026-09-26T17:30:00",
+          "lugar": "Teatro Cine Realejos",
+          "categoria": "cine",
+          "inscripcionUrl": null,
+          "fechaActualizacion": "2026-07-01"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "romeria-san-vicente-mayo",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "romeria-san-vicente-mayo",
+      "titulo": "Romería de San Vicente en las Fiestas de Mayo",
+      "descripcion": "Romería dentro de las Fiestas de Mayo, las fiestas principales del municipio en torno a la Santa Cruz. Carretas, parrandas y comida típica. Salida desde San Vicente a las 12:00. Recorrido accesible.",
+      "fechaHoraISO": "2026-09-06T12:00:00",
+      "lugar": "Plaza de Realejo Alto",
+      "categoria": "fiestas",
+      "imagen": null,
+      "fechaActualizacion": "2026-06-15"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-15",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-15",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-15",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "romeria-san-vicente-mayo",
+          "titulo": "Romería de San Vicente en las Fiestas de Mayo",
+          "descripcion": "Romería dentro de las Fiestas de Mayo, las fiestas principales del municipio en torno a la Santa Cruz. Carretas, parrandas y comida típica. Salida desde San Vicente a las 12:00. Recorrido accesible.",
+          "fechaHoraISO": "2026-09-06T12:00:00",
+          "lugar": "Plaza de Realejo Alto",
+          "categoria": "fiestas",
+          "imagen": null,
+          "fechaActualizacion": "2026-06-15"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "carrera-nocturna-realejos",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "carrera-nocturna-realejos",
+      "titulo": "Carrera nocturna de Los Realejos (5 y 10 km)",
+      "descripcion": "Carrera por Realejo Bajo con salida en el Estadio Los Príncipes. Inscripción 10 euros. Dorsales limitados a 500.",
+      "fechaHoraISO": "2026-10-03T21:00:00",
+      "lugar": "Estadio Los Príncipes",
+      "categoria": "deporte",
+      "inscripcionUrl": "https://sede.losrealejos.es/",
+      "fechaActualizacion": "2026-06-20"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-20",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-20",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-20",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "carrera-nocturna-realejos",
+          "titulo": "Carrera nocturna de Los Realejos (5 y 10 km)",
+          "descripcion": "Carrera por Realejo Bajo con salida en el Estadio Los Príncipes. Inscripción 10 euros. Dorsales limitados a 500.",
+          "fechaHoraISO": "2026-10-03T21:00:00",
+          "lugar": "Estadio Los Príncipes",
+          "categoria": "deporte",
+          "inscripcionUrl": "https://sede.losrealejos.es/",
+          "fechaActualizacion": "2026-06-20"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "taller-juegos-juventud",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "taller-juegos-juventud",
+      "titulo": "Tarde de juegos de mesa en la Casa de la Juventud",
+      "descripcion": "Juegos de mesa, videojuegos y merienda para jóvenes de 12 a 30 años. Gratis, sin inscripción.",
+      "fechaHoraISO": "2026-09-18T17:00:00",
+      "lugar": "Casa de la Juventud",
+      "categoria": "infantil",
+      "fechaActualizacion": "2026-07-05"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-05",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-07-05",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-05",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "taller-juegos-juventud",
+          "titulo": "Tarde de juegos de mesa en la Casa de la Juventud",
+          "descripcion": "Juegos de mesa, videojuegos y merienda para jóvenes de 12 a 30 años. Gratis, sin inscripción.",
+          "fechaHoraISO": "2026-09-18T17:00:00",
+          "lugar": "Casa de la Juventud",
+          "categoria": "infantil",
+          "fechaActualizacion": "2026-07-05"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "mercado-agricola-domingo",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "mercado-agricola-domingo",
+      "titulo": "Mercado del agricultor: edición especial de septiembre",
+      "descripcion": "Papas, vino, queso y miel de Los Realejos. Directo del campo a tu mesa, cada domingo por la mañana.",
+      "fechaHoraISO": "2026-09-13T09:00:00",
+      "lugar": "Plaza de Realejo Alto",
+      "categoria": "mercado",
+      "fechaActualizacion": "2026-07-05"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-05",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-07-05",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-05",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "mercado-agricola-domingo",
+          "titulo": "Mercado del agricultor: edición especial de septiembre",
+          "descripcion": "Papas, vino, queso y miel de Los Realejos. Directo del campo a tu mesa, cada domingo por la mañana.",
+          "fechaHoraISO": "2026-09-13T09:00:00",
+          "lugar": "Plaza de Realejo Alto",
+          "categoria": "mercado",
+          "fechaActualizacion": "2026-07-05"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "concierto-verano-socorro",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "concierto-verano-socorro",
+      "titulo": "Concierto de verano en la playa de El Socorro",
+      "descripcion": "Concierto al atardecer con grupos locales. Ya celebrado: asistieron unas 800 personas.",
+      "fechaHoraISO": "2026-08-15T19:30:00",
+      "lugar": "Playa de El Socorro",
+      "categoria": "musica",
+      "imagen": null,
+      "fechaActualizacion": "2026-06-01"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "concierto-verano-socorro",
+          "titulo": "Concierto de verano en la playa de El Socorro",
+          "descripcion": "Concierto al atardecer con grupos locales. Ya celebrado: asistieron unas 800 personas.",
+          "fechaHoraISO": "2026-08-15T19:30:00",
+          "lugar": "Playa de El Socorro",
+          "categoria": "musica",
+          "imagen": null,
+          "fechaActualizacion": "2026-06-01"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "ruta-rambla-castro-guiada",
+    "coleccion": "eventos",
+    "contenido": {
+      "id": "ruta-rambla-castro-guiada",
+      "titulo": "Ruta guiada por la Rambla de Castro",
+      "descripcion": "Paseo guiado por el palmeral y los acantilados. Ya celebrado en agosto. Próxima edición en octubre.",
+      "fechaHoraISO": "2026-08-22T10:00:00",
+      "lugar": "Rambla de Castro",
+      "categoria": "deporte",
+      "fechaActualizacion": "2026-06-01"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "ruta-rambla-castro-guiada",
+          "titulo": "Ruta guiada por la Rambla de Castro",
+          "descripcion": "Paseo guiado por el palmeral y los acantilados. Ya celebrado en agosto. Próxima edición en octubre.",
+          "fechaHoraISO": "2026-08-22T10:00:00",
+          "lugar": "Rambla de Castro",
+          "categoria": "deporte",
+          "fechaActualizacion": "2026-06-01"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  }
+]

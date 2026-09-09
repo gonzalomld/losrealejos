@@ -36,5 +36,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...areas.map((a) => `/areas-municipales/${a.id}`),
     ...BLOQUES_TRANSPARENCIA.map((b) => `/transparencia/${b}`),
   ].map((ruta) => ({ url: `${BASE}${ruta}`, lastModified: new Date("2026-09-08") }));
-  return [...fijas, ...dinamicas];
+  const todas = [...fijas, ...dinamicas];
+  // Exclusión explícita por prefijo: el gestor y la vista previa nunca se indexan,
+  // aunque alguna ruta futura los genere por error.
+  const EXCLUIDOS = ["/admin", "/vista-previa"];
+  return todas.filter(({ url }) => {
+    const ruta = url.slice(BASE.length) || "/";
+    return !EXCLUIDOS.some((p) => ruta === p || ruta.startsWith(p + "/"));
+  });
 }

@@ -3,7 +3,7 @@
 import { useState } from "react";
 import { AdminContenido, AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import {
-  ACCIONES, ETIQUETAS_ACCION, ETIQUETAS_ROL, ROLES, USUARIOS_DEMO,
+  ETIQUETAS_ACCION, ETIQUETAS_ROL, ROLES, USUARIOS_DEMO,
   motivoDenegacion, useRol, type Accion, type Matriz, type Rol,
 } from "@/lib/roles/contexto";
 import { NAV_ADMIN } from "@/components/admin/nav";
@@ -55,6 +55,9 @@ export function UsuariosClient() {
         <div className="overflow-x-auto rounded-lg border border-neutral-200">
           {!puedeGestionar && <p className="bg-amber-50 p-2 text-sm text-amber-900">{motivoDenegacion(rol, "gestionar_usuarios")} La matriz se muestra en solo lectura.</p>}
           <table className="w-full text-left text-sm">
+            <caption className="sr-only">
+              Matriz de permisos: filas por sección, columnas por rol. Cada casilla nombra rol, acción y sección.
+            </caption>
             <thead>
               <tr className="bg-neutral-50">
                 <th scope="col" className="px-3 py-2 text-xs uppercase text-neutral-500">Sección / acción</th>
@@ -62,34 +65,37 @@ export function UsuariosClient() {
               </tr>
             </thead>
             <tbody>
-              {SECCIONES.map((s) => (
-                <tr key={s} className="border-t border-neutral-100">
-                  <th scope="row" className="px-3 py-2 text-xs font-bold">{NAV_ADMIN.flatMap((g) => g.items).find((i) => i.coleccion === s)?.titulo ?? s}</th>
-                  {ROLES.map((r) => (
-                    <td key={r} className="px-3 py-2">
-                      <span className="flex flex-wrap gap-x-3 gap-y-1">
-                        {(["ver", "crear", "editar", "enviar", "aprobar", "publicar"] as Accion[]).map((a) => {
-                          const filaRol = matriz[r][s] ?? matriz[r]["*"];
-                          const marcado = !!filaRol[a];
-                          return (
-                            <label key={a} className="flex min-h-[44px] items-center gap-1 text-xs" title={ETIQUETAS_ACCION[a]}>
-                              <input
-                                type="checkbox"
-                                checked={marcado}
-                                disabled={!puedeGestionar}
-                                onChange={() => alternar(r, s, a)}
-                                className="h-5 w-5"
-                                aria-label={`${ETIQUETAS_ROL[r].nombre} ${ETIQUETAS_ACCION[a]} en ${s}`}
-                              />
-                              {a}
-                            </label>
-                          );
-                        })}
-                      </span>
-                    </td>
-                  ))}
-                </tr>
-              ))}
+              {SECCIONES.map((s) => {
+                const nombreSeccion = NAV_ADMIN.flatMap((g) => g.items).find((i) => i.coleccion === s)?.titulo ?? s;
+                return (
+                  <tr key={s} className="border-t border-neutral-100">
+                    <th scope="row" className="px-3 py-2 text-xs font-bold">{nombreSeccion}</th>
+                    {ROLES.map((r) => (
+                      <td key={r} className="px-3 py-2">
+                        <span role="group" aria-label={`${ETIQUETAS_ROL[r].nombre} en ${nombreSeccion}`} className="flex flex-wrap gap-x-3 gap-y-1">
+                          {(["ver", "crear", "editar", "enviar", "aprobar", "publicar"] as Accion[]).map((a) => {
+                            const filaRol = matriz[r][s] ?? matriz[r]["*"];
+                            const marcado = !!filaRol[a];
+                            return (
+                              <label key={a} className="flex min-h-[44px] items-center gap-1 text-xs" title={ETIQUETAS_ACCION[a]}>
+                                <input
+                                  type="checkbox"
+                                  checked={marcado}
+                                  disabled={!puedeGestionar}
+                                  onChange={() => alternar(r, s, a)}
+                                  className="h-5 w-5"
+                                  aria-label={`${ETIQUETAS_ROL[r].nombre}: ${ETIQUETAS_ACCION[a]} en ${nombreSeccion}`}
+                                />
+                                {a}
+                              </label>
+                            );
+                          })}
+                        </span>
+                      </td>
+                    ))}
+                  </tr>
+                );
+              })}
             </tbody>
           </table>
         </div>

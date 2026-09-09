@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { RolProvider } from "@/lib/roles/contexto";
 import { AdminShell } from "@/components/admin/AdminShell";
+import { EscrituraProvider } from "@/components/admin/EscrituraContext";
 
 export const metadata: Metadata = {
   title: "Gestor de contenidos",
@@ -11,7 +12,9 @@ export const metadata: Metadata = {
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   return (
     <RolProvider>
-      <AdminShell>{children}</AdminShell>
+      <EscrituraProvider>
+        <AdminShell>{children}</AdminShell>
+      </EscrituraProvider>
     </RolProvider>
   );
 }

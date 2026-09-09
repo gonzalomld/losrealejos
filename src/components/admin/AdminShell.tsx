@@ -1,6 +1,7 @@
 "use client";
 
 import { AdminSidebar } from "./AdminSidebar";
+import { AvisoSoloLectura } from "./EscrituraContext";
 
 /**
  * Armazón del gestor: barra lateral blanca + área de trabajo.
@@ -15,8 +16,9 @@ export function AdminShell({ children, pendientes = 8 }: { children: React.React
       <AdminSidebar pendientes={pendientes} />
       <div className="flex min-w-0 flex-1 flex-col">
         <p role="note" aria-label="Aviso de entorno de demostración" className="border-b border-amber-200 bg-amber-50 px-6 py-2 text-sm text-amber-900">
-          Entorno de demostración: los cambios se guardan en ficheros versionados del prototipo y se restablecen con el botón de la configuración.
+          Entorno de demostración: en local los cambios se guardan en ficheros versionados del prototipo y se restablecen con el botón de la configuración.
         </p>
+        <AvisoSoloLectura />
         <main id="contenido-admin" tabIndex={-1} className="min-w-0 flex-1 bg-white">
           {children}
         </main>

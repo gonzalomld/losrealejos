@@ -1,0 +1,935 @@
+[
+  {
+    "id": "atencion-ciudadana",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "atencion-ciudadana",
+      "nombre": "Atención Ciudadana",
+      "descripcion": "Atiende en persona y por teléfono. Ayuda a hacer gestiones y registra documentos.",
+      "responsable": "Concejalía de Atención Ciudadana",
+      "telefono": "922 34 62 34",
+      "correo": "atencion.ciudadana@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6 (Realejo Bajo)",
+      "tramiteIds": [
+        "certificado-de-empadronamiento",
+        "certificado-de-viaje-descuento-residente",
+        "alta-en-el-padron",
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "atencion-ciudadana",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "atencion-ciudadana",
+          "nombre": "Atención Ciudadana",
+          "descripcion": "Atiende en persona y por teléfono. Ayuda a hacer gestiones y registra documentos.",
+          "responsable": "Concejalía de Atención Ciudadana",
+          "telefono": "922 34 62 34",
+          "correo": "atencion.ciudadana@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6 (Realejo Bajo)",
+          "tramiteIds": [
+            "certificado-de-empadronamiento",
+            "certificado-de-viaje-descuento-residente",
+            "alta-en-el-padron",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "agencia-desarrollo-local",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "agencia-desarrollo-local",
+      "nombre": "Agencia de Desarrollo Local",
+      "descripcion": "Ayudas para buscar trabajo y montar un negocio. Cursos y planes de empleo.",
+      "responsable": "Concejalía de Empleo y Desarrollo Local",
+      "telefono": "922 34 62 40",
+      "correo": "adl@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "agencia-desarrollo-local",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "agencia-desarrollo-local",
+          "nombre": "Agencia de Desarrollo Local",
+          "descripcion": "Ayudas para buscar trabajo y montar un negocio. Cursos y planes de empleo.",
+          "responsable": "Concejalía de Empleo y Desarrollo Local",
+          "telefono": "922 34 62 40",
+          "correo": "adl@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "agricultura",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "agricultura",
+      "nombre": "Agricultura",
+      "descripcion": "Apoyo al campo: caminos rurales, agua de riego y ferias agrícolas.",
+      "responsable": "Concejalía de Agricultura",
+      "telefono": "922 34 62 41",
+      "correo": "agricultura@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "agricultura",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "agricultura",
+          "nombre": "Agricultura",
+          "descripcion": "Apoyo al campo: caminos rurales, agua de riego y ferias agrícolas.",
+          "responsable": "Concejalía de Agricultura",
+          "telefono": "922 34 62 41",
+          "correo": "agricultura@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "bienestar-social",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "bienestar-social",
+      "nombre": "Bienestar Social",
+      "descripcion": "Ayudas para familias, personas mayores y personas en dificultad.",
+      "responsable": "Concejalía de Bienestar Social",
+      "telefono": "922 34 62 42",
+      "correo": "servicios.sociales@losrealejos.es",
+      "ubicacion": "Calle El Medio, 12 (Realejo Alto)",
+      "tramiteIds": [
+        "cesion-derecho-cobro"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "bienestar-social",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "bienestar-social",
+          "nombre": "Bienestar Social",
+          "descripcion": "Ayudas para familias, personas mayores y personas en dificultad.",
+          "responsable": "Concejalía de Bienestar Social",
+          "telefono": "922 34 62 42",
+          "correo": "servicios.sociales@losrealejos.es",
+          "ubicacion": "Calle El Medio, 12 (Realejo Alto)",
+          "tramiteIds": [
+            "cesion-derecho-cobro"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "contratacion",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "contratacion",
+      "nombre": "Contratación",
+      "descripcion": "Compras y contratos del Ayuntamiento. Publica las licitaciones.",
+      "responsable": "Concejalía de Contratación",
+      "telefono": "922 34 62 43",
+      "correo": "contratacion@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "contratacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "contratacion",
+          "nombre": "Contratación",
+          "descripcion": "Compras y contratos del Ayuntamiento. Publica las licitaciones.",
+          "responsable": "Concejalía de Contratación",
+          "telefono": "922 34 62 43",
+          "correo": "contratacion@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "cultura-educacion",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "cultura-educacion",
+      "nombre": "Cultura y Educación",
+      "descripcion": "Bibliotecas, Teatro Cine Realejos, fiestas y apoyo a los colegios.",
+      "responsable": "Concejalía de Cultura y Educación",
+      "telefono": "922 34 62 44",
+      "correo": "cultura@losrealejos.es",
+      "ubicacion": "Teatro Cine Realejos, Paseo de la Libertad",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "cultura-educacion",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "cultura-educacion",
+          "nombre": "Cultura y Educación",
+          "descripcion": "Bibliotecas, Teatro Cine Realejos, fiestas y apoyo a los colegios.",
+          "responsable": "Concejalía de Cultura y Educación",
+          "telefono": "922 34 62 44",
+          "correo": "cultura@losrealejos.es",
+          "ubicacion": "Teatro Cine Realejos, Paseo de la Libertad",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "deportes",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "deportes",
+      "nombre": "Deportes",
+      "descripcion": "Piscina municipal, Estadio Los Príncipes, pistas y actividades deportivas.",
+      "responsable": "Concejalía de Deportes",
+      "telefono": "922 34 62 45",
+      "correo": "deportes@losrealejos.es",
+      "ubicacion": "Piscina municipal, Avenida de los Remedios",
+      "tramiteIds": [
+        "inscripcion-piscina-municipal",
+        "uso-instalaciones-deportivas"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "deportes",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "deportes",
+          "nombre": "Deportes",
+          "descripcion": "Piscina municipal, Estadio Los Príncipes, pistas y actividades deportivas.",
+          "responsable": "Concejalía de Deportes",
+          "telefono": "922 34 62 45",
+          "correo": "deportes@losrealejos.es",
+          "ubicacion": "Piscina municipal, Avenida de los Remedios",
+          "tramiteIds": [
+            "inscripcion-piscina-municipal",
+            "uso-instalaciones-deportivas"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "empresas-publicas",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "empresas-publicas",
+      "nombre": "Empresas Públicas",
+      "descripcion": "Gestiona las empresas de servicios del Ayuntamiento.",
+      "responsable": "Concejalía de Empresas Públicas",
+      "telefono": "922 34 62 46",
+      "correo": "empresas.publicas@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "empresas-publicas",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "empresas-publicas",
+          "nombre": "Empresas Públicas",
+          "descripcion": "Gestiona las empresas de servicios del Ayuntamiento.",
+          "responsable": "Concejalía de Empresas Públicas",
+          "telefono": "922 34 62 46",
+          "correo": "empresas.publicas@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "fiestas",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "fiestas",
+      "nombre": "Fiestas",
+      "descripcion": "Fiestas patronales y fiestas de los barrios. Permisos para actos en la calle.",
+      "responsable": "Concejalía de Fiestas",
+      "telefono": "922 34 62 47",
+      "correo": "fiestas@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "fiestas",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "fiestas",
+          "nombre": "Fiestas",
+          "descripcion": "Fiestas patronales y fiestas de los barrios. Permisos para actos en la calle.",
+          "responsable": "Concejalía de Fiestas",
+          "telefono": "922 34 62 47",
+          "correo": "fiestas@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "hacienda",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "hacienda",
+      "nombre": "Hacienda",
+      "descripcion": "Impuestos y tasas: IBI (Impuesto sobre Bienes Inmuebles), plusvalía y multas.",
+      "responsable": "Concejalía de Hacienda",
+      "telefono": "922 34 62 48",
+      "correo": "hacienda@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": [
+        "plusvalia-municipal-iivtnu",
+        "cesion-derecho-cobro"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "hacienda",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "hacienda",
+          "nombre": "Hacienda",
+          "descripcion": "Impuestos y tasas: IBI (Impuesto sobre Bienes Inmuebles), plusvalía y multas.",
+          "responsable": "Concejalía de Hacienda",
+          "telefono": "922 34 62 48",
+          "correo": "hacienda@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": [
+            "plusvalia-municipal-iivtnu",
+            "cesion-derecho-cobro"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "juventud",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "juventud",
+      "nombre": "Juventud",
+      "descripcion": "Actividades para jóvenes: ocio, cursos y casa de la juventud.",
+      "responsable": "Concejalía de Juventud",
+      "telefono": "922 34 62 49",
+      "correo": "juventud@losrealejos.es",
+      "ubicacion": "Casa de la Juventud, Realejo Alto",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "juventud",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "juventud",
+          "nombre": "Juventud",
+          "descripcion": "Actividades para jóvenes: ocio, cursos y casa de la juventud.",
+          "responsable": "Concejalía de Juventud",
+          "telefono": "922 34 62 49",
+          "correo": "juventud@losrealejos.es",
+          "ubicacion": "Casa de la Juventud, Realejo Alto",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "omic",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "omic",
+      "nombre": "OMIC (Oficina Municipal de Información al Consumidor)",
+      "descripcion": "Ayuda si tienes un problema con una compra o un servicio.",
+      "responsable": "Concejalía de Consumo",
+      "telefono": "922 34 62 50",
+      "correo": "omic@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": [
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "omic",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "omic",
+          "nombre": "OMIC (Oficina Municipal de Información al Consumidor)",
+          "descripcion": "Ayuda si tienes un problema con una compra o un servicio.",
+          "responsable": "Concejalía de Consumo",
+          "telefono": "922 34 62 50",
+          "correo": "omic@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": [
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "patrimonio",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "patrimonio",
+      "nombre": "Patrimonio",
+      "descripcion": "Cuida los edificios y bienes del Ayuntamiento.",
+      "responsable": "Concejalía de Patrimonio",
+      "telefono": "922 34 62 51",
+      "correo": "patrimonio@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "patrimonio",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "patrimonio",
+          "nombre": "Patrimonio",
+          "descripcion": "Cuida los edificios y bienes del Ayuntamiento.",
+          "responsable": "Concejalía de Patrimonio",
+          "telefono": "922 34 62 51",
+          "correo": "patrimonio@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "protocolo",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "protocolo",
+      "nombre": "Protocolo",
+      "descripcion": "Actos oficiales y hermanamientos del municipio.",
+      "responsable": "Alcaldía",
+      "telefono": "922 34 62 52",
+      "correo": "protocolo@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "protocolo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "protocolo",
+          "nombre": "Protocolo",
+          "descripcion": "Actos oficiales y hermanamientos del municipio.",
+          "responsable": "Alcaldía",
+          "telefono": "922 34 62 52",
+          "correo": "protocolo@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "secretaria-general",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "secretaria-general",
+      "nombre": "Secretaría General",
+      "descripcion": "Plenos, actas y registro oficial de documentos.",
+      "responsable": "Secretaría General",
+      "telefono": "922 34 62 53",
+      "correo": "secretaria@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": [
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "secretaria-general",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "secretaria-general",
+          "nombre": "Secretaría General",
+          "descripcion": "Plenos, actas y registro oficial de documentos.",
+          "responsable": "Secretaría General",
+          "telefono": "922 34 62 53",
+          "correo": "secretaria@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": [
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "seguridad-emergencias",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "seguridad-emergencias",
+      "nombre": "Seguridad y Emergencias",
+      "descripcion": "Policía Local y Protección Civil. Emergencias: teléfono 112.",
+      "responsable": "Concejalía de Seguridad",
+      "telefono": "922 34 62 54",
+      "correo": "policia@losrealejos.es",
+      "ubicacion": "Calle El Puente, s/n",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "seguridad-emergencias",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "seguridad-emergencias",
+          "nombre": "Seguridad y Emergencias",
+          "descripcion": "Policía Local y Protección Civil. Emergencias: teléfono 112.",
+          "responsable": "Concejalía de Seguridad",
+          "telefono": "922 34 62 54",
+          "correo": "policia@losrealejos.es",
+          "ubicacion": "Calle El Puente, s/n",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "turismo",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "turismo",
+      "nombre": "Turismo",
+      "descripcion": "Información para visitantes. La web de turismo es losrealejos.travel.",
+      "responsable": "Concejalía de Turismo",
+      "telefono": "922 34 62 55",
+      "correo": "turismo@losrealejos.es",
+      "ubicacion": "Plaza Viera y Clavijo",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "turismo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "turismo",
+          "nombre": "Turismo",
+          "descripcion": "Información para visitantes. La web de turismo es losrealejos.travel.",
+          "responsable": "Concejalía de Turismo",
+          "telefono": "922 34 62 55",
+          "correo": "turismo@losrealejos.es",
+          "ubicacion": "Plaza Viera y Clavijo",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "urbanismo",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "urbanismo",
+      "nombre": "Urbanismo",
+      "descripcion": "Obras en casa, licencias de apertura y planes de la ciudad. Tramita la Gerencia Municipal de Urbanismo (GMU).",
+      "responsable": "Gerencia Municipal de Urbanismo (GMU)",
+      "telefono": "922 34 62 56",
+      "correo": "urbanismo@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": [
+        "licencia-obra-menor",
+        "licencia-actividad"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "urbanismo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "urbanismo",
+          "nombre": "Urbanismo",
+          "descripcion": "Obras en casa, licencias de apertura y planes de la ciudad. Tramita la Gerencia Municipal de Urbanismo (GMU).",
+          "responsable": "Gerencia Municipal de Urbanismo (GMU)",
+          "telefono": "922 34 62 56",
+          "correo": "urbanismo@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": [
+            "licencia-obra-menor",
+            "licencia-actividad"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "viviendas-protegidas",
+    "coleccion": "areas",
+    "contenido": {
+      "id": "viviendas-protegidas",
+      "nombre": "Viviendas Protegidas",
+      "descripcion": "Ayudas para la vivienda y lista de solicitantes de vivienda protegida.",
+      "responsable": "Concejalía de Vivienda",
+      "telefono": "922 34 62 57",
+      "correo": "vivienda@losrealejos.es",
+      "ubicacion": "Avenida de Canarias, 6",
+      "tramiteIds": []
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 12,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "viviendas-protegidas",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "viviendas-protegidas",
+          "nombre": "Viviendas Protegidas",
+          "descripcion": "Ayudas para la vivienda y lista de solicitantes de vivienda protegida.",
+          "responsable": "Concejalía de Vivienda",
+          "telefono": "922 34 62 57",
+          "correo": "vivienda@losrealejos.es",
+          "ubicacion": "Avenida de Canarias, 6",
+          "tramiteIds": []
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  }
+]

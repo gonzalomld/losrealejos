@@ -1,0 +1,190 @@
+[
+  {
+    "id": "plan-empleo-social",
+    "coleccion": "avisos",
+    "contenido": {
+      "id": "plan-empleo-social",
+      "titulo": "Plan de empleo social: 40 contratos",
+      "tipo": "empleo",
+      "descripcion": "Contratos de seis meses para limpieza, jardines y colegios. Apúntate antes de que termine el plazo.",
+      "finPlazoISO": "2026-09-12",
+      "fechaHechoISO": null,
+      "enlace": "/empleo-publico",
+      "enlaceTexto": "Ver la convocatoria del plan de empleo social"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-09-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 3,
+    "ultimaRevision": "2026-09-01",
+    "areaId": "protocolo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-09-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "plan-empleo-social",
+          "titulo": "Plan de empleo social: 40 contratos",
+          "tipo": "empleo",
+          "descripcion": "Contratos de seis meses para limpieza, jardines y colegios. Apúntate antes de que termine el plazo.",
+          "finPlazoISO": "2026-09-12",
+          "fechaHechoISO": null,
+          "enlace": "/empleo-publico",
+          "enlaceTexto": "Ver la convocatoria del plan de empleo social"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "ayuda-libros",
+    "coleccion": "avisos",
+    "contenido": {
+      "id": "ayuda-libros",
+      "titulo": "Ayudas para libros y material escolar",
+      "tipo": "ayuda",
+      "descripcion": "Hasta 150 euros por hijo para familias empadronadas. Pídelas antes de que termine el plazo.",
+      "finPlazoISO": "2026-09-15",
+      "fechaHechoISO": null,
+      "enlace": "/ayudas",
+      "enlaceTexto": "Ver las ayudas para libros y material escolar"
+    },
+    "estado": "programado",
+    "pubFecha": "2026-09-12",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 3,
+    "ultimaRevision": "2026-09-01",
+    "areaId": "protocolo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-09-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "ayuda-libros",
+          "titulo": "Ayudas para libros y material escolar",
+          "tipo": "ayuda",
+          "descripcion": "Hasta 150 euros por hijo para familias empadronadas. Pídelas antes de que termine el plazo.",
+          "finPlazoISO": "2026-09-15",
+          "fechaHechoISO": null,
+          "enlace": "/ayudas",
+          "enlaceTexto": "Ver las ayudas para libros y material escolar"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "corte-agua-realejo-alto",
+    "coleccion": "avisos",
+    "contenido": {
+      "id": "corte-agua-realejo-alto",
+      "titulo": "Corte de agua en Realejo Alto por una reparación",
+      "tipo": "corte-agua",
+      "descripcion": "Afecta a la calle El Medio y alrededores, de 9:00 a 13:00. Ten agua guardada esa mañana.",
+      "finPlazoISO": null,
+      "fechaHechoISO": "2026-09-10",
+      "enlace": "/noticias/acuerdo-plenario-cortes-agua-san-vicente",
+      "enlaceTexto": "Leer la noticia sobre las obras de agua en San Vicente"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-09-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 3,
+    "ultimaRevision": "2026-09-01",
+    "areaId": "protocolo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-09-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "corte-agua-realejo-alto",
+          "titulo": "Corte de agua en Realejo Alto por una reparación",
+          "tipo": "corte-agua",
+          "descripcion": "Afecta a la calle El Medio y alrededores, de 9:00 a 13:00. Ten agua guardada esa mañana.",
+          "finPlazoISO": null,
+          "fechaHechoISO": "2026-09-10",
+          "enlace": "/noticias/acuerdo-plenario-cortes-agua-san-vicente",
+          "enlaceTexto": "Leer la noticia sobre las obras de agua en San Vicente"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "alerta-viento",
+    "coleccion": "avisos",
+    "contenido": {
+      "id": "alerta-viento",
+      "titulo": "Alerta amarilla por viento el fin de semana",
+      "tipo": "meteorologia",
+      "descripcion": "Precaución en El Socorro: no te bañes si hay bandera roja y asegura macetas y toldos.",
+      "finPlazoISO": null,
+      "fechaHechoISO": "2026-09-06",
+      "enlace": "/mi-barrio/seguridad-emergencias",
+      "enlaceTexto": "Ver qué hacer ante avisos del tiempo"
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-09-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 3,
+    "ultimaRevision": "2026-09-01",
+    "areaId": "protocolo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-09-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "alerta-viento",
+          "titulo": "Alerta amarilla por viento el fin de semana",
+          "tipo": "meteorologia",
+          "descripcion": "Precaución en El Socorro: no te bañes si hay bandera roja y asegura macetas y toldos.",
+          "finPlazoISO": null,
+          "fechaHechoISO": "2026-09-06",
+          "enlace": "/mi-barrio/seguridad-emergencias",
+          "enlaceTexto": "Ver qué hacer ante avisos del tiempo"
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  }
+]

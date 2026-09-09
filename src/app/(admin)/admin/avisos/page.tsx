@@ -1,7 +1,13 @@
-import { SeccionPlaceholder } from "@/components/admin/SeccionPlaceholder";
+import { definicionDe } from "@/lib/cms/colecciones";
+import { ColeccionClient } from "@/components/admin/ColeccionClient";
+import { leerParaGestor } from "@/lib/cms/almacen";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default function Pagina() {
-  return <SeccionPlaceholder titulo="Avisos y plazos" descripcion="Avisos puntuales y con plazo de solicitud." />;
+export default async function Pagina() {
+  const definicion = definicionDe("avisos");
+  if (!definicion) notFound();
+  const regs = await leerParaGestor<Record<string, unknown>>("avisos" as never);
+  return <ColeccionClient definicion={definicion} iniciales={regs} />;
 }

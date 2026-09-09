@@ -1,7 +1,13 @@
-import { SeccionPlaceholder } from "@/components/admin/SeccionPlaceholder";
+import { definicionDe } from "@/lib/cms/colecciones";
+import { ColeccionClient } from "@/components/admin/ColeccionClient";
+import { leerParaGestor } from "@/lib/cms/almacen";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default function Pagina() {
-  return <SeccionPlaceholder titulo="Agenda de eventos" descripcion="Eventos culturales, deportivos y festivos." />;
+export default async function Pagina() {
+  const definicion = definicionDe("eventos");
+  if (!definicion) notFound();
+  const regs = await leerParaGestor<Record<string, unknown>>("eventos" as never);
+  return <ColeccionClient definicion={definicion} iniciales={regs} />;
 }

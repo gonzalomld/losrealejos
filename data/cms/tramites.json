@@ -1,0 +1,2086 @@
+[
+  {
+    "id": "alta-en-el-padron",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "alta-en-el-padron",
+      "tituloClaro": "Empadronarme",
+      "tituloOficial": "Alta en el Padrón Municipal de Habitantes",
+      "resumen": {
+        "queEs": "Es apuntarte en la lista de personas que viven en Los Realejos.",
+        "queNecesito": "Necesitas tu DNI o pasaporte y un papel que diga dónde vives.",
+        "dondeSeHace": "Se hace en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+      },
+      "descripcion": "El padrón es la lista oficial de las personas que viven en el municipio. Estar empadronado sirve para pedir ayudas, apuntar a tus hijos al colegio y usar los servicios del Ayuntamiento.",
+      "requisitos": [
+        "Vivir de forma habitual en Los Realejos.",
+        "Puede pedirlo la persona interesada o alguien con su autorización firmada.",
+        "Las personas menores de edad las empadrona su padre, madre o tutor legal."
+      ],
+      "documentacion": [
+        "DNI, NIE o pasaporte en vigor.",
+        "Contrato de alquiler o escritura de la vivienda, o recibo reciente de luz o agua.",
+        "Si vienes de otro municipio, no necesitas darte de baja allí: lo hacemos nosotros.",
+        "Autorización firmada si empadronas a otra persona adulta."
+      ],
+      "canales": [
+        "presencial"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Pide cita previa por teléfono o en la web de cita."
+        },
+        {
+          "paso": 2,
+          "texto": "Ve a la Oficina de Atención Ciudadana (OAC) con tus documentos."
+        },
+        {
+          "paso": 3,
+          "texto": "Rellena la hoja de alta allí mismo. Te damos el justificante en el momento."
+        }
+      ],
+      "identificacion": "No necesitas certificado digital porque se hace en persona. Lleva tu DNI.",
+      "plazoResolucion": "El alta es inmediata en la oficina. El justificante se entrega el mismo día.",
+      "silencio": "No aplica: el alta se resuelve en el acto.",
+      "tasa": "Gratuito. Este trámite no cuesta nada.",
+      "tasaGratuita": true,
+      "normativa": [
+        {
+          "titulo": "Ley de Bases del Régimen Local: normas del padrón",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+        },
+        {
+          "titulo": "Reglamento de Población y Demarcación Territorial",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1986-8532"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/alta-padron",
+      "areaId": "atencion-ciudadana",
+      "presencial": {
+        "nombre": "Oficina de Atención Ciudadana (OAC)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 34"
+      },
+      "tema": "padron",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-06-15",
+      "relacionados": [
+        "certificado-de-empadronamiento",
+        "certificado-de-viaje-descuento-residente",
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-15",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-06-15",
+    "areaId": "atencion-ciudadana",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-15",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "alta-en-el-padron",
+          "tituloClaro": "Empadronarme",
+          "tituloOficial": "Alta en el Padrón Municipal de Habitantes",
+          "resumen": {
+            "queEs": "Es apuntarte en la lista de personas que viven en Los Realejos.",
+            "queNecesito": "Necesitas tu DNI o pasaporte y un papel que diga dónde vives.",
+            "dondeSeHace": "Se hace en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+          },
+          "descripcion": "El padrón es la lista oficial de las personas que viven en el municipio. Estar empadronado sirve para pedir ayudas, apuntar a tus hijos al colegio y usar los servicios del Ayuntamiento.",
+          "requisitos": [
+            "Vivir de forma habitual en Los Realejos.",
+            "Puede pedirlo la persona interesada o alguien con su autorización firmada.",
+            "Las personas menores de edad las empadrona su padre, madre o tutor legal."
+          ],
+          "documentacion": [
+            "DNI, NIE o pasaporte en vigor.",
+            "Contrato de alquiler o escritura de la vivienda, o recibo reciente de luz o agua.",
+            "Si vienes de otro municipio, no necesitas darte de baja allí: lo hacemos nosotros.",
+            "Autorización firmada si empadronas a otra persona adulta."
+          ],
+          "canales": [
+            "presencial"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Pide cita previa por teléfono o en la web de cita."
+            },
+            {
+              "paso": 2,
+              "texto": "Ve a la Oficina de Atención Ciudadana (OAC) con tus documentos."
+            },
+            {
+              "paso": 3,
+              "texto": "Rellena la hoja de alta allí mismo. Te damos el justificante en el momento."
+            }
+          ],
+          "identificacion": "No necesitas certificado digital porque se hace en persona. Lleva tu DNI.",
+          "plazoResolucion": "El alta es inmediata en la oficina. El justificante se entrega el mismo día.",
+          "silencio": "No aplica: el alta se resuelve en el acto.",
+          "tasa": "Gratuito. Este trámite no cuesta nada.",
+          "tasaGratuita": true,
+          "normativa": [
+            {
+              "titulo": "Ley de Bases del Régimen Local: normas del padrón",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+            },
+            {
+              "titulo": "Reglamento de Población y Demarcación Territorial",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1986-8532"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/alta-padron",
+          "areaId": "atencion-ciudadana",
+          "presencial": {
+            "nombre": "Oficina de Atención Ciudadana (OAC)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 34"
+          },
+          "tema": "padron",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-06-15",
+          "relacionados": [
+            "certificado-de-empadronamiento",
+            "certificado-de-viaje-descuento-residente",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "certificado-de-empadronamiento",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "certificado-de-empadronamiento",
+      "tituloClaro": "Pedir un certificado de empadronamiento",
+      "tituloOficial": "Certificado de empadronamiento",
+      "resumen": {
+        "queEs": "Es un papel oficial que dice que vives en Los Realejos.",
+        "queNecesito": "Necesitas estar empadronado y tu DNI o Cl@ve.",
+        "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+      },
+      "descripcion": "Este certificado acredita dónde vives. Te lo piden para renovar el DNI, pedir becas, matricular a tus hijos o hacer gestiones con otras administraciones.",
+      "requisitos": [
+        "Estar empadronado en Los Realejos.",
+        "Si lo pides online, identificarte con certificado digital o Cl@ve.",
+        "Si lo pides en persona, llevar tu DNI."
+      ],
+      "documentacion": [
+        "Online: no hay que subir ningún papel, solo identificarte.",
+        "En persona: DNI, NIE o pasaporte.",
+        "Si lo pide otra persona, autorización firmada y copia de tu DNI."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Entra en la Sede Electrónica y busca este certificado."
+        },
+        {
+          "paso": 2,
+          "texto": "Identifícate con tu certificado digital o con Cl@ve."
+        },
+        {
+          "paso": 3,
+          "texto": "Descarga el certificado con su código de verificación."
+        },
+        {
+          "paso": 4,
+          "texto": "Si prefieres ir en persona, pide cita y ve a la OAC con tu DNI."
+        }
+      ],
+      "identificacion": "Online necesitas certificado digital o Cl@ve. En persona basta el DNI.",
+      "plazoResolucion": "Online es inmediato. En persona se entrega el mismo día.",
+      "silencio": "No aplica: se entrega en el acto.",
+      "tasa": "Gratuito. Este certificado no cuesta nada.",
+      "tasaGratuita": true,
+      "normativa": [
+        {
+          "titulo": "Ley de Bases del Régimen Local: normas del padrón",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/certificado-empadronamiento",
+      "areaId": "atencion-ciudadana",
+      "presencial": {
+        "nombre": "Oficina de Atención Ciudadana (OAC)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 34"
+      },
+      "tema": "padron",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-05-20",
+      "relacionados": [
+        "alta-en-el-padron",
+        "certificado-de-viaje-descuento-residente",
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-05-20",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-05-20",
+    "areaId": "atencion-ciudadana",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-05-20",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "certificado-de-empadronamiento",
+          "tituloClaro": "Pedir un certificado de empadronamiento",
+          "tituloOficial": "Certificado de empadronamiento",
+          "resumen": {
+            "queEs": "Es un papel oficial que dice que vives en Los Realejos.",
+            "queNecesito": "Necesitas estar empadronado y tu DNI o Cl@ve.",
+            "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+          },
+          "descripcion": "Este certificado acredita dónde vives. Te lo piden para renovar el DNI, pedir becas, matricular a tus hijos o hacer gestiones con otras administraciones.",
+          "requisitos": [
+            "Estar empadronado en Los Realejos.",
+            "Si lo pides online, identificarte con certificado digital o Cl@ve.",
+            "Si lo pides en persona, llevar tu DNI."
+          ],
+          "documentacion": [
+            "Online: no hay que subir ningún papel, solo identificarte.",
+            "En persona: DNI, NIE o pasaporte.",
+            "Si lo pide otra persona, autorización firmada y copia de tu DNI."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Entra en la Sede Electrónica y busca este certificado."
+            },
+            {
+              "paso": 2,
+              "texto": "Identifícate con tu certificado digital o con Cl@ve."
+            },
+            {
+              "paso": 3,
+              "texto": "Descarga el certificado con su código de verificación."
+            },
+            {
+              "paso": 4,
+              "texto": "Si prefieres ir en persona, pide cita y ve a la OAC con tu DNI."
+            }
+          ],
+          "identificacion": "Online necesitas certificado digital o Cl@ve. En persona basta el DNI.",
+          "plazoResolucion": "Online es inmediato. En persona se entrega el mismo día.",
+          "silencio": "No aplica: se entrega en el acto.",
+          "tasa": "Gratuito. Este certificado no cuesta nada.",
+          "tasaGratuita": true,
+          "normativa": [
+            {
+              "titulo": "Ley de Bases del Régimen Local: normas del padrón",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-1985-5392"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/certificado-empadronamiento",
+          "areaId": "atencion-ciudadana",
+          "presencial": {
+            "nombre": "Oficina de Atención Ciudadana (OAC)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 34"
+          },
+          "tema": "padron",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-05-20",
+          "relacionados": [
+            "alta-en-el-padron",
+            "certificado-de-viaje-descuento-residente",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "certificado-de-viaje-descuento-residente",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "certificado-de-viaje-descuento-residente",
+      "tituloClaro": "Pedir el certificado de viaje (descuento de residente)",
+      "tituloOficial": "Certificado de residencia para descuento en viajes",
+      "resumen": {
+        "queEs": "Es el papel que te da descuento en avión y barco por vivir en Canarias.",
+        "queNecesito": "Necesitas estar empadronado. No hace falta certificado digital.",
+        "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+      },
+      "descripcion": "Las personas que viven en Canarias pagan menos en los vuelos y barcos a la Península y entre islas. La compañía te pide este certificado para aplicarte el descuento.",
+      "requisitos": [
+        "Estar empadronado en Los Realejos.",
+        "Este es el único trámite de la Sede que NO pide certificado digital."
+      ],
+      "documentacion": [
+        "Online: solo tus datos. El sistema comprueba el padrón solo.",
+        "En persona: DNI, NIE o pasaporte."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Entra en la Sede Electrónica y busca el certificado de viaje."
+        },
+        {
+          "paso": 2,
+          "texto": "Escribe tus datos. No necesitas certificado digital."
+        },
+        {
+          "paso": 3,
+          "texto": "Descarga el certificado y úsalo al comprar tu billete."
+        }
+      ],
+      "identificacion": "No necesitas certificado digital ni Cl@ve. Es el trámite más fácil de la Sede.",
+      "plazoResolucion": "Inmediato online. El mismo día en persona.",
+      "silencio": "No aplica: se entrega en el acto.",
+      "tasa": "Gratuito.",
+      "tasaGratuita": true,
+      "normativa": [
+        {
+          "titulo": "Normativa estatal sobre bonificaciones a residentes en transportes (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/certificado-viaje-residente",
+      "areaId": "atencion-ciudadana",
+      "presencial": {
+        "nombre": "Oficina de Atención Ciudadana (OAC)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 34"
+      },
+      "tema": "padron",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-04-10",
+      "relacionados": [
+        "certificado-de-empadronamiento",
+        "alta-en-el-padron",
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-04-10",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-04-10",
+    "areaId": "atencion-ciudadana",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-04-10",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "certificado-de-viaje-descuento-residente",
+          "tituloClaro": "Pedir el certificado de viaje (descuento de residente)",
+          "tituloOficial": "Certificado de residencia para descuento en viajes",
+          "resumen": {
+            "queEs": "Es el papel que te da descuento en avión y barco por vivir en Canarias.",
+            "queNecesito": "Necesitas estar empadronado. No hace falta certificado digital.",
+            "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+          },
+          "descripcion": "Las personas que viven en Canarias pagan menos en los vuelos y barcos a la Península y entre islas. La compañía te pide este certificado para aplicarte el descuento.",
+          "requisitos": [
+            "Estar empadronado en Los Realejos.",
+            "Este es el único trámite de la Sede que NO pide certificado digital."
+          ],
+          "documentacion": [
+            "Online: solo tus datos. El sistema comprueba el padrón solo.",
+            "En persona: DNI, NIE o pasaporte."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Entra en la Sede Electrónica y busca el certificado de viaje."
+            },
+            {
+              "paso": 2,
+              "texto": "Escribe tus datos. No necesitas certificado digital."
+            },
+            {
+              "paso": 3,
+              "texto": "Descarga el certificado y úsalo al comprar tu billete."
+            }
+          ],
+          "identificacion": "No necesitas certificado digital ni Cl@ve. Es el trámite más fácil de la Sede.",
+          "plazoResolucion": "Inmediato online. El mismo día en persona.",
+          "silencio": "No aplica: se entrega en el acto.",
+          "tasa": "Gratuito.",
+          "tasaGratuita": true,
+          "normativa": [
+            {
+              "titulo": "Normativa estatal sobre bonificaciones a residentes en transportes (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/certificado-viaje-residente",
+          "areaId": "atencion-ciudadana",
+          "presencial": {
+            "nombre": "Oficina de Atención Ciudadana (OAC)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 34"
+          },
+          "tema": "padron",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-04-10",
+          "relacionados": [
+            "certificado-de-empadronamiento",
+            "alta-en-el-padron",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "instancia-generica",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "instancia-generica",
+      "tituloClaro": "Enviar un escrito al Ayuntamiento",
+      "tituloOficial": "Instancia genérica",
+      "resumen": {
+        "queEs": "Es una carta oficial para pedir o comunicar cualquier cosa al Ayuntamiento.",
+        "queNecesito": "Necesitas explicar con claridad lo que pides y adjuntar tus papeles.",
+        "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+      },
+      "descripcion": "Sirve para cualquier petición que no tenga su propio trámite: hacer una sugerencia, pedir información, presentar un documento o reclamar. Si tu gestión tiene trámite propio, usa ese en su lugar.",
+      "requisitos": [
+        "Ser mayor de edad o actuar en nombre de una empresa o asociación.",
+        "Explicar con claridad qué pides y por qué."
+      ],
+      "documentacion": [
+        "DNI, NIE o CIF de quien firma.",
+        "Documentos que apoyen tu petición, si los tienes.",
+        "Si actúas en nombre de otra persona, su autorización."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Entra en la Sede Electrónica y abre la instancia genérica."
+        },
+        {
+          "paso": 2,
+          "texto": "Escribe tu petición con frases cortas y claras."
+        },
+        {
+          "paso": 3,
+          "texto": "Adjunta tus documentos y firma con tu certificado o Cl@ve."
+        },
+        {
+          "paso": 4,
+          "texto": "Guarda el justificante con el número de registro."
+        }
+      ],
+      "identificacion": "Necesitas certificado digital o Cl@ve para firmar online.",
+      "plazoResolucion": "El Ayuntamiento responde en un máximo de 3 meses.",
+      "silencio": "Si no recibes respuesta en 3 meses, en general se entiende desestimada. Pregunta en la OAC por tu expediente.",
+      "tasa": "Gratuito.",
+      "tasaGratuita": true,
+      "normativa": [
+        {
+          "titulo": "Ley del Procedimiento Administrativo Común: cómo presentar escritos",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/instancia-generica",
+      "areaId": "secretaria-general",
+      "presencial": {
+        "nombre": "Oficina de Atención Ciudadana (OAC)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 34"
+      },
+      "tema": "atencion-ciudadana",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano",
+        "empresa",
+        "asociacion"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-03-02",
+      "relacionados": [
+        "certificado-de-empadronamiento",
+        "cesion-derecho-cobro",
+        "licencia-actividad"
+      ]
+    },
+    "estado": "caducado",
+    "pubFecha": "2026-03-02",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2024-11-10",
+    "areaId": "secretaria-general",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-03-02",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "instancia-generica",
+          "tituloClaro": "Enviar un escrito al Ayuntamiento",
+          "tituloOficial": "Instancia genérica",
+          "resumen": {
+            "queEs": "Es una carta oficial para pedir o comunicar cualquier cosa al Ayuntamiento.",
+            "queNecesito": "Necesitas explicar con claridad lo que pides y adjuntar tus papeles.",
+            "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Atención Ciudadana (OAC), en Avenida de Canarias, 6."
+          },
+          "descripcion": "Sirve para cualquier petición que no tenga su propio trámite: hacer una sugerencia, pedir información, presentar un documento o reclamar. Si tu gestión tiene trámite propio, usa ese en su lugar.",
+          "requisitos": [
+            "Ser mayor de edad o actuar en nombre de una empresa o asociación.",
+            "Explicar con claridad qué pides y por qué."
+          ],
+          "documentacion": [
+            "DNI, NIE o CIF de quien firma.",
+            "Documentos que apoyen tu petición, si los tienes.",
+            "Si actúas en nombre de otra persona, su autorización."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Entra en la Sede Electrónica y abre la instancia genérica."
+            },
+            {
+              "paso": 2,
+              "texto": "Escribe tu petición con frases cortas y claras."
+            },
+            {
+              "paso": 3,
+              "texto": "Adjunta tus documentos y firma con tu certificado o Cl@ve."
+            },
+            {
+              "paso": 4,
+              "texto": "Guarda el justificante con el número de registro."
+            }
+          ],
+          "identificacion": "Necesitas certificado digital o Cl@ve para firmar online.",
+          "plazoResolucion": "El Ayuntamiento responde en un máximo de 3 meses.",
+          "silencio": "Si no recibes respuesta en 3 meses, en general se entiende desestimada. Pregunta en la OAC por tu expediente.",
+          "tasa": "Gratuito.",
+          "tasaGratuita": true,
+          "normativa": [
+            {
+              "titulo": "Ley del Procedimiento Administrativo Común: cómo presentar escritos",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2015-10565"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/instancia-generica",
+          "areaId": "secretaria-general",
+          "presencial": {
+            "nombre": "Oficina de Atención Ciudadana (OAC)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 34"
+          },
+          "tema": "atencion-ciudadana",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano",
+            "empresa",
+            "asociacion"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-03-02",
+          "relacionados": [
+            "certificado-de-empadronamiento",
+            "cesion-derecho-cobro",
+            "licencia-actividad"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [
+      {
+        "tipo": "revision-superada",
+        "mensaje": "Ha superado su periodicidad de revisión acordada (6 meses sin revisar).",
+        "severidad": "bloqueo",
+        "fecha": "2026-09-08"
+      }
+    ],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "plusvalia-municipal-iivtnu",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "plusvalia-municipal-iivtnu",
+      "tituloClaro": "Declarar la venta o herencia de una casa (plusvalía)",
+      "tituloOficial": "Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana (IIVTNU)",
+      "resumen": {
+        "queEs": "Es pagar el impuesto municipal cuando vendes o heredas una casa o un terreno.",
+        "queNecesito": "Necesitas la escritura de la venta o de la herencia.",
+        "dondeSeHace": "Se declara por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6."
+      },
+      "descripcion": "Cuando una casa o un terreno cambia de dueño (venta, herencia o donación), hay que pagar este impuesto al Ayuntamiento. Se llama plusvalía. El plazo es de 30 días si es una venta y 6 meses si es una herencia.",
+      "requisitos": [
+        "Haber comprado, vendido, heredado o recibido en donación un inmueble en Los Realejos.",
+        "Presentar la declaración en plazo: 30 días hábiles (ventas) o 6 meses (herencias)."
+      ],
+      "documentacion": [
+        "Copia de la escritura de la venta, herencia o donación.",
+        "DNI o CIF de quien vende y de quien compra.",
+        "Referencia catastral del inmueble (está en el recibo del IBI).",
+        "IBI son las siglas del Impuesto sobre Bienes Inmuebles, el impuesto anual de la casa."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Reúne la escritura y la referencia catastral."
+        },
+        {
+          "paso": 2,
+          "texto": "Presenta la declaración en la Sede Electrónica o en Hacienda con cita."
+        },
+        {
+          "paso": 3,
+          "texto": "El Ayuntamiento calcula el importe y te envía la carta de pago."
+        },
+        {
+          "paso": 4,
+          "texto": "Paga en el banco o por internet antes de la fecha límite."
+        }
+      ],
+      "identificacion": "Online necesitas certificado digital o Cl@ve.",
+      "plazoResolucion": "La liquidación llega en unos 2 meses desde la declaración.",
+      "silencio": "Es un impuesto, no una solicitud: no hay silencio administrativo.",
+      "tasa": "El importe depende del valor del suelo y de los años. Como ejemplo, una vivienda media puede pagar unos 180 euros. El cálculo exacto lo hace Hacienda.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal reguladora del impuesto de plusvalía (referencia pendiente de verificación)"
+        },
+        {
+          "titulo": "Ley de Haciendas Locales: impuestos municipales",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/plusvalia-municipal",
+      "areaId": "hacienda",
+      "presencial": {
+        "nombre": "Oficina de Hacienda",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 48"
+      },
+      "tema": "tributos",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano",
+        "empresa"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-06-01",
+      "relacionados": [
+        "licencia-obra-menor",
+        "instancia-generica",
+        "alta-en-el-padron"
+      ]
+    },
+    "estado": "en_revision",
+    "pubFecha": "2026-06-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-06-01",
+    "areaId": "hacienda",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "J. Pérez (Editor, Hacienda)",
+    "enviadoPor": "J. Pérez (Editor, Hacienda)",
+    "fechaEnvio": "2026-09-06",
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "plusvalia-municipal-iivtnu",
+          "tituloClaro": "Declarar la venta o herencia de una casa (plusvalía)",
+          "tituloOficial": "Impuesto sobre el Incremento de Valor de los Terrenos de Naturaleza Urbana (IIVTNU)",
+          "resumen": {
+            "queEs": "Es pagar el impuesto municipal cuando vendes o heredas una casa o un terreno.",
+            "queNecesito": "Necesitas la escritura de la venta o de la herencia.",
+            "dondeSeHace": "Se declara por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6."
+          },
+          "descripcion": "Cuando una casa o un terreno cambia de dueño (venta, herencia o donación), hay que pagar este impuesto al Ayuntamiento. Se llama plusvalía. El plazo es de 30 días si es una venta y 6 meses si es una herencia.",
+          "requisitos": [
+            "Haber comprado, vendido, heredado o recibido en donación un inmueble en Los Realejos.",
+            "Presentar la declaración en plazo: 30 días hábiles (ventas) o 6 meses (herencias)."
+          ],
+          "documentacion": [
+            "Copia de la escritura de la venta, herencia o donación.",
+            "DNI o CIF de quien vende y de quien compra.",
+            "Referencia catastral del inmueble (está en el recibo del IBI).",
+            "IBI son las siglas del Impuesto sobre Bienes Inmuebles, el impuesto anual de la casa."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Reúne la escritura y la referencia catastral."
+            },
+            {
+              "paso": 2,
+              "texto": "Presenta la declaración en la Sede Electrónica o en Hacienda con cita."
+            },
+            {
+              "paso": 3,
+              "texto": "El Ayuntamiento calcula el importe y te envía la carta de pago."
+            },
+            {
+              "paso": 4,
+              "texto": "Paga en el banco o por internet antes de la fecha límite."
+            }
+          ],
+          "identificacion": "Online necesitas certificado digital o Cl@ve.",
+          "plazoResolucion": "La liquidación llega en unos 2 meses desde la declaración.",
+          "silencio": "Es un impuesto, no una solicitud: no hay silencio administrativo.",
+          "tasa": "El importe depende del valor del suelo y de los años. Como ejemplo, una vivienda media puede pagar unos 180 euros. El cálculo exacto lo hace Hacienda.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal reguladora del impuesto de plusvalía (referencia pendiente de verificación)"
+            },
+            {
+              "titulo": "Ley de Haciendas Locales: impuestos municipales",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2004-4214"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/plusvalia-municipal",
+          "areaId": "hacienda",
+          "presencial": {
+            "nombre": "Oficina de Hacienda",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 48"
+          },
+          "tema": "tributos",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano",
+            "empresa"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-06-01",
+          "relacionados": [
+            "licencia-obra-menor",
+            "instancia-generica",
+            "alta-en-el-padron"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "inscripcion-piscina-municipal",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "inscripcion-piscina-municipal",
+      "tituloClaro": "Apuntarme a la piscina municipal",
+      "tituloOficial": "Inscripción en actividades y abonos de la piscina municipal",
+      "resumen": {
+        "queEs": "Es apuntarte a nadar libre, a cursos o a clases en la piscina del municipio.",
+        "queNecesito": "Necesitas tu DNI y tus datos de contacto. Los menores necesitan autorización.",
+        "dondeSeHace": "Se hace en la piscina municipal, en Avenida de los Remedios. También online para renovar."
+      },
+      "descripcion": "La piscina municipal de Los Realejos ofrece nado libre, cursos para niños y adultos, aquagym y natación para mayores. Puedes pagar por meses o apuntarte a un curso completo.",
+      "requisitos": [
+        "No hay edad mínima para nado libre acompañado; los cursos infantiles son desde los 4 años.",
+        "Las personas menores necesitan la autorización de su padre o madre.",
+        "Las personas empadronadas tienen precio reducido."
+      ],
+      "documentacion": [
+        "DNI, NIE o libro de familia para menores.",
+        "Justificante de empadronamiento (lo comprobamos nosotros, no tienes que traerlo).",
+        "Número de cuenta si quieres pagar cada mes de forma automática."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Elige tu actividad y horario en el tablón de Deportes o en la piscina."
+        },
+        {
+          "paso": 2,
+          "texto": "Rellena la ficha de inscripción con tus datos."
+        },
+        {
+          "paso": 3,
+          "texto": "Paga la primera cuota en la piscina o por internet."
+        }
+      ],
+      "identificacion": "En persona basta el DNI. Online necesitas Cl@ve o certificado.",
+      "plazoResolucion": "La plaza se confirma en el momento si hay sitio libre.",
+      "silencio": "No aplica.",
+      "tasa": "Como ejemplo: abono mensual de nado libre unos 28,50 euros; curso trimestral infantil unos 45 euros. Las personas empadronadas pagan menos.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/inscripcion-piscina",
+      "areaId": "deportes",
+      "presencial": {
+        "nombre": "Piscina municipal",
+        "direccion": "Avenida de los Remedios",
+        "telefono": "922 34 62 45"
+      },
+      "tema": "deportes",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano"
+      ],
+      "plazoAbierto": true,
+      "fechaActualizacion": "2026-07-10",
+      "relacionados": [
+        "uso-instalaciones-deportivas",
+        "alta-en-el-padron",
+        "instancia-generica"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-10",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-07-10",
+    "areaId": "deportes",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-10",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "inscripcion-piscina-municipal",
+          "tituloClaro": "Apuntarme a la piscina municipal",
+          "tituloOficial": "Inscripción en actividades y abonos de la piscina municipal",
+          "resumen": {
+            "queEs": "Es apuntarte a nadar libre, a cursos o a clases en la piscina del municipio.",
+            "queNecesito": "Necesitas tu DNI y tus datos de contacto. Los menores necesitan autorización.",
+            "dondeSeHace": "Se hace en la piscina municipal, en Avenida de los Remedios. También online para renovar."
+          },
+          "descripcion": "La piscina municipal de Los Realejos ofrece nado libre, cursos para niños y adultos, aquagym y natación para mayores. Puedes pagar por meses o apuntarte a un curso completo.",
+          "requisitos": [
+            "No hay edad mínima para nado libre acompañado; los cursos infantiles son desde los 4 años.",
+            "Las personas menores necesitan la autorización de su padre o madre.",
+            "Las personas empadronadas tienen precio reducido."
+          ],
+          "documentacion": [
+            "DNI, NIE o libro de familia para menores.",
+            "Justificante de empadronamiento (lo comprobamos nosotros, no tienes que traerlo).",
+            "Número de cuenta si quieres pagar cada mes de forma automática."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Elige tu actividad y horario en el tablón de Deportes o en la piscina."
+            },
+            {
+              "paso": 2,
+              "texto": "Rellena la ficha de inscripción con tus datos."
+            },
+            {
+              "paso": 3,
+              "texto": "Paga la primera cuota en la piscina o por internet."
+            }
+          ],
+          "identificacion": "En persona basta el DNI. Online necesitas Cl@ve o certificado.",
+          "plazoResolucion": "La plaza se confirma en el momento si hay sitio libre.",
+          "silencio": "No aplica.",
+          "tasa": "Como ejemplo: abono mensual de nado libre unos 28,50 euros; curso trimestral infantil unos 45 euros. Las personas empadronadas pagan menos.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/inscripcion-piscina",
+          "areaId": "deportes",
+          "presencial": {
+            "nombre": "Piscina municipal",
+            "direccion": "Avenida de los Remedios",
+            "telefono": "922 34 62 45"
+          },
+          "tema": "deportes",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano"
+          ],
+          "plazoAbierto": true,
+          "fechaActualizacion": "2026-07-10",
+          "relacionados": [
+            "uso-instalaciones-deportivas",
+            "alta-en-el-padron",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "licencia-obra-menor",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "licencia-obra-menor",
+      "tituloClaro": "Hacer una obra pequeña en casa",
+      "tituloOficial": "Licencia urbanística de obra menor",
+      "resumen": {
+        "queEs": "Es el permiso para arreglos pequeños: baño, cocina, ventanas o pintar la fachada.",
+        "queNecesito": "Necesitas describir la obra y decir quién la va a hacer.",
+        "dondeSeHace": "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6, o en la Sede Electrónica."
+      },
+      "descripcion": "Si vas a cambiar el baño, la cocina, las ventanas o arreglar el tejado, necesitas este permiso. No vale para tirar muros de carga ni para casas nuevas: eso es obra mayor. La GMU (Gerencia Municipal de Urbanismo) es la oficina que lo tramita.",
+      "requisitos": [
+        "La obra no puede cambiar la estructura del edificio ni su uso.",
+        "La vivienda debe estar en suelo urbano y sin expedientes de disciplina abiertos.",
+        "Si vives en un edificio protegido o en Rambla de Castro, consulta antes: puede necesitar permiso extra."
+      ],
+      "documentacion": [
+        "Descripción de la obra: qué vas a hacer y con qué materiales.",
+        "Presupuesto firmado por la empresa o el albañil.",
+        "Fotos del estado actual.",
+        "Si cambias ventanas o fachada, plano simple o croquis.",
+        "DNI y referencia catastral del inmueble."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Prepara la descripción, el presupuesto y las fotos."
+        },
+        {
+          "paso": 2,
+          "texto": "Presenta la solicitud en la Sede Electrónica o en la GMU con cita."
+        },
+        {
+          "paso": 3,
+          "texto": "Paga la tasa cuando te llegue la carta de pago."
+        },
+        {
+          "paso": 4,
+          "texto": "Espera la licencia antes de empezar la obra."
+        }
+      ],
+      "identificacion": "Online necesitas certificado digital o Cl@ve.",
+      "plazoResolucion": "Unos 2 meses desde que presentas todo completo.",
+      "silencio": "Si pasan 2 meses sin respuesta, en general se entiende concedida, salvo en zonas protegidas. No empieces la obra sin confirmarlo con la GMU.",
+      "tasa": "Como ejemplo: unos 32,15 euros de tasa más un porcentaje sobre el presupuesto de obra. El importe exacto lo calcula Urbanismo.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal de licencias urbanísticas (referencia pendiente de verificación)"
+        },
+        {
+          "titulo": "Ley del Suelo y de los Espacios Naturales Protegidos de Canarias (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/licencia-obra-menor",
+      "areaId": "urbanismo",
+      "presencial": {
+        "nombre": "Gerencia Municipal de Urbanismo (GMU)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 56"
+      },
+      "tema": "urbanismo",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano",
+        "empresa"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-05-28",
+      "relacionados": [
+        "licencia-actividad",
+        "plusvalia-municipal-iivtnu",
+        "instancia-generica"
+      ]
+    },
+    "estado": "en_revision",
+    "pubFecha": "2026-05-28",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-05-28",
+    "areaId": "urbanismo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "M. Hernández (Editor, Urbanismo)",
+    "enviadoPor": "M. Hernández (Editor, Urbanismo)",
+    "fechaEnvio": "2026-09-05",
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-05-28",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "licencia-obra-menor",
+          "tituloClaro": "Hacer una obra pequeña en casa",
+          "tituloOficial": "Licencia urbanística de obra menor",
+          "resumen": {
+            "queEs": "Es el permiso para arreglos pequeños: baño, cocina, ventanas o pintar la fachada.",
+            "queNecesito": "Necesitas describir la obra y decir quién la va a hacer.",
+            "dondeSeHace": "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6, o en la Sede Electrónica."
+          },
+          "descripcion": "Si vas a cambiar el baño, la cocina, las ventanas o arreglar el tejado, necesitas este permiso. No vale para tirar muros de carga ni para casas nuevas: eso es obra mayor. La GMU (Gerencia Municipal de Urbanismo) es la oficina que lo tramita.",
+          "requisitos": [
+            "La obra no puede cambiar la estructura del edificio ni su uso.",
+            "La vivienda debe estar en suelo urbano y sin expedientes de disciplina abiertos.",
+            "Si vives en un edificio protegido o en Rambla de Castro, consulta antes: puede necesitar permiso extra."
+          ],
+          "documentacion": [
+            "Descripción de la obra: qué vas a hacer y con qué materiales.",
+            "Presupuesto firmado por la empresa o el albañil.",
+            "Fotos del estado actual.",
+            "Si cambias ventanas o fachada, plano simple o croquis.",
+            "DNI y referencia catastral del inmueble."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Prepara la descripción, el presupuesto y las fotos."
+            },
+            {
+              "paso": 2,
+              "texto": "Presenta la solicitud en la Sede Electrónica o en la GMU con cita."
+            },
+            {
+              "paso": 3,
+              "texto": "Paga la tasa cuando te llegue la carta de pago."
+            },
+            {
+              "paso": 4,
+              "texto": "Espera la licencia antes de empezar la obra."
+            }
+          ],
+          "identificacion": "Online necesitas certificado digital o Cl@ve.",
+          "plazoResolucion": "Unos 2 meses desde que presentas todo completo.",
+          "silencio": "Si pasan 2 meses sin respuesta, en general se entiende concedida, salvo en zonas protegidas. No empieces la obra sin confirmarlo con la GMU.",
+          "tasa": "Como ejemplo: unos 32,15 euros de tasa más un porcentaje sobre el presupuesto de obra. El importe exacto lo calcula Urbanismo.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal de licencias urbanísticas (referencia pendiente de verificación)"
+            },
+            {
+              "titulo": "Ley del Suelo y de los Espacios Naturales Protegidos de Canarias (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/licencia-obra-menor",
+          "areaId": "urbanismo",
+          "presencial": {
+            "nombre": "Gerencia Municipal de Urbanismo (GMU)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 56"
+          },
+          "tema": "urbanismo",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano",
+            "empresa"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-05-28",
+          "relacionados": [
+            "licencia-actividad",
+            "plusvalia-municipal-iivtnu",
+            "instancia-generica"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "licencia-actividad",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "licencia-actividad",
+      "tituloClaro": "Abrir un negocio o local",
+      "tituloOficial": "Licencia de actividad e instalación",
+      "resumen": {
+        "queEs": "Es el permiso para abrir una tienda, un bar, una oficina o un taller.",
+        "queNecesito": "Necesitas un técnico que prepare el proyecto del local.",
+        "dondeSeHace": "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6."
+      },
+      "descripcion": "Antes de abrir un negocio necesitas que el Ayuntamiento compruebe que el local cumple las normas de seguridad, ruido e higiene. Los negocios pequeños sin obras pueden usar un trámite más rápido: pregunta en la GMU.",
+      "requisitos": [
+        "El local debe estar en una zona donde ese negocio esté permitido.",
+        "Contar con un proyecto o memoria firmado por un técnico.",
+        "Estar dado de alta en Hacienda y en la Seguridad Social antes de abrir."
+      ],
+      "documentacion": [
+        "Proyecto o memoria técnica del local, firmado por técnico competente.",
+        "Plano del local y de su ubicación.",
+        "Contrato de alquiler o escritura del local.",
+        "DNI o CIF de quien abre el negocio.",
+        "Justificante de haber pagado la tasa."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Habla con la GMU antes de alquilar: confirma que ese negocio puede abrir ahí."
+        },
+        {
+          "paso": 2,
+          "texto": "Encarga el proyecto a un técnico."
+        },
+        {
+          "paso": 3,
+          "texto": "Presenta la solicitud con el proyecto en la Sede o en la GMU."
+        },
+        {
+          "paso": 4,
+          "texto": "Los técnicos municipales visitan el local antes de la apertura."
+        }
+      ],
+      "identificacion": "Online necesitas certificado digital o Cl@ve.",
+      "plazoResolucion": "Unos 3 meses en actividades normales; más en bares o locales con música.",
+      "silencio": "Si no hay respuesta en plazo, en general se entiende desestimada por seguridad. Pregunta en la GMU.",
+      "tasa": "Como ejemplo: apertura de comercio pequeño unos 120 euros. Bares y locales grandes pagan más según metros.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal reguladora de actividades (referencia pendiente de verificación)"
+        },
+        {
+          "titulo": "Ley canaria de actividades clasificadas (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/licencia-actividad",
+      "areaId": "urbanismo",
+      "presencial": {
+        "nombre": "Gerencia Municipal de Urbanismo (GMU)",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 56"
+      },
+      "tema": "actividad-economica",
+      "temasSecundarios": [
+        "urbanismo"
+      ],
+      "perfiles": [
+        "empresa",
+        "asociacion"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-04-22",
+      "relacionados": [
+        "licencia-obra-menor",
+        "instancia-generica",
+        "cesion-derecho-cobro"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-04-22",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-04-22",
+    "areaId": "urbanismo",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-04-22",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "licencia-actividad",
+          "tituloClaro": "Abrir un negocio o local",
+          "tituloOficial": "Licencia de actividad e instalación",
+          "resumen": {
+            "queEs": "Es el permiso para abrir una tienda, un bar, una oficina o un taller.",
+            "queNecesito": "Necesitas un técnico que prepare el proyecto del local.",
+            "dondeSeHace": "Se pide en la Gerencia Municipal de Urbanismo (GMU), en Avenida de Canarias, 6."
+          },
+          "descripcion": "Antes de abrir un negocio necesitas que el Ayuntamiento compruebe que el local cumple las normas de seguridad, ruido e higiene. Los negocios pequeños sin obras pueden usar un trámite más rápido: pregunta en la GMU.",
+          "requisitos": [
+            "El local debe estar en una zona donde ese negocio esté permitido.",
+            "Contar con un proyecto o memoria firmado por un técnico.",
+            "Estar dado de alta en Hacienda y en la Seguridad Social antes de abrir."
+          ],
+          "documentacion": [
+            "Proyecto o memoria técnica del local, firmado por técnico competente.",
+            "Plano del local y de su ubicación.",
+            "Contrato de alquiler o escritura del local.",
+            "DNI o CIF de quien abre el negocio.",
+            "Justificante de haber pagado la tasa."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Habla con la GMU antes de alquilar: confirma que ese negocio puede abrir ahí."
+            },
+            {
+              "paso": 2,
+              "texto": "Encarga el proyecto a un técnico."
+            },
+            {
+              "paso": 3,
+              "texto": "Presenta la solicitud con el proyecto en la Sede o en la GMU."
+            },
+            {
+              "paso": 4,
+              "texto": "Los técnicos municipales visitan el local antes de la apertura."
+            }
+          ],
+          "identificacion": "Online necesitas certificado digital o Cl@ve.",
+          "plazoResolucion": "Unos 3 meses en actividades normales; más en bares o locales con música.",
+          "silencio": "Si no hay respuesta en plazo, en general se entiende desestimada por seguridad. Pregunta en la GMU.",
+          "tasa": "Como ejemplo: apertura de comercio pequeño unos 120 euros. Bares y locales grandes pagan más según metros.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal reguladora de actividades (referencia pendiente de verificación)"
+            },
+            {
+              "titulo": "Ley canaria de actividades clasificadas (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/licencia-actividad",
+          "areaId": "urbanismo",
+          "presencial": {
+            "nombre": "Gerencia Municipal de Urbanismo (GMU)",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 56"
+          },
+          "tema": "actividad-economica",
+          "temasSecundarios": [
+            "urbanismo"
+          ],
+          "perfiles": [
+            "empresa",
+            "asociacion"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-04-22",
+          "relacionados": [
+            "licencia-obra-menor",
+            "instancia-generica",
+            "cesion-derecho-cobro"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "cesion-derecho-cobro",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "cesion-derecho-cobro",
+      "tituloClaro": "Cobrar una ayuda o factura en otra cuenta",
+      "tituloOficial": "Cesión del derecho de cobro",
+      "resumen": {
+        "queEs": "Es decir al Ayuntamiento en qué cuenta quieres cobrar una ayuda o factura.",
+        "queNecesito": "Necesitas tu DNI y el número de tu cuenta bancaria.",
+        "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6."
+      },
+      "descripcion": "Si el Ayuntamiento te va a pagar (una ayuda, una subvención o una factura de tu empresa), con este papel indicas la cuenta donde quieres recibir el dinero. También sirve para ceder el cobro a otra persona.",
+      "requisitos": [
+        "Tener un pago pendiente del Ayuntamiento a tu favor.",
+        "Ser la persona titular de la cuenta o autorizar la cesión ante funcionario."
+      ],
+      "documentacion": [
+        "DNI, NIE o CIF.",
+        "Número de cuenta (IBAN).",
+        "Documento que acredite el pago pendiente: resolución de ayuda o factura.",
+        "Si cedes el cobro a otra persona, DNI de las dos partes."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Rellena el modelo de cesión con tus datos y tu cuenta."
+        },
+        {
+          "paso": 2,
+          "texto": "Preséntalo en la Sede Electrónica o en Hacienda."
+        },
+        {
+          "paso": 3,
+          "texto": "El pago llega a esa cuenta cuando se apruebe."
+        }
+      ],
+      "identificacion": "Online necesitas certificado digital o Cl@ve.",
+      "plazoResolucion": "Se registra en unos 15 días.",
+      "silencio": "Es un acto de registro: no tiene silencio administrativo.",
+      "tasa": "Gratuito.",
+      "tasaGratuita": true,
+      "normativa": [
+        {
+          "titulo": "Ley General de Subvenciones: cobro de ayudas",
+          "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/cesion-derecho-cobro",
+      "areaId": "hacienda",
+      "presencial": {
+        "nombre": "Oficina de Hacienda",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 48"
+      },
+      "tema": "tributos",
+      "temasSecundarios": [
+        "servicios-sociales"
+      ],
+      "perfiles": [
+        "ciudadano",
+        "empresa",
+        "asociacion"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-02-18",
+      "relacionados": [
+        "instancia-generica",
+        "licencia-actividad",
+        "plusvalia-municipal-iivtnu"
+      ]
+    },
+    "estado": "caducado",
+    "pubFecha": "2026-02-18",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2024-11-10",
+    "areaId": "hacienda",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-02-18",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "cesion-derecho-cobro",
+          "tituloClaro": "Cobrar una ayuda o factura en otra cuenta",
+          "tituloOficial": "Cesión del derecho de cobro",
+          "resumen": {
+            "queEs": "Es decir al Ayuntamiento en qué cuenta quieres cobrar una ayuda o factura.",
+            "queNecesito": "Necesitas tu DNI y el número de tu cuenta bancaria.",
+            "dondeSeHace": "Se hace por internet en la Sede Electrónica o en persona en la Oficina de Hacienda, en Avenida de Canarias, 6."
+          },
+          "descripcion": "Si el Ayuntamiento te va a pagar (una ayuda, una subvención o una factura de tu empresa), con este papel indicas la cuenta donde quieres recibir el dinero. También sirve para ceder el cobro a otra persona.",
+          "requisitos": [
+            "Tener un pago pendiente del Ayuntamiento a tu favor.",
+            "Ser la persona titular de la cuenta o autorizar la cesión ante funcionario."
+          ],
+          "documentacion": [
+            "DNI, NIE o CIF.",
+            "Número de cuenta (IBAN).",
+            "Documento que acredite el pago pendiente: resolución de ayuda o factura.",
+            "Si cedes el cobro a otra persona, DNI de las dos partes."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Rellena el modelo de cesión con tus datos y tu cuenta."
+            },
+            {
+              "paso": 2,
+              "texto": "Preséntalo en la Sede Electrónica o en Hacienda."
+            },
+            {
+              "paso": 3,
+              "texto": "El pago llega a esa cuenta cuando se apruebe."
+            }
+          ],
+          "identificacion": "Online necesitas certificado digital o Cl@ve.",
+          "plazoResolucion": "Se registra en unos 15 días.",
+          "silencio": "Es un acto de registro: no tiene silencio administrativo.",
+          "tasa": "Gratuito.",
+          "tasaGratuita": true,
+          "normativa": [
+            {
+              "titulo": "Ley General de Subvenciones: cobro de ayudas",
+              "url": "https://www.boe.es/buscar/act.php?id=BOE-A-2003-20977"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/cesion-derecho-cobro",
+          "areaId": "hacienda",
+          "presencial": {
+            "nombre": "Oficina de Hacienda",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 48"
+          },
+          "tema": "tributos",
+          "temasSecundarios": [
+            "servicios-sociales"
+          ],
+          "perfiles": [
+            "ciudadano",
+            "empresa",
+            "asociacion"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-02-18",
+          "relacionados": [
+            "instancia-generica",
+            "licencia-actividad",
+            "plusvalia-municipal-iivtnu"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [
+      {
+        "tipo": "revision-superada",
+        "mensaje": "Ha superado su periodicidad de revisión acordada (6 meses sin revisar).",
+        "severidad": "bloqueo",
+        "fecha": "2026-09-08"
+      }
+    ],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "uso-instalaciones-deportivas",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "uso-instalaciones-deportivas",
+      "tituloClaro": "Reservar una pista o campo de deporte",
+      "tituloOficial": "Autorización de uso de instalaciones deportivas municipales",
+      "resumen": {
+        "queEs": "Es reservar una pista, el pabellón o el campo para jugar o entrenar.",
+        "queNecesito": "Necesitas decir qué día, a qué hora y cuántas personas sois.",
+        "dondeSeHace": "Se reserva en la Oficina de Deportes, en la piscina municipal, o en la propia instalación."
+      },
+      "descripcion": "Puedes reservar por horas el pabellón, las pistas del Estadio Los Príncipes, las canchas de los barrios y las salas. Los clubes de Los Realejos tienen preferencia en horario de tarde.",
+      "requisitos": [
+        "Hacer la reserva con al menos 48 horas de antelación.",
+        "Dejar fianza en torneos y usos de fin de semana.",
+        "Respetar las normas de cada instalación."
+      ],
+      "documentacion": [
+        "DNI de quien reserva.",
+        "Si es un club, CIF y carta de la directiva.",
+        "Justificante del pago de la tasa o de la fianza."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Llama o escribe a Deportes para comprobar que la pista está libre."
+        },
+        {
+          "paso": 2,
+          "texto": "Rellena la solicitud de reserva con día y hora."
+        },
+        {
+          "paso": 3,
+          "texto": "Paga la tasa y guarda el justificante para el día de uso."
+        }
+      ],
+      "identificacion": "En persona basta el DNI.",
+      "plazoResolucion": "La reserva se confirma en 48 horas.",
+      "silencio": "No aplica.",
+      "tasa": "Como ejemplo: pista exterior unos 12 euros por hora; pabellón completo unos 30 euros por hora. Clubes locales con convenio pagan menos.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)"
+        },
+        {
+          "titulo": "Reglamento municipal de uso de instalaciones deportivas (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/reserva-instalaciones-deportivas",
+      "areaId": "deportes",
+      "presencial": {
+        "nombre": "Oficina de Deportes",
+        "direccion": "Piscina municipal, Avenida de los Remedios",
+        "telefono": "922 34 62 45"
+      },
+      "tema": "deportes",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano",
+        "asociacion",
+        "empresa"
+      ],
+      "plazoAbierto": false,
+      "fechaActualizacion": "2026-06-30",
+      "relacionados": [
+        "inscripcion-piscina-municipal",
+        "instancia-generica",
+        "licencia-actividad"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-06-30",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-06-30",
+    "areaId": "deportes",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-06-30",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "uso-instalaciones-deportivas",
+          "tituloClaro": "Reservar una pista o campo de deporte",
+          "tituloOficial": "Autorización de uso de instalaciones deportivas municipales",
+          "resumen": {
+            "queEs": "Es reservar una pista, el pabellón o el campo para jugar o entrenar.",
+            "queNecesito": "Necesitas decir qué día, a qué hora y cuántas personas sois.",
+            "dondeSeHace": "Se reserva en la Oficina de Deportes, en la piscina municipal, o en la propia instalación."
+          },
+          "descripcion": "Puedes reservar por horas el pabellón, las pistas del Estadio Los Príncipes, las canchas de los barrios y las salas. Los clubes de Los Realejos tienen preferencia en horario de tarde.",
+          "requisitos": [
+            "Hacer la reserva con al menos 48 horas de antelación.",
+            "Dejar fianza en torneos y usos de fin de semana.",
+            "Respetar las normas de cada instalación."
+          ],
+          "documentacion": [
+            "DNI de quien reserva.",
+            "Si es un club, CIF y carta de la directiva.",
+            "Justificante del pago de la tasa o de la fianza."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Llama o escribe a Deportes para comprobar que la pista está libre."
+            },
+            {
+              "paso": 2,
+              "texto": "Rellena la solicitud de reserva con día y hora."
+            },
+            {
+              "paso": 3,
+              "texto": "Paga la tasa y guarda el justificante para el día de uso."
+            }
+          ],
+          "identificacion": "En persona basta el DNI.",
+          "plazoResolucion": "La reserva se confirma en 48 horas.",
+          "silencio": "No aplica.",
+          "tasa": "Como ejemplo: pista exterior unos 12 euros por hora; pabellón completo unos 30 euros por hora. Clubes locales con convenio pagan menos.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal de precios de instalaciones deportivas (referencia pendiente de verificación)"
+            },
+            {
+              "titulo": "Reglamento municipal de uso de instalaciones deportivas (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/reserva-instalaciones-deportivas",
+          "areaId": "deportes",
+          "presencial": {
+            "nombre": "Oficina de Deportes",
+            "direccion": "Piscina municipal, Avenida de los Remedios",
+            "telefono": "922 34 62 45"
+          },
+          "tema": "deportes",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano",
+            "asociacion",
+            "empresa"
+          ],
+          "plazoAbierto": false,
+          "fechaActualizacion": "2026-06-30",
+          "relacionados": [
+            "inscripcion-piscina-municipal",
+            "instancia-generica",
+            "licencia-actividad"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "pago-ibi-tasas",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "pago-ibi-tasas",
+      "tituloClaro": "Pagar el IBI o una tasa",
+      "tituloOficial": "Pago de tributos municipales (IBI y tasas)",
+      "resumen": {
+        "queEs": "Es pagar el impuesto de tu casa (IBI) o una tasa del Ayuntamiento.",
+        "queNecesito": "Necesitas la carta de pago o la referencia del recibo.",
+        "dondeSeHace": "Se paga por internet en la pasarela de pago, en el banco o en persona en la Oficina de Hacienda."
+      },
+      "descripcion": "El IBI (Impuesto sobre Bienes Inmuebles) es el impuesto anual de tu casa, local o terreno. También puedes pagar aquí tasas como la basura, vados o multas. Si no tienes la carta de pago, pídela en Hacienda.",
+      "requisitos": [
+        "Tener la carta de pago o conocer la referencia del recibo.",
+        "Pagar antes de la fecha límite para evitar recargos."
+      ],
+      "documentacion": [
+        "Carta de pago o referencia del recibo.",
+        "Tarjeta bancaria si pagas por internet."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Entra en la pasarela de pago online con tu carta de pago."
+        },
+        {
+          "paso": 2,
+          "texto": "Comprueba el importe y paga con tarjeta."
+        },
+        {
+          "paso": 3,
+          "texto": "Guarda el justificante de pago."
+        },
+        {
+          "paso": 4,
+          "texto": "También puedes pagar en el banco o en Hacienda con cita."
+        }
+      ],
+      "identificacion": "Para pagar online no necesitas certificado digital. Solo tu tarjeta.",
+      "plazoResolucion": "El pago es inmediato y queda registrado al momento.",
+      "silencio": "Es un pago, no una solicitud: no hay silencio administrativo.",
+      "tasa": "El IBI depende del valor de tu vivienda. Como ejemplo, una vivienda media en Realejo Bajo paga unos 210 euros al año. Mira tu recibo para ver tu importe.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal del IBI (referencia pendiente de verificación)"
+        },
+        {
+          "titulo": "Calendario fiscal municipal (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/pago-tributos",
+      "areaId": "hacienda",
+      "presencial": {
+        "nombre": "Oficina de Hacienda",
+        "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+        "telefono": "922 34 62 48"
+      },
+      "tema": "tributos",
+      "temasSecundarios": [],
+      "perfiles": [
+        "ciudadano",
+        "empresa"
+      ],
+      "plazoAbierto": true,
+      "fechaActualizacion": "2026-07-01",
+      "relacionados": [
+        "plusvalia-municipal-iivtnu",
+        "cesion-derecho-cobro",
+        "licencia-obra-menor"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-01",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-07-01",
+    "areaId": "hacienda",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-01",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "pago-ibi-tasas",
+          "tituloClaro": "Pagar el IBI o una tasa",
+          "tituloOficial": "Pago de tributos municipales (IBI y tasas)",
+          "resumen": {
+            "queEs": "Es pagar el impuesto de tu casa (IBI) o una tasa del Ayuntamiento.",
+            "queNecesito": "Necesitas la carta de pago o la referencia del recibo.",
+            "dondeSeHace": "Se paga por internet en la pasarela de pago, en el banco o en persona en la Oficina de Hacienda."
+          },
+          "descripcion": "El IBI (Impuesto sobre Bienes Inmuebles) es el impuesto anual de tu casa, local o terreno. También puedes pagar aquí tasas como la basura, vados o multas. Si no tienes la carta de pago, pídela en Hacienda.",
+          "requisitos": [
+            "Tener la carta de pago o conocer la referencia del recibo.",
+            "Pagar antes de la fecha límite para evitar recargos."
+          ],
+          "documentacion": [
+            "Carta de pago o referencia del recibo.",
+            "Tarjeta bancaria si pagas por internet."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Entra en la pasarela de pago online con tu carta de pago."
+            },
+            {
+              "paso": 2,
+              "texto": "Comprueba el importe y paga con tarjeta."
+            },
+            {
+              "paso": 3,
+              "texto": "Guarda el justificante de pago."
+            },
+            {
+              "paso": 4,
+              "texto": "También puedes pagar en el banco o en Hacienda con cita."
+            }
+          ],
+          "identificacion": "Para pagar online no necesitas certificado digital. Solo tu tarjeta.",
+          "plazoResolucion": "El pago es inmediato y queda registrado al momento.",
+          "silencio": "Es un pago, no una solicitud: no hay silencio administrativo.",
+          "tasa": "El IBI depende del valor de tu vivienda. Como ejemplo, una vivienda media en Realejo Bajo paga unos 210 euros al año. Mira tu recibo para ver tu importe.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal del IBI (referencia pendiente de verificación)"
+            },
+            {
+              "titulo": "Calendario fiscal municipal (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/pago-tributos",
+          "areaId": "hacienda",
+          "presencial": {
+            "nombre": "Oficina de Hacienda",
+            "direccion": "Avenida de Canarias, 6, Realejo Bajo",
+            "telefono": "922 34 62 48"
+          },
+          "tema": "tributos",
+          "temasSecundarios": [],
+          "perfiles": [
+            "ciudadano",
+            "empresa"
+          ],
+          "plazoAbierto": true,
+          "fechaActualizacion": "2026-07-01",
+          "relacionados": [
+            "plusvalia-municipal-iivtnu",
+            "cesion-derecho-cobro",
+            "licencia-obra-menor"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  },
+  {
+    "id": "inscripcion-actividades-infantiles",
+    "coleccion": "tramites",
+    "contenido": {
+      "id": "inscripcion-actividades-infantiles",
+      "tituloClaro": "Apuntar a mi hijo a una actividad",
+      "tituloOficial": "Inscripción en actividades infantiles y juveniles municipales",
+      "resumen": {
+        "queEs": "Es apuntar a tu hijo a talleres, ludoteca, campamentos y actividades de verano.",
+        "queNecesito": "Necesitas el DNI del padre o la madre y los datos del niño.",
+        "dondeSeHace": "Se hace en la Casa de la Juventud, en Realejo Alto, o por internet."
+      },
+      "descripcion": "El Ayuntamiento organiza actividades para niños durante el curso y en verano: ludoteca, talleres, campamentos y clases. Las plazas son limitadas y se dan por orden de llegada.",
+      "requisitos": [
+        "Niños de 3 a 16 años empadronados en Los Realejos (tienen prioridad).",
+        "La inscripción la hace el padre, la madre o el tutor legal.",
+        "Estar al día en los pagos de actividades anteriores."
+      ],
+      "documentacion": [
+        "DNI del padre, madre o tutor.",
+        "Libro de familia o certificado de nacimiento.",
+        "Tarjeta sanitaria del niño.",
+        "Si tiene alergias o necesita medicación, informe médico."
+      ],
+      "canales": [
+        "ambos"
+      ],
+      "comoSeHace": [
+        {
+          "paso": 1,
+          "texto": "Mira la oferta de actividades en la agenda o en la Casa de la Juventud."
+        },
+        {
+          "paso": 2,
+          "texto": "Rellena la ficha de inscripción con los datos del niño."
+        },
+        {
+          "paso": 3,
+          "texto": "Paga la cuota si la actividad la tiene. Hay descuentos para familias numerosas."
+        },
+        {
+          "paso": 4,
+          "texto": "Recibirás la confirmación de plaza por teléfono o correo."
+        }
+      ],
+      "identificacion": "En persona basta el DNI. Online necesitas Cl@ve o certificado.",
+      "plazoResolucion": "La plaza se confirma en unos 7 días si hay sitio libre.",
+      "silencio": "Si no recibes respuesta en 15 días, llama a Juventud: puede que no haya plaza.",
+      "tasa": "Como ejemplo: ludoteca mensual unos 20 euros; campamento de verano unos 60 euros por quincena. Familias numerosas pagan la mitad.",
+      "tasaGratuita": false,
+      "normativa": [
+        {
+          "titulo": "Ordenanza municipal de precios de actividades culturales y juveniles (referencia pendiente de verificación)"
+        }
+      ],
+      "sedeUrl": "https://sede.losrealejos.es/tramites/inscripcion-actividades-infantiles",
+      "areaId": "juventud",
+      "presencial": {
+        "nombre": "Casa de la Juventud",
+        "direccion": "Realejo Alto",
+        "telefono": "922 34 62 49"
+      },
+      "tema": "cultura",
+      "temasSecundarios": [
+        "servicios-sociales"
+      ],
+      "perfiles": [
+        "ciudadano"
+      ],
+      "plazoAbierto": true,
+      "fechaActualizacion": "2026-07-05",
+      "relacionados": [
+        "inscripcion-piscina-municipal",
+        "uso-instalaciones-deportivas",
+        "alta-en-el-padron"
+      ]
+    },
+    "estado": "publicado",
+    "pubFecha": "2026-07-05",
+    "validezHasta": null,
+    "expiraEl": null,
+    "periodicidadMeses": 6,
+    "ultimaRevision": "2026-07-05",
+    "areaId": "juventud",
+    "autor": "Contenido migrado del portal",
+    "ultimoEditor": "Contenido migrado del portal",
+    "enviadoPor": null,
+    "fechaEnvio": null,
+    "revision": null,
+    "versiones": [
+      {
+        "n": 1,
+        "fecha": "2026-07-05",
+        "autor": "Contenido migrado del portal",
+        "motivo": "Migración inicial del portal público",
+        "contenido": {
+          "id": "inscripcion-actividades-infantiles",
+          "tituloClaro": "Apuntar a mi hijo a una actividad",
+          "tituloOficial": "Inscripción en actividades infantiles y juveniles municipales",
+          "resumen": {
+            "queEs": "Es apuntar a tu hijo a talleres, ludoteca, campamentos y actividades de verano.",
+            "queNecesito": "Necesitas el DNI del padre o la madre y los datos del niño.",
+            "dondeSeHace": "Se hace en la Casa de la Juventud, en Realejo Alto, o por internet."
+          },
+          "descripcion": "El Ayuntamiento organiza actividades para niños durante el curso y en verano: ludoteca, talleres, campamentos y clases. Las plazas son limitadas y se dan por orden de llegada.",
+          "requisitos": [
+            "Niños de 3 a 16 años empadronados en Los Realejos (tienen prioridad).",
+            "La inscripción la hace el padre, la madre o el tutor legal.",
+            "Estar al día en los pagos de actividades anteriores."
+          ],
+          "documentacion": [
+            "DNI del padre, madre o tutor.",
+            "Libro de familia o certificado de nacimiento.",
+            "Tarjeta sanitaria del niño.",
+            "Si tiene alergias o necesita medicación, informe médico."
+          ],
+          "canales": [
+            "ambos"
+          ],
+          "comoSeHace": [
+            {
+              "paso": 1,
+              "texto": "Mira la oferta de actividades en la agenda o en la Casa de la Juventud."
+            },
+            {
+              "paso": 2,
+              "texto": "Rellena la ficha de inscripción con los datos del niño."
+            },
+            {
+              "paso": 3,
+              "texto": "Paga la cuota si la actividad la tiene. Hay descuentos para familias numerosas."
+            },
+            {
+              "paso": 4,
+              "texto": "Recibirás la confirmación de plaza por teléfono o correo."
+            }
+          ],
+          "identificacion": "En persona basta el DNI. Online necesitas Cl@ve o certificado.",
+          "plazoResolucion": "La plaza se confirma en unos 7 días si hay sitio libre.",
+          "silencio": "Si no recibes respuesta en 15 días, llama a Juventud: puede que no haya plaza.",
+          "tasa": "Como ejemplo: ludoteca mensual unos 20 euros; campamento de verano unos 60 euros por quincena. Familias numerosas pagan la mitad.",
+          "tasaGratuita": false,
+          "normativa": [
+            {
+              "titulo": "Ordenanza municipal de precios de actividades culturales y juveniles (referencia pendiente de verificación)"
+            }
+          ],
+          "sedeUrl": "https://sede.losrealejos.es/tramites/inscripcion-actividades-infantiles",
+          "areaId": "juventud",
+          "presencial": {
+            "nombre": "Casa de la Juventud",
+            "direccion": "Realejo Alto",
+            "telefono": "922 34 62 49"
+          },
+          "tema": "cultura",
+          "temasSecundarios": [
+            "servicios-sociales"
+          ],
+          "perfiles": [
+            "ciudadano"
+          ],
+          "plazoAbierto": true,
+          "fechaActualizacion": "2026-07-05",
+          "relacionados": [
+            "inscripcion-piscina-municipal",
+            "uso-instalaciones-deportivas",
+            "alta-en-el-padron"
+          ]
+        }
+      }
+    ],
+    "hallazgos": [],
+    "estadoDatos": "no_aplica",
+    "notaDatos": null
+  }
+]

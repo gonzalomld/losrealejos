@@ -9,7 +9,13 @@ import {
   restaurarVersion as restaurarAlmacen,
 } from "./almacen";
 import type { Coleccion, EstadoContenido } from "./tipos-editoriales";
+import { ERROR_SOLO_LECTURA, esEscribible } from "./almacen";
 import { registrarActividad } from "@/lib/actividad/registro";
+
+/** ¿Puede escribir este entorno? Lo decide el probe real, no una variable. */
+export async function accionPuedeEscribir(): Promise<{ escribible: boolean }> {
+  return { escribible: await esEscribible() };
+}
 
 function rutasAfectadas(coleccion: Coleccion, id: string): string[] {
   const base: Record<Coleccion, string> = {
@@ -36,6 +42,7 @@ function rutasAfectadas(coleccion: Coleccion, id: string): string[] {
 
 export async function accionGuardar<T>(coleccion: Coleccion, id: string, contenido: T, autor: string, motivo = "") {
   try {
+    if (!(await esEscribible())) return { ok: false as const, error: ERROR_SOLO_LECTURA };
     const reg = await guardarContenido(coleccion, id, contenido, autor, motivo);
     await registrarActividad({ usuario: autor, accion: "modificacion", elemento: `${coleccion}/${id}`, detalle: motivo || "Contenido editado" });
     for (const r of rutasAfectadas(coleccion, id)) revalidatePath(r);
@@ -47,6 +54,7 @@ export async function accionGuardar<T>(coleccion: Coleccion, id: string, conteni
 
 export async function accionCambiarEstado(coleccion: Coleccion, id: string, estado: EstadoContenido, autor: string, comentario = "") {
   try {
+    if (!(await esEscribible())) return { ok: false as const, error: ERROR_SOLO_LECTURA };
     const reg = await cambiarEstadoAlmacen(coleccion, id, estado, autor, comentario);
     await registrarActividad({ usuario: autor, accion: estado === "publicado" ? "publicacion" : estado === "en_revision" ? "envio_revision" : "modificacion", elemento: `${coleccion}/${id}`, detalle: comentario || `Estado → ${estado}` });
     for (const r of rutasAfectadas(coleccion, id)) revalidatePath(r);
@@ -58,6 +66,7 @@ export async function accionCambiarEstado(coleccion: Coleccion, id: string, esta
 
 export async function accionRestaurarVersion(coleccion: Coleccion, id: string, n: number, autor: string) {
   try {
+    if (!(await esEscribible())) return { ok: false as const, error: ERROR_SOLO_LECTURA };
     const reg = await restaurarAlmacen(coleccion, id, n, autor);
     await registrarActividad({ usuario: autor, accion: "modificacion", elemento: `${coleccion}/${id}`, detalle: `Restaurada la versión ${n}` });
     for (const r of rutasAfectadas(coleccion, id)) revalidatePath(r);
@@ -75,6 +84,7 @@ export async function accionCrear<T>(
   autor: string,
 ) {
   try {
+    if (!(await esEscribible())) return { ok: false as const, error: ERROR_SOLO_LECTURA };
     const reg = await crearRegistro(coleccion, id, contenido, areaId, autor);
     await registrarActividad({ usuario: autor, accion: "modificacion", elemento: `${coleccion}/${id}`, detalle: "Contenido creado" });
     for (const r of rutasAfectadas(coleccion, id)) revalidatePath(r);

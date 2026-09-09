@@ -2,15 +2,18 @@ import type { Metadata } from "next";
 import { SearchBox } from "@/components/sitio/SearchBox";
 import { TramiteCard } from "@/components/sitio/TramiteCard";
 import { CONTACTO_OAC, TRAMITES_FRECUENTES } from "@/data/vocabularios";
-import { TRAMITES } from "@/data/tramites";
+import { leerParaFront } from "@/lib/cms/almacen";
+import type { Tramite } from "@/data/tramites";
 
 export const metadata: Metadata = {
   title: "Página no encontrada",
   description: "Esta página no existe o ha cambiado de dirección. Busca tu gestión o llama al 922 34 62 34.",
 };
 
-export default function NotFound() {
-  const frecuentes = TRAMITES.filter((t) => (TRAMITES_FRECUENTES as readonly string[]).includes(t.id));
+/** El 404 solo ofrece trámites publicados y vigentes: nunca despublicados ni caducados. */
+export default async function NotFound() {
+  const publicados = await leerParaFront<Tramite>("tramites");
+  const frecuentes = publicados.filter((t) => (TRAMITES_FRECUENTES as readonly string[]).includes(t.id));
   return (
     <div className="mx-auto max-w-6xl px-4 py-10">
       <h1 className="text-3xl font-extrabold">Esta página no existe o ha cambiado de dirección</h1>

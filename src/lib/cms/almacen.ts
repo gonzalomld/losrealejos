@@ -12,16 +12,43 @@ import type { Coleccion, RegistroEditorial } from "./tipos-editoriales";
  *   registros publicados y vigentes, con la forma exacta de los tipos
  *   actuales. El front no sabe que existe un envoltorio editorial.
  * - Gestor (lectura + escritura): `leerParaGestor`, `guardarContenido`,
- *   `cambiarEstado`, `restaurarVersion`.
+ *   `cambiarEstado`, `restaurarVersion`, `crearRegistro`.
  *
- * Persistencia del prototipo: ficheros JSON versionados en el repositorio
- * (`data/cms/*.json`), uno por colección, con el registro editorial
- * completo. Sin .gitignore: el estado de la demostración debe ser estable
- * y reproducible. Sin memoria de proceso: en despliegue serverless cada
- * petición puede atender un proceso distinto.
+ * Persistencia: en desarrollo local los cambios se escriben en
+ * `data/cms/*.json` (versionados en el repositorio). En el entorno
+ * desplegado el sistema de ficheros es de solo lectura: la capacidad de
+ * escritura se prueba de verdad con `esEscribible()` (intento real de
+ * crear+borrar un fichero temporal, sin inferir de variables de entorno)
+ * y, si falla, el gestor entra en modo consulta con los controles de
+ * guardado deshabilitados y la explicación visible en la interfaz.
  */
 
 const DIR = path.join(process.cwd(), "data", "cms");
+const PROBE = path.join(DIR, ".probe-escritura");
+
+let probeCache: boolean | null = null;
+
+/** Prueba real de escritura (crear+borrar temporal). Nunca inferida de env. */
+export async function esEscribible(): Promise<boolean> {
+  if (probeCache !== null) return probeCache;
+  try {
+    await fs.mkdir(DIR, { recursive: true });
+    await fs.writeFile(PROBE, "ok", "utf-8");
+    await fs.unlink(PROBE);
+    probeCache = true;
+  } catch {
+    probeCache = false;
+  }
+  return probeCache;
+}
+
+/** Solo para pruebas: invalida la caché del probe. */
+export function _resetProbeCache(): void {
+  probeCache = null;
+}
+
+export const ERROR_SOLO_LECTURA =
+  "Entorno de demostración en solo lectura; la edición se demuestra en local.";
 
 let semilla: RegistroEditorial<unknown>[] | null = null;
 
@@ -34,23 +61,30 @@ function ruta(coleccion: Coleccion): string {
   return path.join(DIR, `${coleccion}.json`);
 }
 
-async function leerOverrides(coleccion: Coleccion): Promise<Record<string, RegistroEditorial<unknown>>> {
+async function leerAlmacen(coleccion: Coleccion): Promise<RegistroEditorial<unknown>[]> {
   try {
     const texto = await fs.readFile(ruta(coleccion), "utf-8");
     const arr = JSON.parse(texto) as RegistroEditorial<unknown>[];
-    const mapa: Record<string, RegistroEditorial<unknown>> = {};
-    for (const r of arr) mapa[r.id] = r;
-    return mapa;
+    return Array.isArray(arr) ? arr : [];
   } catch {
-    return {};
+    return [];
   }
 }
 
-/** Todos los registros de una colección: semilla + overrides fusionados por id. */
+/**
+ * Todos los registros de una colección: fusión de ambas fuentes.
+ * Semilla (reparto versionado) + todo lo del almacenamiento que no esté
+ * en ella (registros nuevos y overrides), indexado por id.
+ */
 export async function leerRegistros<T>(coleccion: Coleccion): Promise<RegistroEditorial<T>[]> {
   const base = getSemilla().filter((r) => r.coleccion === coleccion);
-  const overrides = await leerOverrides(coleccion);
-  return base.map((r) => (overrides[r.id] ? (overrides[r.id] as RegistroEditorial<T>) : (r as RegistroEditorial<T>)));
+  const almacenados = await leerAlmacen(coleccion);
+  const porId = new Map<string, RegistroEditorial<unknown>>();
+  for (const r of base) porId.set(r.id, r);
+  for (const r of almacenados) {
+    if (r && typeof r.id === "string" && r.coleccion === coleccion) porId.set(r.id, r);
+  }
+  return [...porId.values()] as RegistroEditorial<T>[];
 }
 
 /** Vista front: solo contenido publicado y vigente, forma exacta del tipo actual. */
@@ -84,11 +118,10 @@ export async function leerParaPreview<T>(
 }
 
 async function persistir(coleccion: Coleccion, regs: RegistroEditorial<unknown>[]): Promise<void> {
+  if (!(await esEscribible())) throw new Error(ERROR_SOLO_LECTURA);
   await fs.mkdir(DIR, { recursive: true });
-  // Solo persisten los registros que difieren de la semilla.
-  const base = new Map(getSemilla().filter((r) => r.coleccion === coleccion).map((r) => [r.id, JSON.stringify(r)]));
-  const distintos = regs.filter((r) => base.get(r.id) !== JSON.stringify(r));
-  await fs.writeFile(ruta(coleccion), JSON.stringify(distintos, null, 2) + "\n", "utf-8");
+  // El fichero versionado contiene el estado completo de la colección.
+  await fs.writeFile(ruta(coleccion), JSON.stringify(regs, null, 2) + "\n", "utf-8");
 }
 
 /** Guarda contenido editado; genera versión con autor, fecha y motivo. */
@@ -201,14 +234,30 @@ export async function crearRegistro<T>(
   return nuevo;
 }
 
-/** Restablece la demo al estado versionado (borra overrides). */
-export async function restablecerDemo(): Promise<void> {
-  try {
-    const ficheros = await fs.readdir(DIR);
-    await Promise.all(
-      ficheros.filter((f) => f.endsWith(".json")).map((f) => fs.unlink(path.join(DIR, f))),
-    );
-  } catch {
-    /* sin overrides: nada que restablecer */
-  }
+/** Restablece la demo al estado versionado: reescribe el fichero desde la semilla. */
+export async function restablecerDemo(coleccion?: Coleccion): Promise<void> {
+  if (!(await esEscribible())) throw new Error(ERROR_SOLO_LECTURA);
+  await fs.mkdir(DIR, { recursive: true });
+  const colecciones: Coleccion[] = coleccion
+    ? [coleccion]
+    : ["tramites", "noticias", "eventos", "ayudas", "empleo", "avisos", "servicios", "paginas", "areas", "documentos", "transparencia"];
+  await Promise.all(
+    colecciones.map((c) =>
+      fs.writeFile(ruta(c), JSON.stringify(getSemilla().filter((r) => r.coleccion === c), null, 2) + "\n", "utf-8"),
+    ),
+  );
+  // La actividad también vuelve a su semilla versionada.
+  const semillaActividad = [
+    { fecha: "2026-09-07", usuario: "M. Hernández (Editor, Urbanismo)", accion: "envio_revision", elemento: "tramites/licencia-obra-menor", detalle: "Enviada a revisión: actualizados requisitos" },
+    { fecha: "2026-09-06", usuario: "J. Pérez (Editor, Hacienda)", accion: "envio_revision", elemento: "tramites/plusvalia-municipal-iivtnu", detalle: "Enviada a revisión: nuevo plazo de resolución" },
+    { fecha: "2026-09-05", usuario: "R. Sosa (Validadora)", accion: "publicacion", elemento: "noticias/reforma-piscina-municipal-verano", detalle: "Publicada tras revisión" },
+    { fecha: "2026-09-04", usuario: "Administrador demo", accion: "cambio_permiso", elemento: "usuarios", detalle: "Asignada C. Ruiz a Bienestar Social" },
+  ];
+  await fs.writeFile(path.join(DIR, "actividad.json"), JSON.stringify(semillaActividad, null, 2) + "\n", "utf-8");
+}
+
+/** Estado de demostración versionado: genera data/cms/*.json desde la semilla. */
+export function estadoVersionado(): { coleccion: Coleccion; registros: RegistroEditorial<unknown>[] }[] {
+  const colecciones: Coleccion[] = ["tramites", "noticias", "eventos", "ayudas", "empleo", "avisos", "servicios", "paginas", "areas", "documentos", "transparencia"];
+  return colecciones.map((c) => ({ coleccion: c, registros: getSemilla().filter((r) => r.coleccion === c) }));
 }

@@ -1,5 +1,6 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
+import { esEscribible } from "@/lib/cms/almacen";
 
 export type AccionActividad =
   | "acceso"
@@ -45,10 +46,9 @@ export async function registrarActividad(entrada: Omit<EntradaActividad, "fecha"
     detalle: entrada.detalle,
   };
   const todas = [completa, ...actual].slice(0, 500);
-  try {
-    await fs.mkdir(path.dirname(FICHERO), { recursive: true });
-    await fs.writeFile(FICHERO, JSON.stringify(todas, null, 2) + "\n", "utf-8");
-  } catch {
-    /* en despliegues sin FS escribible el registro es de sesión; no bloquea la acción */
-  }
+  // La trazabilidad no bloquea la acción: si no se puede escribir, se registra
+  // en la respuesta de la acción y queda visible en la interfaz.
+  if (!(await esEscribible())) return;
+  await fs.mkdir(path.dirname(FICHERO), { recursive: true });
+  await fs.writeFile(FICHERO, JSON.stringify(todas, null, 2) + "\n", "utf-8");
 }

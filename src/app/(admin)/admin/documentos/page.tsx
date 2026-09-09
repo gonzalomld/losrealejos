@@ -1,7 +1,13 @@
-import { SeccionPlaceholder } from "@/components/admin/SeccionPlaceholder";
+import { definicionDe } from "@/lib/cms/colecciones";
+import { ColeccionClient } from "@/components/admin/ColeccionClient";
+import { leerParaGestor } from "@/lib/cms/almacen";
+import { notFound } from "next/navigation";
 
 export const dynamic = "force-dynamic";
 
-export default function Pagina() {
-  return <SeccionPlaceholder titulo="Biblioteca de documentos" descripcion="Documentos con formato, ejercicio y estado de revisión." />;
+export default async function Pagina() {
+  const definicion = definicionDe("documentos");
+  if (!definicion) notFound();
+  const regs = await leerParaGestor<Record<string, unknown>>("documentos" as never);
+  return <ColeccionClient definicion={definicion} iniciales={regs} />;
 }
