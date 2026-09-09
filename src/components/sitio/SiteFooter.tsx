@@ -120,9 +120,6 @@ export function SiteFooter() {
           ))}
         </div>
       </div>
-      <p className="pie-cierre">
-        Ayuntamiento de la Villa de Los Realejos · Última actualización del portal: 8 de septiembre de 2026
-      </p>
     </footer>
   );
 }

@@ -436,12 +436,7 @@
 .pie-tarjeta {
   position: relative;
   height: 660px;
-  margin-left: 40px;
-  margin-right: 40px;
-  border-radius: 28px;
   overflow: hidden;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
   background-color: #fff;
   background-image: url("/fotos/plaza-los-realejos.jpg");
   background-size: cover;
@@ -557,13 +552,6 @@
   text-decoration: underline;
   text-underline-offset: 3px;
 }
-.pie-cierre {
-  font-size: 12.5px;
-  color: #5a5a5a;
-  padding: 18px 64px 22px;
-  margin: 0;
-  line-height: 1.6;
-}
 @media (max-width: 1024px) {
   .pie-contenido {
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -576,9 +564,6 @@
   .pie-tarjeta {
     height: auto;
     min-height: 560px;
-    margin-left: 16px;
-    margin-right: 16px;
-    border-radius: 20px;
   }
   .pie-degradado {
     background: linear-gradient(
@@ -593,8 +578,5 @@
     grid-template-columns: minmax(0, 1fr);
     gap: 28px;
     padding: 32px 20px 24px;
-  }
-  .pie-cierre {
-    padding: 16px 20px 20px;
   }
 }

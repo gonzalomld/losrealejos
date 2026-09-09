@@ -8,9 +8,11 @@ import { BloquesEditor } from "./BloquesEditor";
 import { VerificadorPanel } from "./VerificadorPanel";
 import type { Bloque } from "@/lib/cms/bloques";
 import type { RegistroEditorial } from "@/lib/cms/tipos-editoriales";
-import { verificarImagen, verificarLegibilidad, type ReglaResultado } from "@/lib/cms/verificadores";
+import { verificarImagen, verificarLegibilidad, verificarLecturaFacil, type ReglaResultado } from "@/lib/cms/verificadores";
 import { ETIQUETAS_ROL, motivoDenegacion, useRol, type Accion } from "@/lib/roles/contexto";
 import { accionCambiarEstado, accionGuardar } from "@/lib/cms/acciones";
+import { AREAS } from "@/data/areas";
+import { CANALES, ETIQUETAS_CANAL, ETIQUETAS_PERFIL, ETIQUETAS_TEMA, PERFILES, TEMAS, type Canal, type Perfil, type Tema } from "@/data/vocabularios";
 
 /**
  * Editor configurable: un solo componente dibujado desde la definición de
@@ -89,6 +91,14 @@ export function EditorModal<T extends Record<string, unknown>>({
     }
     const desc = typeof form["descripcion"] === "string" ? (form["descripcion"] as string) : "";
     if (desc) out.push(...verificarLegibilidad(desc));
+    const resumen = form["resumen"] as { queEs?: string; queNecesito?: string; dondeSeHace?: string } | undefined;
+    if (resumen) {
+      out.push(...verificarLecturaFacil({
+        queEs: String(resumen.queEs ?? ""),
+        queNecesito: String(resumen.queNecesito ?? ""),
+        dondeSeHace: String(resumen.dondeSeHace ?? ""),
+      }));
+    }
     return out;
   }, [bloques, form]);
 
@@ -215,15 +225,124 @@ export function EditorModal<T extends Record<string, unknown>>({
               <label className="block text-xs font-semibold">Descripción
                 <textarea value={String(form["descripcion"] ?? "")} onChange={(e) => set("descripcion" as keyof T, e.target.value as T[keyof T])} rows={4} className="mt-1 w-full rounded-md border border-neutral-300 px-2 py-2 text-sm" />
               </label>
+              <ListaTextos
+                titulo="Requisitos"
+                valores={(form["requisitos"] as string[] | undefined) ?? []}
+                onCambio={(v) => set("requisitos" as keyof T, v as T[keyof T])}
+              />
+              <ListaTextos
+                titulo="Documentación que hay que llevar"
+                valores={(form["documentacion"] as string[] | undefined) ?? []}
+                onCambio={(v) => set("documentacion" as keyof T, v as T[keyof T])}
+              />
+              <fieldset className="rounded-md border border-neutral-200 p-2">
+                <legend className="px-1 text-xs font-semibold">Canales</legend>
+                {CANALES.map((c: Canal) => {
+                  const lista = (form["canales"] as string[] | undefined) ?? [];
+                  return (
+                    <label key={c} className="flex min-h-[44px] items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        checked={lista.includes(c)}
+                        onChange={(e) => {
+                          const next = e.target.checked ? [...lista, c] : lista.filter((x) => x !== c);
+                          set("canales" as keyof T, (next.length ? next : ["presencial"]) as T[keyof T]);
+                        }}
+                        className="h-5 w-5"
+                      />
+                      {ETIQUETAS_CANAL[c]}
+                    </label>
+                  );
+                })}
+              </fieldset>
+              <fieldset className="rounded-md border border-neutral-200 p-2">
+                <legend className="px-1 text-xs font-semibold">Lugar de presentación presencial</legend>
+                {(["nombre", "direccion", "telefono"] as const).map((k) => {
+                  const pres = (form["presencial"] as Record<string, string> | undefined) ?? {};
+                  const etiquetas = { nombre: "Nombre del lugar", direccion: "Dirección", telefono: "Teléfono" } as const;
+                  return (
+                    <label key={k} className="mt-1 block text-xs font-semibold">{etiquetas[k]}
+                      <input
+                        value={pres[k] ?? ""}
+                        onChange={(e) => set("presencial" as keyof T, { ...pres, [k]: e.target.value } as T[keyof T])}
+                        className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm"
+                      />
+                    </label>
+                  );
+                })}
+              </fieldset>
               <label className="block text-xs font-semibold">Plazo de resolución
                 <input value={String(form["plazoResolucion"] ?? "")} onChange={(e) => set("plazoResolucion" as keyof T, e.target.value as T[keyof T])} className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" />
+              </label>
+              <label className="block text-xs font-semibold">Sentido del silencio
+                <input value={String(form["silencio"] ?? "")} onChange={(e) => set("silencio" as keyof T, e.target.value as T[keyof T])} className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" placeholder="Estimatorio, desestimatorio o no aplica" />
               </label>
               <label className="block text-xs font-semibold">Tasas
                 <input value={String(form["tasa"] ?? "")} onChange={(e) => set("tasa" as keyof T, e.target.value as T[keyof T])} className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" />
               </label>
+              <NormativaEditor
+                valores={(form["normativa"] as { titulo: string; url?: string }[] | undefined) ?? []}
+                onCambio={(v) => set("normativa" as keyof T, v as T[keyof T])}
+              />
               <label className="block text-xs font-semibold">Enlace al procedimiento de la Sede
                 <input value={String(form["sedeUrl"] ?? "")} onChange={(e) => set("sedeUrl" as keyof T, e.target.value as T[keyof T])} className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" inputMode="url" />
               </label>
+              <div className="grid gap-2 sm:grid-cols-2">
+                <label className="block text-xs font-semibold">Área responsable
+                  <select
+                    value={String(form["areaId"] ?? registro.areaId)}
+                    onChange={(e) => set("areaId" as keyof T, e.target.value as T[keyof T])}
+                    className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 bg-white px-2 text-sm"
+                  >
+                    {AREAS.map((a) => (<option key={a.id} value={a.id}>{a.nombre}</option>))}
+                  </select>
+                </label>
+                <label className="block text-xs font-semibold">Tema principal
+                  <select
+                    value={String(form["tema"] ?? "")}
+                    onChange={(e) => set("tema" as keyof T, e.target.value as T[keyof T])}
+                    className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 bg-white px-2 text-sm"
+                  >
+                    {TEMAS.map((t: Tema) => (<option key={t} value={t}>{ETIQUETAS_TEMA[t]}</option>))}
+                  </select>
+                </label>
+              </div>
+              <fieldset className="rounded-md border border-neutral-200 p-2">
+                <legend className="px-1 text-xs font-semibold">Temas secundarios</legend>
+                <div className="grid gap-0 sm:grid-cols-2">
+                  {TEMAS.map((t: Tema) => {
+                    const lista = (form["temasSecundarios"] as string[] | undefined) ?? [];
+                    return (
+                      <label key={t} className="flex min-h-[44px] items-center gap-2 text-sm">
+                        <input
+                          type="checkbox"
+                          checked={lista.includes(t)}
+                          onChange={(e) => set("temasSecundarios" as keyof T, (e.target.checked ? [...lista, t] : lista.filter((x) => x !== t)) as T[keyof T])}
+                          className="h-5 w-5"
+                        />
+                        {ETIQUETAS_TEMA[t]}
+                      </label>
+                    );
+                  })}
+                </div>
+              </fieldset>
+              <fieldset className="rounded-md border border-neutral-200 p-2">
+                <legend className="px-1 text-xs font-semibold">Perfiles</legend>
+                {PERFILES.map((p: Perfil) => {
+                  const lista = (form["perfiles"] as string[] | undefined) ?? [];
+                  return (
+                    <label key={p} className="flex min-h-[44px] items-center gap-2 text-sm">
+                      <input
+                        type="checkbox"
+                        checked={lista.includes(p)}
+                        onChange={(e) => set("perfiles" as keyof T, (e.target.checked ? [...lista, p] : lista.filter((x) => x !== p)) as T[keyof T])}
+                        className="h-5 w-5"
+                      />
+                      {ETIQUETAS_PERFIL[p]}
+                    </label>
+                  );
+                })}
+              </fieldset>
             </section>
 
             <BloquesEditor valor={bloques} onCambio={(b) => { setBloques(b); setSucio(true); }} />
@@ -292,5 +411,84 @@ export function EditorModal<T extends Record<string, unknown>>({
         </div>
       )}
     </div>
+  );
+}
+
+function ListaTextos({ titulo, valores, onCambio }: { titulo: string; valores: string[]; onCambio: (v: string[]) => void }) {
+  const [nuevo, setNuevo] = useState("");
+  return (
+    <fieldset className="rounded-md border border-neutral-200 p-2">
+      <legend className="px-1 text-xs font-semibold">{titulo} ({valores.length})</legend>
+      <ul className="space-y-1">
+        {valores.map((v, i) => (
+          <li key={i} className="flex items-start gap-2 text-sm">
+            <span className="flex-1 rounded bg-neutral-50 px-2 py-2">{v}</span>
+            <button
+              type="button"
+              onClick={() => onCambio(valores.filter((_, j) => j !== i))}
+              aria-label={`Eliminar: ${v.slice(0, 40)}`}
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-red-700 hover:bg-red-50"
+            >
+              <X aria-hidden="true" size={15} />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-1 flex gap-1">
+        <input
+          value={nuevo}
+          onChange={(e) => setNuevo(e.target.value)}
+          onKeyDown={(e) => { if (e.key === "Enter") { e.preventDefault(); if (nuevo.trim()) { onCambio([...valores, nuevo.trim()]); setNuevo(""); } } }}
+          placeholder="Añadir y pulsar Enter…"
+          aria-label={`Añadir a ${titulo}`}
+          className="min-h-[44px] flex-1 rounded-md border border-neutral-300 px-2 text-sm"
+        />
+        <button
+          type="button"
+          onClick={() => { if (nuevo.trim()) { onCambio([...valores, nuevo.trim()]); setNuevo(""); } }}
+          className="min-h-[44px] rounded-md bg-neutral-200 px-3 text-sm font-semibold"
+        >
+          Añadir
+        </button>
+      </div>
+    </fieldset>
+  );
+}
+
+function NormativaEditor({ valores, onCambio }: { valores: { titulo: string; url?: string }[]; onCambio: (v: { titulo: string; url?: string }[]) => void }) {
+  const [titulo, setTitulo] = useState("");
+  const [url, setUrl] = useState("");
+  return (
+    <fieldset className="rounded-md border border-neutral-200 p-2">
+      <legend className="px-1 text-xs font-semibold">Normativa ({valores.length})</legend>
+      <ul className="space-y-1">
+        {valores.map((n, i) => (
+          <li key={i} className="flex items-start gap-2 text-sm">
+            <span className="flex-1 rounded bg-neutral-50 px-2 py-2">
+              {n.titulo}{n.url ? ` — ${n.url}` : ""}
+            </span>
+            <button
+              type="button"
+              onClick={() => onCambio(valores.filter((_, j) => j !== i))}
+              aria-label={`Eliminar norma: ${n.titulo.slice(0, 40)}`}
+              className="inline-flex min-h-[44px] min-w-[44px] items-center justify-center rounded-md text-red-700 hover:bg-red-50"
+            >
+              <X aria-hidden="true" size={15} />
+            </button>
+          </li>
+        ))}
+      </ul>
+      <div className="mt-1 grid gap-1 sm:grid-cols-[1fr_1fr_auto]">
+        <input value={titulo} onChange={(e) => setTitulo(e.target.value)} placeholder="Título de la norma" aria-label="Título de la norma" className="min-h-[44px] rounded-md border border-neutral-300 px-2 text-sm" />
+        <input value={url} onChange={(e) => setUrl(e.target.value)} placeholder="URL (opcional)" aria-label="URL de la norma" inputMode="url" className="min-h-[44px] rounded-md border border-neutral-300 px-2 text-sm" />
+        <button
+          type="button"
+          onClick={() => { if (titulo.trim()) { onCambio([...valores, { titulo: titulo.trim(), ...(url.trim() ? { url: url.trim() } : {}) }]); setTitulo(""); setUrl(""); } }}
+          className="min-h-[44px] rounded-md bg-neutral-200 px-3 text-sm font-semibold"
+        >
+          Añadir
+        </button>
+      </div>
+    </fieldset>
   );
 }

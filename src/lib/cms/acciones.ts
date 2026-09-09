@@ -3,6 +3,7 @@
 import { revalidatePath } from "next/cache";
 import {
   cambiarEstado as cambiarEstadoAlmacen,
+  crearRegistro,
   guardarContenido,
   restablecerDemo as restablecerAlmacen,
   restaurarVersion as restaurarAlmacen,
@@ -63,6 +64,23 @@ export async function accionRestaurarVersion(coleccion: Coleccion, id: string, n
     return { ok: true as const, registro: reg };
   } catch (e) {
     return { ok: false as const, error: e instanceof Error ? e.message : "No se pudo restaurar la versión." };
+  }
+}
+
+export async function accionCrear<T>(
+  coleccion: Coleccion,
+  id: string,
+  contenido: T,
+  areaId: string,
+  autor: string,
+) {
+  try {
+    const reg = await crearRegistro(coleccion, id, contenido, areaId, autor);
+    await registrarActividad({ usuario: autor, accion: "modificacion", elemento: `${coleccion}/${id}`, detalle: "Contenido creado" });
+    for (const r of rutasAfectadas(coleccion, id)) revalidatePath(r);
+    return { ok: true as const, registro: reg };
+  } catch (e) {
+    return { ok: false as const, error: e instanceof Error ? e.message : "No se pudo crear el contenido." };
   }
 }
 

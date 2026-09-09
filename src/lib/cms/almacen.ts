@@ -104,10 +104,13 @@ export async function guardarContenido<T>(
   if (i < 0) throw new Error(`Registro no encontrado: ${coleccion}/${id}`);
   const anterior = regs[i];
   const cambia = JSON.stringify(anterior.contenido) !== JSON.stringify(contenido);
+  const areaEnContenido = (contenido as Record<string, unknown>)["areaId"];
   const actualizado: RegistroEditorial<T> = {
     ...anterior,
     contenido,
     ultimoEditor: autor,
+    // El área responsable vive también en el contenido: se sincroniza al guardar.
+    areaId: typeof areaEnContenido === "string" && areaEnContenido ? areaEnContenido : anterior.areaId,
     versiones: cambia
       ? [...anterior.versiones, { n: anterior.versiones.length + 1, fecha: new Date().toISOString().slice(0, 10), autor, motivo, contenido }]
       : anterior.versiones,
@@ -158,6 +161,44 @@ export async function restaurarVersion<T>(
   const v = reg.versiones.find((x) => x.n === n);
   if (!v) throw new Error(`Versión ${n} no encontrada en ${coleccion}/${id}`);
   return guardarContenido(coleccion, id, v.contenido, autor, `Restaurada la versión ${n}`);
+}
+
+/** Crea un registro nuevo en estado borrador. Falla si el id ya existe. */
+export async function crearRegistro<T>(
+  coleccion: Coleccion,
+  id: string,
+  contenido: T,
+  areaId: string,
+  autor: string,
+  periodicidadMeses = 6,
+): Promise<RegistroEditorial<T>> {
+  const regs = await leerRegistros<T>(coleccion);
+  if (regs.some((r) => r.id === id)) throw new Error(`Ya existe ${coleccion}/${id}`);
+  const hoy = new Date().toISOString().slice(0, 10);
+  const nuevo: RegistroEditorial<T> = {
+    id,
+    coleccion,
+    contenido,
+    estado: "borrador",
+    pubFecha: null,
+    validezHasta: null,
+    expiraEl: null,
+    periodicidadMeses,
+    ultimaRevision: hoy,
+    areaId,
+    autor,
+    ultimoEditor: autor,
+    enviadoPor: null,
+    fechaEnvio: null,
+    revision: null,
+    versiones: [{ n: 1, fecha: hoy, autor, motivo: "Creación del contenido", contenido }],
+    hallazgos: [],
+    estadoDatos: "no_aplica",
+    notaDatos: null,
+  };
+  regs.push(nuevo);
+  await persistir(coleccion, regs as RegistroEditorial<unknown>[]);
+  return nuevo;
 }
 
 /** Restablece la demo al estado versionado (borra overrides). */

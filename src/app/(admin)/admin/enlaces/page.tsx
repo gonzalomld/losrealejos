@@ -1,7 +1,7 @@
-import { SeccionPlaceholder } from "@/components/admin/SeccionPlaceholder";
+import { ConfigDemoPage } from "@/components/admin/ConfigDemo";
 
 export const dynamic = "force-dynamic";
 
-export default function Pagina() {
-  return <SeccionPlaceholder titulo="Sistemas externos" descripcion="Enlaces a Sede, cita previa, pago e incidencias." />;
+export default function EnlacesAdmin() {
+  return <ConfigDemoPage />;
 }

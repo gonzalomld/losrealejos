@@ -25,6 +25,9 @@ export function TramitesClient({ iniciales }: { iniciales: RegistroEditorial<Rec
   const [pagina, setPagina] = useState(1);
   const [porPagina, setPorPagina] = useState(10);
   const [editando, setEditando] = useState<RegistroEditorial<Record<string, unknown>> | null>(null);
+  const [creando, setCreando] = useState(false);
+  const [nuevoId, setNuevoId] = useState("");
+  const [errorCrear, setErrorCrear] = useState<string | null>(null);
 
   // Editor de área: solo ve contenidos de su área.
   const visibles = useMemo(() => {
@@ -86,15 +89,74 @@ export function TramitesClient({ iniciales }: { iniciales: RegistroEditorial<Rec
 
   const puedeCrear = puede("crear" as Accion, "tramites");
 
+  async function crear() {
+    setErrorCrear(null);
+    const id = nuevoId.trim().toLowerCase().replace(/[^a-z0-9-]+/g, "-").replace(/^-+|-+$/g, "");
+    if (!id) { setErrorCrear("Escribe un identificador, p. ej. «certificado-nuevo»."); return; }
+    const area = rol === "editor" && usuario.areaId ? usuario.areaId : fArea || "atencion-ciudadana";
+    const base = {
+      id,
+      tituloClaro: "Nuevo trámite (título provisional)",
+      tituloOficial: "",
+      resumen: { queEs: "", queNecesito: "", dondeSeHace: "" },
+      descripcion: "",
+      requisitos: [],
+      documentacion: [],
+      canales: ["presencial"],
+      comoSeHace: [],
+      identificacion: "",
+      plazoResolucion: "",
+      silencio: "",
+      tasa: "",
+      tasaGratuita: true,
+      normativa: [],
+      sedeUrl: "",
+      areaId: area,
+      tema: "atencion-ciudadana",
+      temasSecundarios: [],
+      presencial: { nombre: "", direccion: "", telefono: "" },
+      perfiles: ["ciudadano"],
+      plazoAbierto: false,
+      fechaActualizacion: new Date().toISOString().slice(0, 10),
+      relacionados: [],
+    };
+    const { accionCrear } = await import("@/lib/cms/acciones");
+    const r = await accionCrear("tramites", id, base, area, usuario.nombre);
+    if (!r.ok) { setErrorCrear(r.error); return; }
+    window.location.reload();
+  }
+
   return (
     <AdminContenido>
       <AdminPageHeader
         titulo="Trámites"
         descripcion="La colección más importante. Fecha de última revisión siempre visible; indicador cuando supera su periodicidad acordada."
         acciones={[
-          { etiqueta: "Nuevo trámite", principal: true, deshabilitada: !puedeCrear, motivo: !puedeCrear ? motivoDenegacion(rol, "crear") : undefined },
+          { etiqueta: creando ? "Cancelar creación" : "Nuevo trámite", principal: true, onClick: () => setCreando((c) => !c), deshabilitada: !puedeCrear, motivo: !puedeCrear ? motivoDenegacion(rol, "crear") : undefined },
         ]}
       />
+      {creando && puedeCrear && (
+        <div className="rounded-lg border border-neutral-200 p-3">
+          <label htmlFor="nuevo-id" className="block text-xs font-semibold">
+            Identificador del nuevo trámite (minúsculas y guiones, p. ej. «certificado-nuevo»)
+            <input
+              id="nuevo-id"
+              value={nuevoId}
+              onChange={(e) => setNuevoId(e.target.value)}
+              className="mt-1 min-h-[44px] w-full max-w-md rounded-md border border-neutral-300 px-2 text-sm"
+              placeholder="certificado-nuevo"
+            />
+          </label>
+          {errorCrear && <p role="alert" className="mt-1 text-sm font-semibold text-red-800">{errorCrear}</p>}
+          <button
+            type="button"
+            onClick={crear}
+            className="mt-2 inline-flex min-h-[44px] items-center rounded-md bg-primary px-4 text-sm font-bold text-white"
+          >
+            Crear en borrador y abrir el editor
+          </button>
+        </div>
+      )}
       {rol === "editor" && (
         <p className="rounded-md bg-blue-50 p-2 text-sm text-blue-900">
           Ves solo los contenidos de tu área ({getArea(usuario.areaId ?? "")?.nombre}). Los listados no muestran los de otras áreas.
