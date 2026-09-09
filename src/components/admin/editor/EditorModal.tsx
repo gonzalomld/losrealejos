@@ -10,10 +10,11 @@ import { BloquesEditor } from "./BloquesEditor";
 import { CampoDef } from "./CamposDef";
 import { VerificadorPanel } from "./VerificadorPanel";
 import type { Bloque } from "@/lib/cms/bloques";
+import { enlacesDeMarkdown, nivelesDeMarkdown } from "@/lib/cms/bloques";
 import type { DefColeccion } from "@/lib/cms/definiciones";
 import { escribirRuta, tituloDeContenido } from "@/lib/cms/definiciones";
 import type { RegistroEditorial } from "@/lib/cms/tipos-editoriales";
-import { verificarImagen, verificarLegibilidad, verificarLecturaFacil, type ReglaResultado } from "@/lib/cms/verificadores";
+import { verificarEnlace, verificarImagen, verificarJerarquia, verificarLegibilidad, verificarLecturaFacil, verificarTabla, type ReglaResultado } from "@/lib/cms/verificadores";
 import { ETIQUETAS_ROL, motivoDenegacion, useRol, type Accion } from "@/lib/roles/contexto";
 import { accionCambiarEstado, accionGuardar } from "@/lib/cms/acciones";
 
@@ -54,14 +55,26 @@ export function EditorModal<T extends Record<string, unknown>>({
   const abridorRef = useRef<Element | null>(null);
   const guardandoRef = useRef(false);
 
-  // Trampa de foco cíclica + fondo inerte (B3.5).
+  // Trampa de foco cíclica + fondo inerte (B3.5). Con alternativa si no hay `inert` (12).
   useEffect(() => {
     abridorRef.current = document.activeElement;
     const dialogo = dialogoRef.current;
     const raiz = document.getElementById("contenido-admin");
     dialogo?.querySelector<HTMLElement>("input, textarea, select, button")?.focus();
     document.body.style.overflow = "hidden";
-    if (raiz) raiz.inert = true;
+    const soportaInert = "inert" in HTMLElement.prototype;
+    if (raiz) {
+      if (soportaInert) {
+        raiz.inert = true;
+      } else {
+        // Alternativa: oculta el fondo a AT y saca sus focos del orden Tab.
+        raiz.setAttribute("aria-hidden", "true");
+        for (const el of raiz.querySelectorAll<HTMLElement>("a[href], button, input, select, textarea, [tabindex]")) {
+          if (el.dataset.tabPrev === undefined) el.dataset.tabPrev = el.getAttribute("tabindex") ?? "";
+          el.setAttribute("tabindex", "-1");
+        }
+      }
+    }
     function trampa(e: KeyboardEvent) {
       if (e.key !== "Tab" || !dialogo) return;
       const focos = [...dialogo.querySelectorAll<HTMLElement>("input, textarea, select, button, a[href]")]
@@ -75,7 +88,20 @@ export function EditorModal<T extends Record<string, unknown>>({
     document.addEventListener("keydown", trampa);
     return () => {
       document.body.style.overflow = "";
-      if (raiz) raiz.inert = false;
+      if (raiz) {
+        if (soportaInert) {
+          raiz.inert = false;
+        } else {
+          raiz.removeAttribute("aria-hidden");
+          for (const el of raiz.querySelectorAll<HTMLElement>("a[href], button, input, select, textarea, [tabindex]")) {
+            const prev = el.dataset.tabPrev;
+            if (prev === undefined) continue;
+            if (prev === "") el.removeAttribute("tabindex");
+            else el.setAttribute("tabindex", prev);
+            delete el.dataset.tabPrev;
+          }
+        }
+      }
       document.removeEventListener("keydown", trampa);
       (abridorRef.current as HTMLElement | null)?.focus?.();
     };
@@ -108,21 +134,46 @@ export function EditorModal<T extends Record<string, unknown>>({
 
   const resultados: ReglaResultado[] = useMemo(() => {
     const out: ReglaResultado[] = [];
+    const niveles: number[] = [];
     for (const b of bloques) {
       if (b.tipo === "foto") {
         const r = verificarImagen(b.alt, false);
         if (r) out.push({ ...r, mensaje: `Bloque Foto: ${r.mensaje}` });
       }
-      if (b.texto) out.push(...verificarLegibilidad(b.texto));
+      if (b.tipo === "tabla") {
+        // Estructura editable con th: bloqueo solo si no hay encabezados.
+        const primera = b.tabla?.[0] ?? [];
+        const tieneTh = primera.length > 0 && primera.every((c) => c.trim() !== "");
+        const r = verificarTabla(tieneTh);
+        if (r) out.push({ ...r, mensaje: `Bloque Tabla: ${r.mensaje}` });
+      }
+      if (b.tipo === "enlace-externo" && (b.textoEnlace || b.destino)) {
+        if (b.destino && !(b.textoEnlace ?? "").trim()) {
+          out.push({ regla: "enlace-descriptivo", mensaje: "Bloque enlace externo: falta el texto visible del enlace.", severidad: "bloqueo" });
+        } else {
+          const r = verificarEnlace(b.textoEnlace ?? "");
+          if (r) out.push({ ...r, mensaje: `Bloque enlace externo: ${r.mensaje}` });
+        }
+      }
+      if (b.texto) {
+        niveles.push(...nivelesDeMarkdown(b.texto));
+        for (const e of enlacesDeMarkdown(b.texto)) {
+          const r = verificarEnlace(e.texto);
+          if (r) out.push({ ...r, mensaje: `Enlace «${e.texto}»: describe su destino.` });
+        }
+        out.push(...verificarLegibilidad(b.texto));
+      }
     }
+    // h1 = título de la ficha; los bloques deben empezar en h2 sin saltos.
+    out.push(...verificarJerarquia([1, ...niveles]).map((r) => ({ ...r, mensaje: `Bloques: ${r.mensaje}` })));
     const desc = typeof form["descripcion"] === "string" ? (form["descripcion"] as string) : "";
     if (desc) out.push(...verificarLegibilidad(desc));
     const resumen = form["resumen"] as { queEs?: string; queNecesito?: string; dondeSeHace?: string } | undefined;
-    if (resumen) {
+    if (definicion.lecturaFacil || resumen) {
       out.push(...verificarLecturaFacil({
-        queEs: String(resumen.queEs ?? ""),
-        queNecesito: String(resumen.queNecesito ?? ""),
-        dondeSeHace: String(resumen.dondeSeHace ?? ""),
+        queEs: String(resumen?.queEs ?? ""),
+        queNecesito: String(resumen?.queNecesito ?? ""),
+        dondeSeHace: String(resumen?.dondeSeHace ?? ""),
       }));
     }
     return out;

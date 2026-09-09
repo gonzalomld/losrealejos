@@ -120,6 +120,22 @@ export function BloquesEditor({ valor, onCambio }: { valor: Bloque[]; onCambio: 
                         <p id={`${b.id}-alt-ayuda`} className="text-xs text-neutral-500">Describe qué se ve en la foto. Sin alt, el verificador bloquea la publicación.</p>
                       </>
                     )}
+                    {(b.tipo === "tabla") && (
+                      <TablaEditor
+                        filas={(b.tabla ?? [["", ""], ["", ""]]) as string[][]}
+                        onCambio={(t) => onCambio(valor.map((x) => (x.id === b.id ? { ...x, tabla: t } : x)))}
+                      />
+                    )}
+                    {(b.tipo === "enlace-externo") && (
+                      <>
+                        <label className="block text-xs font-semibold">Texto del enlace (describe el destino; «leer más» bloquea)
+                          <input value={b.textoEnlace ?? ""} onChange={(e) => onCambio(valor.map((x) => (x.id === b.id ? { ...x, textoEnlace: e.target.value } : x)))} className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" />
+                        </label>
+                        <label className="block text-xs font-semibold">Destino (URL)
+                          <input value={b.destino ?? ""} onChange={(e) => onCambio(valor.map((x) => (x.id === b.id ? { ...x, destino: e.target.value } : x)))} inputMode="url" className="mt-1 min-h-[44px] w-full rounded-md border border-neutral-300 px-2 text-sm" />
+                        </label>
+                      </>
+                    )}
                     <label className="block text-xs font-semibold">
                       {b.tipo === "contenido" ? "Texto (negrita con **, cursiva con *, listas con -)" : "Contenido del bloque"}
                       <textarea
@@ -137,5 +153,49 @@ export function BloquesEditor({ valor, onCambio }: { valor: Bloque[]; onCambio: 
         </ul>
       )}
     </section>
+  );
+}
+
+/**
+ * Tabla con primera fila de encabezados (th). Botones de fila/columna
+ * operables con teclado; la edición de celdas es por inputs etiquetados.
+ */
+function TablaEditor({ filas, onCambio }: { filas: string[][]; onCambio: (t: string[][]) => void }) {
+  function celda(f: number, c: number, v: string) {
+    onCambio(filas.map((fila, fi) => (fi === f ? fila.map((x, ci) => (ci === c ? v : x)) : fila)));
+  }
+  function addFila() {
+    onCambio([...filas, Array(filas[0]?.length ?? 2).fill("")]);
+  }
+  function addColumna() {
+    onCambio(filas.map((fila) => [...fila, ""]));
+  }
+  return (
+    <div>
+      <p className="text-xs font-semibold">Tabla: la primera fila son los encabezados (obligatorios para publicar)</p>
+      <table className="mt-1 w-full border-collapse text-sm">
+        <tbody>
+          {filas.map((fila, fi) => (
+            <tr key={fi}>
+              {fila.map((celdaV, ci) => (
+                <td key={ci} className="border border-neutral-300 p-0">
+                  <label className="sr-only">{fi === 0 ? `Encabezado columna ${ci + 1}` : `Fila ${fi}, columna ${ci + 1}`}</label>
+                  <input
+                    value={celdaV}
+                    onChange={(e) => celda(fi, ci, e.target.value)}
+                    aria-label={fi === 0 ? `Encabezado columna ${ci + 1}` : `Fila ${fi}, columna ${ci + 1}`}
+                    className="min-h-[44px] w-full px-2 text-sm"
+                  />
+                </td>
+              ))}
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div className="mt-1 flex gap-1">
+        <button type="button" onClick={addFila} className="min-h-[44px] rounded-md bg-neutral-200 px-3 text-xs font-semibold">Añadir fila</button>
+        <button type="button" onClick={addColumna} className="min-h-[44px] rounded-md bg-neutral-200 px-3 text-xs font-semibold">Añadir columna</button>
+      </div>
+    </div>
   );
 }

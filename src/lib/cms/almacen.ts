@@ -14,22 +14,52 @@ import type { Coleccion, RegistroEditorial } from "./tipos-editoriales";
  * - Gestor (lectura + escritura): `leerParaGestor`, `guardarContenido`,
  *   `cambiarEstado`, `restaurarVersion`, `crearRegistro`.
  *
- * Persistencia: en desarrollo local los cambios se escriben en
- * `data/cms/*.json` (versionados en el repositorio). En el entorno
- * desplegado el sistema de ficheros es de solo lectura: la capacidad de
- * escritura se prueba de verdad con `esEscribible()` (intento real de
- * crear+borrar un fichero temporal, sin inferir de variables de entorno)
- * y, si falla, el gestor entra en modo consulta con los controles de
- * guardado deshabilitados y la explicación visible en la interfaz.
+ * Persistencia (docs/persistencia.md):
+ * - Vía prioritaria: Postgres (Supabase, región UE) vía `db.ts`.
+ *   Si la tabla está vacía, se siembra desde data/cms/*.json.
+ * - Reserva: fichero local (desarrollo) si el probe de escritura funciona.
+ * - Última reserva: modo consulta (lectura de semilla/fichero, sin escribir).
+ * La capacidad se prueba de verdad (PostgREST o probe fs), sin inferir de env.
  */
+import { dbDisponible, dbList, dbTablaVacia, dbUpsert, dbVaciarTodo, type BackendId } from "./db";
 
 const DIR = path.join(process.cwd(), "data", "cms");
 const PROBE = path.join(DIR, ".probe-escritura");
 
 let probeCache: boolean | null = null;
 
-/** Prueba real de escritura (crear+borrar temporal). Nunca inferida de env. */
-export async function esEscribible(): Promise<boolean> {
+let backendCache: { backend: BackendId; at: number } | null = null;
+
+/**
+ * Backend activo. Orden: db → fichero → lectura.
+ * `dbDisponible()` sondea PostgREST de verdad; el probe fs es la reserva.
+ */
+export async function tipoBackend(): Promise<BackendId> {
+  if (backendCache && Date.now() - backendCache.at < 30000) return backendCache.backend;
+  let backend: BackendId = "lectura";
+  try {
+    if (await dbDisponible()) backend = "db";
+    else if (await esEscribibleFs()) backend = "fichero";
+  } catch {
+    backend = "lectura";
+  }
+  backendCache = { backend, at: Date.now() };
+  return backend;
+}
+
+/** Solo para pruebas: invalida las cachés de probes. */
+export function _resetProbeCache(): void {
+  probeCache = null;
+}
+
+/** Solo para pruebas: invalida la caché de backend. */
+export function _resetBackendCache(): void {
+  backendCache = null;
+  probeCache = null;
+}
+
+/** Prueba real de escritura en fichero (crear+borrar temporal). Nunca inferida de env. */
+export async function esEscribibleFs(): Promise<boolean> {
   if (probeCache !== null) return probeCache;
   try {
     await fs.mkdir(DIR, { recursive: true });
@@ -42,9 +72,9 @@ export async function esEscribible(): Promise<boolean> {
   return probeCache;
 }
 
-/** Solo para pruebas: invalida la caché del probe. */
-export function _resetProbeCache(): void {
-  probeCache = null;
+/** ¿Puede escribir este entorno (db o fichero)? Lo deciden los probes reales. */
+export async function esEscribible(): Promise<boolean> {
+  return (await tipoBackend()) !== "lectura";
 }
 
 export const ERROR_SOLO_LECTURA =
@@ -72,11 +102,24 @@ async function leerAlmacen(coleccion: Coleccion): Promise<RegistroEditorial<unkn
 }
 
 /**
- * Todos los registros de una colección: fusión de ambas fuentes.
- * Semilla (reparto versionado) + todo lo del almacenamiento que no esté
- * en ella (registros nuevos y overrides), indexado por id.
+ * Todos los registros de una colección.
+ * Prioridad: db → fichero (fusión con semilla, por id) → semilla.
+ * Si la tabla está vacía, se siembra desde data/cms/*.json (idempotente).
  */
 export async function leerRegistros<T>(coleccion: Coleccion): Promise<RegistroEditorial<T>[]> {
+  const backend = await tipoBackend();
+  if (backend === "db") {
+    try {
+      const filas = await dbList<T>(coleccion);
+      if (filas.length > 0) return filas;
+      // Tabla vacía: sembrar desde los ficheros versionados.
+      await sembrarEnDb(coleccion);
+      const resembrados = await dbList<T>(coleccion);
+      if (resembrados.length > 0) return resembrados;
+    } catch {
+      // La base no responde: reserva inmediata a fichero/semilla.
+    }
+  }
   const base = getSemilla().filter((r) => r.coleccion === coleccion);
   const almacenados = await leerAlmacen(coleccion);
   const porId = new Map<string, RegistroEditorial<unknown>>();
@@ -118,10 +161,22 @@ export async function leerParaPreview<T>(
 }
 
 async function persistir(coleccion: Coleccion, regs: RegistroEditorial<unknown>[]): Promise<void> {
-  if (!(await esEscribible())) throw new Error(ERROR_SOLO_LECTURA);
+  const backend = await tipoBackend();
+  if (backend === "lectura") throw new Error(ERROR_SOLO_LECTURA);
+  if (backend === "db") {
+    await dbUpsert(coleccion, regs);
+    return;
+  }
   await fs.mkdir(DIR, { recursive: true });
   // El fichero versionado contiene el estado completo de la colección.
   await fs.writeFile(ruta(coleccion), JSON.stringify(regs, null, 2) + "\n", "utf-8");
+}
+
+/** Siembra una colección en la base desde los ficheros versionados. */
+async function sembrarEnDb(coleccion: Coleccion): Promise<void> {
+  const fichero = await leerAlmacen(coleccion);
+  const fuente = fichero.length > 0 ? fichero : getSemilla().filter((r) => r.coleccion === coleccion);
+  if (fuente.length > 0) await dbUpsert(coleccion, fuente);
 }
 
 /** Guarda contenido editado; genera versión con autor, fecha y motivo. */
@@ -234,13 +289,21 @@ export async function crearRegistro<T>(
   return nuevo;
 }
 
-/** Restablece la demo al estado versionado: reescribe el fichero desde la semilla. */
+/** Restablece la demo al estado versionado: resiembra desde los ficheros (nunca los borra). */
 export async function restablecerDemo(coleccion?: Coleccion): Promise<void> {
-  if (!(await esEscribible())) throw new Error(ERROR_SOLO_LECTURA);
-  await fs.mkdir(DIR, { recursive: true });
+  const backend = await tipoBackend();
+  if (backend === "lectura") throw new Error(ERROR_SOLO_LECTURA);
   const colecciones: Coleccion[] = coleccion
     ? [coleccion]
     : ["tramites", "noticias", "eventos", "ayudas", "empleo", "avisos", "servicios", "paginas", "areas", "documentos", "transparencia"];
+  if (backend === "db") {
+    await dbVaciarTodo();
+    for (const c of colecciones) await sembrarEnDb(c);
+    const { dbInsertActividad } = await import("./db");
+    await dbInsertActividad({ fecha: "2026-09-08", usuario: "Sistema", accion: "modificacion", elemento: "demo", detalle: "Datos de demostración restablecidos" });
+    return;
+  }
+  await fs.mkdir(DIR, { recursive: true });
   await Promise.all(
     colecciones.map((c) =>
       fs.writeFile(ruta(c), JSON.stringify(getSemilla().filter((r) => r.coleccion === c), null, 2) + "\n", "utf-8"),

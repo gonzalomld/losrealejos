@@ -29,5 +29,29 @@ export type Bloque = {
   texto?: string;
   alt?: string;
   src?: string;
+  /** Bloque tabla: primera fila = encabezados. Sin encabezados no se publica. */
+  tabla?: string[][];
+  /** Bloque enlace externo: texto visible + destino. Sin texto descriptivo no se publica. */
+  textoEnlace?: string;
+  destino?: string;
   plegado?: boolean;
 };
+
+/** Extrae Markdown simple [#, ##, ###] a niveles de encabezado, en orden. */
+export function nivelesDeMarkdown(texto: string): number[] {
+  const out: number[] = [];
+  for (const linea of texto.split("\n")) {
+    const m = /^(#{1,6})\s+\S/.exec(linea.trim());
+    if (m) out.push(m[1].length);
+  }
+  return out;
+}
+
+/** Extrae [texto](destino) de Markdown a pares. */
+export function enlacesDeMarkdown(texto: string): { texto: string; destino: string }[] {
+  const out: { texto: string; destino: string }[] = [];
+  const re = /\[([^\]]+)\]\(([^)]+)\)/g;
+  let m: RegExpExecArray | null;
+  while ((m = re.exec(texto)) !== null) out.push({ texto: m[1], destino: m[2] });
+  return out;
+}

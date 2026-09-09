@@ -9,12 +9,14 @@ import {
   restaurarVersion as restaurarAlmacen,
 } from "./almacen";
 import type { Coleccion, EstadoContenido } from "./tipos-editoriales";
-import { ERROR_SOLO_LECTURA, esEscribible } from "./almacen";
+import { ERROR_SOLO_LECTURA, esEscribible, tipoBackend } from "./almacen";
+import type { BackendId } from "./db";
 import { registrarActividad } from "@/lib/actividad/registro";
 
-/** ¿Puede escribir este entorno? Lo decide el probe real, no una variable. */
-export async function accionPuedeEscribir(): Promise<{ escribible: boolean }> {
-  return { escribible: await esEscribible() };
+/** ¿Puede escribir este entorno? Lo deciden los probes reales, no una variable. */
+export async function accionPuedeEscribir(): Promise<{ escribible: boolean; backend: BackendId }> {
+  const backend = await tipoBackend();
+  return { escribible: backend !== "lectura", backend };
 }
 
 function rutasAfectadas(coleccion: Coleccion, id: string): string[] {

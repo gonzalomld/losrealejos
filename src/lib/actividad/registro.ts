@@ -1,6 +1,7 @@
 import { promises as fs } from "node:fs";
 import path from "node:path";
-import { esEscribible } from "@/lib/cms/almacen";
+import { tipoBackend } from "@/lib/cms/almacen";
+import { dbInsertActividad, dbListActividad } from "@/lib/cms/db";
 
 export type AccionActividad =
   | "acceso"
@@ -29,6 +30,11 @@ const SEMILLA_ACTIVIDAD: EntradaActividad[] = [
 
 export async function leerActividad(): Promise<EntradaActividad[]> {
   try {
+    if ((await tipoBackend()) === "db") return await dbListActividad();
+  } catch {
+    /* reserva a fichero/semilla */
+  }
+  try {
     const texto = await fs.readFile(FICHERO, "utf-8");
     return JSON.parse(texto) as EntradaActividad[];
   } catch {
@@ -37,7 +43,6 @@ export async function leerActividad(): Promise<EntradaActividad[]> {
 }
 
 export async function registrarActividad(entrada: Omit<EntradaActividad, "fecha"> & { fecha?: string }): Promise<void> {
-  const actual = await leerActividad();
   const completa: EntradaActividad = {
     fecha: entrada.fecha ?? new Date().toISOString().slice(0, 10),
     usuario: entrada.usuario,
@@ -45,10 +50,24 @@ export async function registrarActividad(entrada: Omit<EntradaActividad, "fecha"
     elemento: entrada.elemento,
     detalle: entrada.detalle,
   };
-  const todas = [completa, ...actual].slice(0, 500);
   // La trazabilidad no bloquea la acción: si no se puede escribir, se registra
   // en la respuesta de la acción y queda visible en la interfaz.
-  if (!(await esEscribible())) return;
-  await fs.mkdir(path.dirname(FICHERO), { recursive: true });
-  await fs.writeFile(FICHERO, JSON.stringify(todas, null, 2) + "\n", "utf-8");
+  try {
+    if ((await tipoBackend()) === "db") {
+      await dbInsertActividad(completa);
+      return;
+    }
+  } catch {
+    return;
+  }
+  const actual = await leerActividad();
+  const todas = [completa, ...actual].slice(0, 500);
+  try {
+    const { esEscribibleFs } = await import("@/lib/cms/almacen");
+    if (!(await esEscribibleFs())) return;
+    await fs.mkdir(path.dirname(FICHERO), { recursive: true });
+    await fs.writeFile(FICHERO, JSON.stringify(todas, null, 2) + "\n", "utf-8");
+  } catch {
+    /* sin escritura: no bloquea la acción */
+  }
 }

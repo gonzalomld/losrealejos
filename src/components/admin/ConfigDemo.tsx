@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AdminContenido, AdminPageHeader } from "@/components/admin/AdminPageHeader";
 import { motivoDenegacion, useRol, type Accion } from "@/lib/roles/contexto";
 import { accionRestablecerDemo } from "@/lib/cms/acciones";
+import { useSoloLectura } from "@/components/admin/EscrituraContext";
+import { ERROR_SOLO_LECTURA_UI } from "@/components/admin/solo-lectura";
 
 /**
  * Botón de restablecer datos de demostración.
@@ -11,13 +13,17 @@ import { accionRestablecerDemo } from "@/lib/cms/acciones";
  */
 export function RestablecerDemo() {
   const { rol, usuario, puede } = useRol();
+  const soloLectura = useSoloLectura();
   const [estado, setEstado] = useState<"idle" | "ok" | "error">("idle");
-  const permitido = puede("gestionar_config", "enlaces");
+  const [mensaje, setMensaje] = useState<string | null>(null);
+  const permitido = !soloLectura && puede("gestionar_config", "enlaces");
+  const motivo = soloLectura ? ERROR_SOLO_LECTURA_UI : !puede("gestionar_config", "enlaces") ? motivoDenegacion(rol, "gestionar_config") : undefined;
 
   async function restablecer() {
     if (!confirm("Se borran todos los cambios de la demo y vuelve al estado inicial. ¿Continuar?")) return;
     const r = await accionRestablecerDemo(usuario.nombre);
     setEstado(r.ok ? "ok" : "error");
+    if (!r.ok) setMensaje("error" in r ? (r as { error: string }).error : null);
     if (r.ok) window.location.reload();
   }
 
@@ -32,14 +38,14 @@ export function RestablecerDemo() {
         type="button"
         onClick={restablecer}
         disabled={!permitido}
-        title={!permitido ? motivoDenegacion(rol, "gestionar_config") : undefined}
-        aria-label={!permitido ? `Restablecer datos. ${motivoDenegacion(rol, "gestionar_config")}` : "Restablecer datos de demostración"}
+        title={motivo}
+        aria-label={motivo ? `Restablecer datos. ${motivo}` : "Restablecer datos de demostración"}
         className="mt-2 inline-flex min-h-[44px] items-center rounded-md bg-neutral-200 px-4 text-sm font-semibold disabled:cursor-not-allowed disabled:opacity-60"
       >
         Restablecer datos de demostración
       </button>
       {estado === "ok" && <p role="status" className="mt-1 text-sm text-green-900">Demo restablecida.</p>}
-      {estado === "error" && <p role="alert" className="mt-1 text-sm text-red-900">No se pudo restablecer. Inténtalo de nuevo.</p>}
+      {estado === "error" && <p role="alert" className="mt-1 text-sm text-red-900">{mensaje ?? "No se pudo restablecer. Inténtalo de nuevo."}</p>}
     </section>
   );
 }
