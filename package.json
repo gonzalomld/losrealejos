@@ -7,7 +7,9 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "cms:seed": "node scripts/cms-seed.cjs"
+    "cms:seed": "node scripts/cms-seed.cjs",
+    "cms:backup": "node scripts/cms-backup.cjs",
+    "cms:restore": "node scripts/cms-restore.cjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.0.1",

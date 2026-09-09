@@ -67,13 +67,6 @@ export function _resetDbCache(): void {
   pingCache = null;
 }
 
-/** ¿La tabla está vacía? Para sembrar desde data/cms al arrancar. */
-export async function dbTablaVacia(): Promise<boolean> {
-  const res = await rest(`/cms_registros?select=id&limit=1`);
-  const arr = (await res.json()) as unknown[];
-  return arr.length === 0;
-}
-
 export async function dbList<T>(coleccion: Coleccion): Promise<RegistroEditorial<T>[]> {
   const res = await rest(`/cms_registros?coleccion=eq.${encodeURIComponent(coleccion)}&select=registro&limit=2000`);
   const arr = (await res.json()) as { registro: RegistroEditorial<T> }[];

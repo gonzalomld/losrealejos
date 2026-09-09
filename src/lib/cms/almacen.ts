@@ -21,7 +21,7 @@ import type { Coleccion, RegistroEditorial } from "./tipos-editoriales";
  * - Última reserva: modo consulta (lectura de semilla/fichero, sin escribir).
  * La capacidad se prueba de verdad (PostgREST o probe fs), sin inferir de env.
  */
-import { dbDisponible, dbList, dbTablaVacia, dbUpsert, dbVaciarTodo, type BackendId } from "./db";
+import { dbDisponible, dbList, dbUpsert, dbVaciarTodo, type BackendId } from "./db";
 
 const DIR = path.join(process.cwd(), "data", "cms");
 const PROBE = path.join(DIR, ".probe-escritura");
